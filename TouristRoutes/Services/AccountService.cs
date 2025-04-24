@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,6 +50,8 @@ namespace TouristRoutes.Services
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
 
+            AppState.IsAuthenticated = true;
+            AppState.CurrentAppUser = user;
             return (true, "");
         }
 
@@ -79,6 +82,9 @@ namespace TouristRoutes.Services
 
             if (isValid)
             {
+                AppState.IsAuthenticated = true;
+                AppState.CurrentAppUser = dbUser;
+
                 return (true, "");
             } else
             {

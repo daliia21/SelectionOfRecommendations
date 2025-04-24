@@ -1,13 +1,14 @@
 using TouristRoutes.Dtos;
+using TouristRoutes.Forms;
 using TouristRoutes.Services;
 
 namespace TouristRoutes
 {
-    public partial class Form1 : Form
+    public partial class AccountForm : Form
     {
         AccountService _accountService;
 
-        public Form1()
+        public AccountForm()
         {
             InitializeComponent();
 
@@ -25,8 +26,8 @@ namespace TouristRoutes
         {
             LoginDto loginDto = new LoginDto
             {
-                Email = textBox5.Text,
-                Password = textBox6.Text
+                Email = loginEmail.Text,
+                Password = loginPassword.Text
             };
 
             var result = _accountService.Login(loginDto);
@@ -41,6 +42,7 @@ namespace TouristRoutes
                 MessageBox.Show(result.Item2);
             }
 
+
             
         }
 
@@ -48,10 +50,10 @@ namespace TouristRoutes
         {
             RegisterDto registerDto = new RegisterDto
             {
-                FirstName = textBox1.Text,
-                LastName = textBox4.Text,
-                Email = textBox3.Text,
-                Password = textBox2.Text
+                FirstName = registerFirstName.Text,
+                LastName = registerLastName.Text,
+                Email = registerEmail.Text,
+                Password = registerPassword.Text
             };
 
             var result = _accountService.Register(registerDto);
@@ -60,10 +62,16 @@ namespace TouristRoutes
             {
                 MessageBox.Show("Регистрация прошла успешно!");
 
+                this.Hide();
+                AnketaForm anketaForm = new AnketaForm();
+                anketaForm.Show();
+
             } else
             {
                 MessageBox.Show(result.Item2);
             }
+
+            
         }
     }
 }
