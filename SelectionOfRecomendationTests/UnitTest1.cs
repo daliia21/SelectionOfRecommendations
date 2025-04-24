@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TouristRoutes;
+using TouristRoutes.Dtos;
 using TouristRoutes.Models;
+using TouristRoutes.Services;
 
 namespace SelectionOfRecomendationTests
 {
@@ -90,6 +92,33 @@ namespace SelectionOfRecomendationTests
             //dbContext.SaveChanges();
 
             // Удаление всех пользователей
+        }
+
+        [Fact]
+        public void TestPasswordHasher()
+        {
+            AccountService accountService = new AccountService();
+
+            //RegisterDto dalia = new RegisterDto
+            //{
+            //    FirstName = "Dalia",
+            //    LastName = "Sabirova",
+            //    Email = "daliaa@gmail.com",
+            //    Password = "12345vbsln"
+            //};
+
+            //var result = accountService.Register(dalia);
+
+            LoginDto loginDto = new LoginDto
+            {
+                Email = "dalia@gmail.com",
+                Password = "12345vbsln"
+            };
+
+            var result = accountService.Login(loginDto);
+
+            Assert.Equal(true, result.Item1);
+
         }
     }
 }
