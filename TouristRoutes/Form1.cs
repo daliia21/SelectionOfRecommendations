@@ -11,5 +11,17 @@ namespace TouristRoutes
         {
 
         }
+
+
+
+        private void logIn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Вход успешно выполнен!");
+        }
+
+        private void registration_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Вы успешно зарегистрировались!");
+        }
     }
 }

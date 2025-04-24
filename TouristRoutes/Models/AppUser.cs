@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +16,10 @@ namespace TouristRoutes.Models
         /// <summary>
         /// Id пользователя
         /// </summary>
-        public int UserId { get; set; }
+        public int Id { get; set; }
+
+        public AppUserInfo? AppUserInfo { get; set; }
+
 
         /// <summary>
         /// Имя пользователя
@@ -29,7 +34,7 @@ namespace TouristRoutes.Models
         /// <summary>
         /// Логин пользователя
         /// </summary>
-        public string LogIn { get; set; }
+        public string Email { get; set; }
 
         /// <summary>
         /// Пароль пользователя

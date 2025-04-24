@@ -88,6 +88,7 @@
             button2.TabIndex = 10;
             button2.Text = "Войти";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += logIn_Click;
             // 
             // label7
             // 
@@ -157,6 +158,7 @@
             button1.TabIndex = 9;
             button1.Text = "Зарегистрироваться";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += registration_Click;
             // 
             // label5
             // 
