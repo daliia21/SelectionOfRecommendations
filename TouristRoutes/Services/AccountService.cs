@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TouristRoutes.Dtos;
 using TouristRoutes.Models;
@@ -55,15 +56,51 @@ namespace TouristRoutes.Services
             return (true, "");
         }
 
-        // todo
+        
         private bool CheckComplexityPassword(string password)
         {
+            string specialSymbols = "!@#$%^&*()~`;:?";
+            if (password.Length < 8)
+            {
+                return false;
+            }
+
+            if (!password.Any(char.IsLower))
+            {
+                return false;
+            }
+
+            if (!password.Any(char.IsUpper))
+            {
+                return false;
+            }
+
+            if (!password.Any(char.IsDigit))
+            {
+                return false;
+            }
+
+            if (!password.Any(c => specialSymbols.Contains(c)))
+            {
+                return false;
+            }
+
+                
             return true;
         }
 
         private bool CheckCorrectEmail(string email)
-        {
-            return true;
+        {            
+            try
+            {               
+                string pattern = @"^(([a-zA-Z0-9_\-\.%\+]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,})|("".+"")@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,}))$";
+                return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
         public (bool, string) Login(LoginDto loginDto)

@@ -43,7 +43,6 @@
             registerLastName = new TextBox();
             registerEmail = new TextBox();
             label2 = new Label();
-            registerFirstNameLabel = new Label();
             registerPassword = new TextBox();
             registerFirstName = new TextBox();
             accountFormTabControl.SuspendLayout();
@@ -51,18 +50,18 @@
             registerTabPage.SuspendLayout();
             SuspendLayout();
             // 
-            // tabControl1
+            // accountFormTabControl
             // 
             accountFormTabControl.Controls.Add(loginTabPage);
             accountFormTabControl.Controls.Add(registerTabPage);
             accountFormTabControl.Location = new Point(-12, 12);
-            accountFormTabControl.Name = "tabControl1";
+            accountFormTabControl.Name = "accountFormTabControl";
             accountFormTabControl.SelectedIndex = 0;
             accountFormTabControl.Size = new Size(647, 754);
             accountFormTabControl.SizeMode = TabSizeMode.Fixed;
             accountFormTabControl.TabIndex = 4;
             // 
-            // tabPage1
+            // loginTabPage
             // 
             loginTabPage.BackColor = Color.FromArgb(96, 118, 85);
             loginTabPage.Controls.Add(loginButton);
@@ -71,64 +70,64 @@
             loginTabPage.Controls.Add(loginEmail);
             loginTabPage.Controls.Add(loginEmailLabel);
             loginTabPage.Location = new Point(8, 46);
-            loginTabPage.Name = "tabPage1";
+            loginTabPage.Name = "loginTabPage";
             loginTabPage.Padding = new Padding(3);
             loginTabPage.RightToLeft = RightToLeft.Yes;
             loginTabPage.Size = new Size(631, 700);
             loginTabPage.TabIndex = 0;
             loginTabPage.Text = "Авторизация";
             // 
-            // button2
+            // loginButton
             // 
             loginButton.BackColor = Color.FromArgb(255, 247, 233);
             loginButton.ForeColor = Color.FromArgb(96, 118, 85);
             loginButton.Location = new Point(179, 501);
-            loginButton.Name = "button2";
+            loginButton.Name = "loginButton";
             loginButton.Size = new Size(265, 46);
             loginButton.TabIndex = 10;
             loginButton.Text = "Войти";
             loginButton.UseVisualStyleBackColor = false;
             loginButton.Click += logIn_Click;
             // 
-            // label7
+            // loginPasswordLabel
             // 
             loginPasswordLabel.AutoSize = true;
             loginPasswordLabel.Font = new Font("Segoe UI", 13F);
             loginPasswordLabel.ForeColor = Color.FromArgb(255, 247, 233);
             loginPasswordLabel.Location = new Point(30, 249);
-            loginPasswordLabel.Name = "label7";
+            loginPasswordLabel.Name = "loginPasswordLabel";
             loginPasswordLabel.Size = new Size(136, 47);
             loginPasswordLabel.TabIndex = 7;
             loginPasswordLabel.Text = "пароль";
             // 
-            // textBox6
+            // loginPassword
             // 
             loginPassword.Location = new Point(30, 315);
-            loginPassword.Name = "textBox6";
+            loginPassword.Name = "loginPassword";
             loginPassword.Size = new Size(576, 39);
             loginPassword.TabIndex = 6;
             loginPassword.TextAlign = HorizontalAlignment.Right;
             // 
-            // textBox5
+            // loginEmail
             // 
             loginEmail.Location = new Point(30, 170);
-            loginEmail.Name = "textBox5";
+            loginEmail.Name = "loginEmail";
             loginEmail.Size = new Size(576, 39);
             loginEmail.TabIndex = 5;
             loginEmail.TextAlign = HorizontalAlignment.Right;
             // 
-            // label6
+            // loginEmailLabel
             // 
             loginEmailLabel.AutoSize = true;
             loginEmailLabel.Font = new Font("Segoe UI", 13F);
             loginEmailLabel.ForeColor = Color.FromArgb(255, 247, 233);
             loginEmailLabel.Location = new Point(30, 97);
-            loginEmailLabel.Name = "label6";
+            loginEmailLabel.Name = "loginEmailLabel";
             loginEmailLabel.Size = new Size(112, 47);
             loginEmailLabel.TabIndex = 4;
             loginEmailLabel.Text = "логин";
             // 
-            // tabPage2
+            // registerTabPage
             // 
             registerTabPage.BackColor = Color.FromArgb(96, 118, 85);
             registerTabPage.Controls.Add(registerButton);
@@ -138,72 +137,71 @@
             registerTabPage.Controls.Add(registerLastName);
             registerTabPage.Controls.Add(registerEmail);
             registerTabPage.Controls.Add(label2);
-            registerTabPage.Controls.Add(registerFirstNameLabel);
             registerTabPage.Controls.Add(registerPassword);
             registerTabPage.Controls.Add(registerFirstName);
             registerTabPage.Location = new Point(8, 46);
-            registerTabPage.Name = "tabPage2";
+            registerTabPage.Name = "registerTabPage";
             registerTabPage.Padding = new Padding(3);
             registerTabPage.Size = new Size(631, 700);
             registerTabPage.TabIndex = 1;
             registerTabPage.Text = "Регистрация";
             // 
-            // button1
+            // registerButton
             // 
             registerButton.BackColor = Color.FromArgb(255, 247, 233);
             registerButton.ForeColor = Color.FromArgb(96, 118, 85);
             registerButton.Location = new Point(176, 593);
-            registerButton.Name = "button1";
+            registerButton.Name = "registerButton";
             registerButton.Size = new Size(265, 46);
             registerButton.TabIndex = 9;
             registerButton.Text = "Зарегистрироваться";
             registerButton.UseVisualStyleBackColor = false;
             registerButton.Click += registration_Click;
             // 
-            // label5
+            // registerPasswordLabel
             // 
             registerPasswordLabel.AutoSize = true;
             registerPasswordLabel.Font = new Font("Segoe UI", 13F);
             registerPasswordLabel.ForeColor = Color.FromArgb(255, 247, 233);
             registerPasswordLabel.Location = new Point(26, 426);
-            registerPasswordLabel.Name = "label5";
+            registerPasswordLabel.Name = "registerPasswordLabel";
             registerPasswordLabel.Size = new Size(136, 47);
             registerPasswordLabel.TabIndex = 8;
             registerPasswordLabel.Text = "пароль";
             // 
-            // label4
+            // registerEmailLabel
             // 
             registerEmailLabel.AutoSize = true;
             registerEmailLabel.Font = new Font("Segoe UI", 13F);
             registerEmailLabel.ForeColor = Color.FromArgb(255, 247, 233);
             registerEmailLabel.Location = new Point(26, 288);
-            registerEmailLabel.Name = "label4";
+            registerEmailLabel.Name = "registerEmailLabel";
             registerEmailLabel.Size = new Size(112, 47);
             registerEmailLabel.TabIndex = 7;
             registerEmailLabel.Text = "логин";
             // 
-            // label3
+            // registerLastNameLabel
             // 
             registerLastNameLabel.AutoSize = true;
             registerLastNameLabel.Font = new Font("Segoe UI", 13F);
             registerLastNameLabel.ForeColor = Color.FromArgb(255, 247, 233);
             registerLastNameLabel.Location = new Point(26, 166);
-            registerLastNameLabel.Name = "label3";
+            registerLastNameLabel.Name = "registerLastNameLabel";
             registerLastNameLabel.Size = new Size(163, 47);
             registerLastNameLabel.TabIndex = 6;
             registerLastNameLabel.Text = "фамилия";
             // 
-            // textBox4
+            // registerLastName
             // 
             registerLastName.Location = new Point(27, 230);
-            registerLastName.Name = "textBox4";
+            registerLastName.Name = "registerLastName";
             registerLastName.Size = new Size(576, 39);
             registerLastName.TabIndex = 5;
             // 
-            // textBox3
+            // registerEmail
             // 
             registerEmail.Location = new Point(27, 352);
-            registerEmail.Name = "textBox3";
+            registerEmail.Name = "registerEmail";
             registerEmail.Size = new Size(576, 39);
             registerEmail.TabIndex = 4;
             // 
@@ -218,29 +216,21 @@
             label2.TabIndex = 3;
             label2.Text = "имя";
             // 
-            // label1
-            // 
-            registerFirstNameLabel.AutoSize = true;
-            registerFirstNameLabel.Location = new Point(26, 181);
-            registerFirstNameLabel.Name = "label1";
-            registerFirstNameLabel.Size = new Size(0, 32);
-            registerFirstNameLabel.TabIndex = 2;
-            // 
-            // textBox2
+            // registerPassword
             // 
             registerPassword.Location = new Point(32, 491);
-            registerPassword.Name = "textBox2";
+            registerPassword.Name = "registerPassword";
             registerPassword.Size = new Size(576, 39);
             registerPassword.TabIndex = 1;
             // 
-            // textBox1
+            // registerFirstName
             // 
             registerFirstName.Location = new Point(27, 95);
-            registerFirstName.Name = "textBox1";
+            registerFirstName.Name = "registerFirstName";
             registerFirstName.Size = new Size(576, 39);
             registerFirstName.TabIndex = 0;
             // 
-            // Form1
+            // AccountForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -249,7 +239,7 @@
             Controls.Add(accountFormTabControl);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "Form1";
+            Name = "AccountForm";
             Text = "Registration";
             accountFormTabControl.ResumeLayout(false);
             loginTabPage.ResumeLayout(false);
@@ -264,7 +254,6 @@
         private TabPage loginTabPage;
         private TabPage registerTabPage;
         private Label label2;
-        private Label registerFirstNameLabel;
         private TextBox registerPassword;
         private TextBox registerFirstName;
         private Label registerPasswordLabel;
