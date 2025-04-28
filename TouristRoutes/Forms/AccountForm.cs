@@ -15,10 +15,6 @@ namespace TouristRoutes
             _accountService = new AccountService();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
 
@@ -43,7 +39,7 @@ namespace TouristRoutes
             }
 
 
-            
+
         }
 
         private void registration_Click(object sender, EventArgs e)
@@ -66,12 +62,18 @@ namespace TouristRoutes
                 AnketaForm anketaForm = new AnketaForm();
                 anketaForm.Show();
 
-            } else
+            }
+            else
             {
                 MessageBox.Show(result.Item2);
             }
 
-            
+
+        }
+
+        private void AccountForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
