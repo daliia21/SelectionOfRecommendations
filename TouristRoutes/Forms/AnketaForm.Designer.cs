@@ -29,47 +29,47 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button1 = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            groupBox3 = new GroupBox();
-            groupBox4 = new GroupBox();
-            groupBox5 = new GroupBox();
-            groupBox6 = new GroupBox();
-            groupBox8 = new GroupBox();
-            groupBox9 = new GroupBox();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
             checkBox5 = new CheckBox();
+            checkBox4 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox1 = new CheckBox();
+            groupBox2 = new GroupBox();
             checkBox6 = new CheckBox();
             checkBox7 = new CheckBox();
             checkBox8 = new CheckBox();
             checkBox9 = new CheckBox();
             checkBox10 = new CheckBox();
+            groupBox3 = new GroupBox();
             checkBox11 = new CheckBox();
             checkBox12 = new CheckBox();
             checkBox13 = new CheckBox();
+            groupBox4 = new GroupBox();
             checkBox14 = new CheckBox();
             checkBox15 = new CheckBox();
             checkBox16 = new CheckBox();
+            groupBox5 = new GroupBox();
             checkBox17 = new CheckBox();
             checkBox18 = new CheckBox();
             checkBox19 = new CheckBox();
             checkBox20 = new CheckBox();
             checkBox21 = new CheckBox();
+            groupBox6 = new GroupBox();
             checkBox22 = new CheckBox();
             checkBox23 = new CheckBox();
             checkBox24 = new CheckBox();
             checkBox25 = new CheckBox();
+            groupBox8 = new GroupBox();
             checkBox26 = new CheckBox();
             checkBox27 = new CheckBox();
             checkBox28 = new CheckBox();
+            groupBox9 = new GroupBox();
             checkBox29 = new CheckBox();
             checkBox30 = new CheckBox();
             checkBox31 = new CheckBox();
-            button1 = new Button();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -93,6 +93,18 @@
             panel1.Size = new Size(1075, 2010);
             panel1.TabIndex = 0;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(75, 136, 158);
+            button1.Font = new Font("Segoe UI", 13F);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(444, 1902);
+            button1.Name = "button1";
+            button1.Size = new Size(281, 80);
+            button1.TabIndex = 10;
+            button1.Text = "ЗАВЕРШИТЬ";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(groupBox1);
@@ -103,7 +115,7 @@
             flowLayoutPanel1.Controls.Add(groupBox6);
             flowLayoutPanel1.Controls.Add(groupBox8);
             flowLayoutPanel1.Controls.Add(groupBox9);
-            flowLayoutPanel1.Location = new Point(3, 3);
+            flowLayoutPanel1.Location = new Point(168, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(798, 1878);
             flowLayoutPanel1.TabIndex = 9;
@@ -122,6 +134,56 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Возраст";
             // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Location = new Point(6, 206);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(88, 36);
+            checkBox5.TabIndex = 4;
+            checkBox5.Text = "50+";
+            checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(6, 164);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(170, 36);
+            checkBox4.TabIndex = 3;
+            checkBox4.Text = "от 36 до 50";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(6, 122);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(170, 36);
+            checkBox3.TabIndex = 2;
+            checkBox3.Text = "от 25 до 36";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(6, 80);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(170, 36);
+            checkBox2.TabIndex = 1;
+            checkBox2.Text = "от 18 до 25";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(6, 38);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(106, 36);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "до 18";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(checkBox6);
@@ -135,131 +197,6 @@
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Какой вид туризма вам ближе? (можно выбрать несколько):";
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(checkBox11);
-            groupBox3.Controls.Add(checkBox12);
-            groupBox3.Controls.Add(checkBox13);
-            groupBox3.Location = new Point(3, 557);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(781, 172);
-            groupBox3.TabIndex = 4;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Какой бюджет на поездку (на человека)?";
-            // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(checkBox14);
-            groupBox4.Controls.Add(checkBox15);
-            groupBox4.Controls.Add(checkBox16);
-            groupBox4.Location = new Point(3, 735);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(781, 168);
-            groupBox4.TabIndex = 5;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Предпочтительная длительность поездки:";
-            // 
-            // groupBox5
-            // 
-            groupBox5.Controls.Add(checkBox17);
-            groupBox5.Controls.Add(checkBox18);
-            groupBox5.Controls.Add(checkBox19);
-            groupBox5.Controls.Add(checkBox20);
-            groupBox5.Controls.Add(checkBox21);
-            groupBox5.Location = new Point(3, 909);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(781, 271);
-            groupBox5.TabIndex = 6;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Куда чаще всего ездите?";
-            // 
-            // groupBox6
-            // 
-            groupBox6.Controls.Add(checkBox22);
-            groupBox6.Controls.Add(checkBox23);
-            groupBox6.Controls.Add(checkBox24);
-            groupBox6.Controls.Add(checkBox25);
-            groupBox6.Location = new Point(3, 1186);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(781, 208);
-            groupBox6.TabIndex = 7;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "В какой сезон хотите путешествовать? (можно выбрать несколько):";
-            // 
-            // groupBox8
-            // 
-            groupBox8.Controls.Add(checkBox26);
-            groupBox8.Controls.Add(checkBox27);
-            groupBox8.Controls.Add(checkBox28);
-            groupBox8.Location = new Point(3, 1400);
-            groupBox8.Name = "groupBox8";
-            groupBox8.Size = new Size(781, 179);
-            groupBox8.TabIndex = 8;
-            groupBox8.TabStop = false;
-            groupBox8.Text = "Уровень подготовки:";
-            // 
-            // groupBox9
-            // 
-            groupBox9.Controls.Add(checkBox29);
-            groupBox9.Controls.Add(checkBox30);
-            groupBox9.Controls.Add(checkBox31);
-            groupBox9.Location = new Point(3, 1585);
-            groupBox9.Name = "groupBox9";
-            groupBox9.Size = new Size(781, 179);
-            groupBox9.TabIndex = 9;
-            groupBox9.TabStop = false;
-            groupBox9.Text = "На подумать";
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 38);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(106, 36);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "до 18";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(6, 80);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(170, 36);
-            checkBox2.TabIndex = 1;
-            checkBox2.Text = "от 18 до 25";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(6, 122);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(170, 36);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "от 25 до 36";
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(6, 164);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(170, 36);
-            checkBox4.TabIndex = 3;
-            checkBox4.Text = "от 36 до 50";
-            checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(6, 206);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(88, 36);
-            checkBox5.TabIndex = 4;
-            checkBox5.Text = "50+";
-            checkBox5.UseVisualStyleBackColor = true;
             // 
             // checkBox6
             // 
@@ -312,6 +249,18 @@
             checkBox10.Text = "Шопинг";
             checkBox10.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(checkBox11);
+            groupBox3.Controls.Add(checkBox12);
+            groupBox3.Controls.Add(checkBox13);
+            groupBox3.Location = new Point(3, 557);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(781, 172);
+            groupBox3.TabIndex = 4;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Какой бюджет на поездку (на человека)?";
+            // 
             // checkBox11
             // 
             checkBox11.AutoSize = true;
@@ -343,6 +292,18 @@
             checkBox13.Text = "Премиум (70+ тыс. руб.)";
             checkBox13.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(checkBox14);
+            groupBox4.Controls.Add(checkBox15);
+            groupBox4.Controls.Add(checkBox16);
+            groupBox4.Location = new Point(3, 735);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(781, 168);
+            groupBox4.TabIndex = 5;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Предпочтительная длительность поездки:";
+            // 
             // checkBox14
             // 
             checkBox14.AutoSize = true;
@@ -373,14 +334,28 @@
             checkBox16.Text = "10+ дней";
             checkBox16.UseVisualStyleBackColor = true;
             // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(checkBox17);
+            groupBox5.Controls.Add(checkBox18);
+            groupBox5.Controls.Add(checkBox19);
+            groupBox5.Controls.Add(checkBox20);
+            groupBox5.Controls.Add(checkBox21);
+            groupBox5.Location = new Point(3, 909);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(781, 271);
+            groupBox5.TabIndex = 6;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Куда чаще всего ездите?";
+            // 
             // checkBox17
             // 
             checkBox17.AutoSize = true;
             checkBox17.Location = new Point(6, 214);
             checkBox17.Name = "checkBox17";
-            checkBox17.Size = new Size(172, 36);
+            checkBox17.Size = new Size(351, 36);
             checkBox17.TabIndex = 9;
-            checkBox17.Text = "checkBox17";
+            checkBox17.Text = "Экзотические направления";
             checkBox17.UseVisualStyleBackColor = true;
             // 
             // checkBox18
@@ -388,9 +363,9 @@
             checkBox18.AutoSize = true;
             checkBox18.Location = new Point(6, 172);
             checkBox18.Name = "checkBox18";
-            checkBox18.Size = new Size(172, 36);
+            checkBox18.Size = new Size(287, 36);
             checkBox18.TabIndex = 8;
-            checkBox18.Text = "checkBox18";
+            checkBox18.Text = "Исторические города";
             checkBox18.UseVisualStyleBackColor = true;
             // 
             // checkBox19
@@ -398,9 +373,9 @@
             checkBox19.AutoSize = true;
             checkBox19.Location = new Point(6, 130);
             checkBox19.Name = "checkBox19";
-            checkBox19.Size = new Size(172, 36);
+            checkBox19.Size = new Size(303, 36);
             checkBox19.TabIndex = 7;
-            checkBox19.Text = "checkBox19";
+            checkBox19.Text = "Прибрежные регионы ";
             checkBox19.UseVisualStyleBackColor = true;
             // 
             // checkBox20
@@ -408,9 +383,9 @@
             checkBox20.AutoSize = true;
             checkBox20.Location = new Point(6, 88);
             checkBox20.Name = "checkBox20";
-            checkBox20.Size = new Size(172, 36);
+            checkBox20.Size = new Size(336, 36);
             checkBox20.TabIndex = 6;
-            checkBox20.Text = "checkBox20";
+            checkBox20.Text = "Лесные/заповедные зоны";
             checkBox20.UseVisualStyleBackColor = true;
             // 
             // checkBox21
@@ -418,10 +393,23 @@
             checkBox21.AutoSize = true;
             checkBox21.Location = new Point(6, 46);
             checkBox21.Name = "checkBox21";
-            checkBox21.Size = new Size(172, 36);
+            checkBox21.Size = new Size(221, 36);
             checkBox21.TabIndex = 5;
-            checkBox21.Text = "checkBox21";
+            checkBox21.Text = "Горные районы";
             checkBox21.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(checkBox22);
+            groupBox6.Controls.Add(checkBox23);
+            groupBox6.Controls.Add(checkBox24);
+            groupBox6.Controls.Add(checkBox25);
+            groupBox6.Location = new Point(3, 1186);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(781, 208);
+            groupBox6.TabIndex = 7;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "В какой сезон хотите путешествовать? (можно выбрать несколько):";
             // 
             // checkBox22
             // 
@@ -463,6 +451,18 @@
             checkBox25.Text = "Лето";
             checkBox25.UseVisualStyleBackColor = true;
             // 
+            // groupBox8
+            // 
+            groupBox8.Controls.Add(checkBox26);
+            groupBox8.Controls.Add(checkBox27);
+            groupBox8.Controls.Add(checkBox28);
+            groupBox8.Location = new Point(3, 1400);
+            groupBox8.Name = "groupBox8";
+            groupBox8.Size = new Size(781, 179);
+            groupBox8.TabIndex = 8;
+            groupBox8.TabStop = false;
+            groupBox8.Text = "Уровень подготовки:";
+            // 
             // checkBox26
             // 
             checkBox26.AutoSize = true;
@@ -493,14 +493,26 @@
             checkBox28.Text = "Новичок";
             checkBox28.UseVisualStyleBackColor = true;
             // 
+            // groupBox9
+            // 
+            groupBox9.Controls.Add(checkBox29);
+            groupBox9.Controls.Add(checkBox30);
+            groupBox9.Controls.Add(checkBox31);
+            groupBox9.Location = new Point(3, 1585);
+            groupBox9.Name = "groupBox9";
+            groupBox9.Size = new Size(781, 179);
+            groupBox9.TabIndex = 9;
+            groupBox9.TabStop = false;
+            groupBox9.Text = "Какова цель вашей поездки?";
+            // 
             // checkBox29
             // 
             checkBox29.AutoSize = true;
             checkBox29.Location = new Point(6, 125);
             checkBox29.Name = "checkBox29";
-            checkBox29.Size = new Size(172, 36);
+            checkBox29.Size = new Size(318, 36);
             checkBox29.TabIndex = 14;
-            checkBox29.Text = "checkBox29";
+            checkBox29.Text = "Культурное обогащение";
             checkBox29.UseVisualStyleBackColor = true;
             // 
             // checkBox30
@@ -508,9 +520,9 @@
             checkBox30.AutoSize = true;
             checkBox30.Location = new Point(6, 83);
             checkBox30.Name = "checkBox30";
-            checkBox30.Size = new Size(172, 36);
+            checkBox30.Size = new Size(139, 36);
             checkBox30.TabIndex = 13;
-            checkBox30.Text = "checkBox30";
+            checkBox30.Text = "Экстрим";
             checkBox30.UseVisualStyleBackColor = true;
             // 
             // checkBox31
@@ -518,22 +530,10 @@
             checkBox31.AutoSize = true;
             checkBox31.Location = new Point(6, 41);
             checkBox31.Name = "checkBox31";
-            checkBox31.Size = new Size(172, 36);
+            checkBox31.Size = new Size(115, 36);
             checkBox31.TabIndex = 12;
-            checkBox31.Text = "checkBox31";
+            checkBox31.Text = "Отдых";
             checkBox31.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(75, 136, 158);
-            button1.Font = new Font("Segoe UI", 13F);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(241, 1899);
-            button1.Name = "button1";
-            button1.Size = new Size(281, 80);
-            button1.TabIndex = 10;
-            button1.Text = "ЗАВЕРШИТЬ";
-            button1.UseVisualStyleBackColor = false;
             // 
             // AnketaForm
             // 
@@ -541,7 +541,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(75, 136, 158);
-            ClientSize = new Size(910, 836);
+            ClientSize = new Size(1154, 1094);
             Controls.Add(panel1);
             Name = "AnketaForm";
             Text = "AnketaForm";
