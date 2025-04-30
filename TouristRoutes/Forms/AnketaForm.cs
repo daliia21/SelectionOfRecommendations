@@ -24,15 +24,6 @@ namespace TouristRoutes.Forms
 
 
 
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox12_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void savedAnketaButton_Click(object sender, EventArgs e)
         {
@@ -48,15 +39,8 @@ namespace TouristRoutes.Forms
             }
         }
 
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
 
-        }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {

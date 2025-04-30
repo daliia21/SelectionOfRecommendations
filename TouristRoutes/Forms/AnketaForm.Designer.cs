@@ -100,7 +100,7 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.None;
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Add(ageGroupBox);
             flowLayoutPanel1.Controls.Add(groupBox2);
@@ -114,7 +114,6 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(821, 1800);
             flowLayoutPanel1.TabIndex = 9;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // ageGroupBox
             // 
@@ -210,7 +209,6 @@
             checkBox6.TabIndex = 9;
             checkBox6.Text = "Рекреационный";
             checkBox6.UseVisualStyleBackColor = true;
-            checkBox6.CheckedChanged += checkBox6_CheckedChanged;
             // 
             // checkBox7
             // 
@@ -310,7 +308,6 @@
             groupBox4.TabIndex = 5;
             groupBox4.TabStop = false;
             groupBox4.Text = "Предпочтительная длительность поездки:";
-            groupBox4.Enter += groupBox4_Enter;
             // 
             // checkBox14
             // 
@@ -566,7 +563,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(297, 19);
+            label2.Location = new Point(302, 19);
             label2.Name = "label2";
             label2.Size = new Size(984, 41);
             label2.TabIndex = 1;
@@ -579,7 +576,7 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(2, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1901, 72);
+            panel2.Size = new Size(1911, 72);
             panel2.TabIndex = 2;
             // 
             // AnketaForm
