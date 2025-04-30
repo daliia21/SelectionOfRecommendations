@@ -1,30 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TouristRoutes.Models
+namespace TouristRoutes.Dtos
 {
-    /// <summary>
-    /// Модель для хранения данных при заполнении анкеты
-    /// <summary>
-    public class AppUserInfo
+    public class AnketaDto
     {
-        /// <summary>
-        /// Id анкеты пользователя
-        /// <summary>       
-        public int Id { get; set; }
-
-        public int AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
-
-        
-
-        /// <summary>
-        /// Возраст пользователя
-        /// <summary>       
         public string AgeCategory { get; set; }
 
         /// <summary>
@@ -61,8 +44,5 @@ namespace TouristRoutes.Models
         /// Цель поездки
         /// <summary> 
         public string Purpose { get; set; }
-
-
-
     }
 }

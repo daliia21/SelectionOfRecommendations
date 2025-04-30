@@ -7,15 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TouristRoutes.Dtos;
+using TouristRoutes.Services;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TouristRoutes.Forms
 {
     public partial class AnketaForm : Form
     {
+        AccountService _accountServise;
         public AnketaForm()
         {
             InitializeComponent();
+            _accountServise = new AccountService();
         }
+
+
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
@@ -23,6 +30,30 @@ namespace TouristRoutes.Forms
         }
 
         private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void savedAnketaButton_Click(object sender, EventArgs e)
+        {
+            AnketaDto anketaDto = new AnketaDto();
+
+            foreach (CheckBox rb in ageGroupBox.Controls.OfType<CheckBox>())
+            {
+                if (rb.Checked)
+                {
+                    anketaDto.AgeCategory = rb.Text;
+                    break;
+                }
+            }
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            groupBox1 = new GroupBox();
+            ageGroupBox = new GroupBox();
             checkBox5 = new CheckBox();
             checkBox4 = new CheckBox();
             checkBox3 = new CheckBox();
@@ -70,9 +69,13 @@
             checkBox29 = new CheckBox();
             checkBox30 = new CheckBox();
             checkBox31 = new CheckBox();
+            savedAnketaButton = new Button();
+            label2 = new Label();
+            panel2 = new Panel();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
-            groupBox1.SuspendLayout();
+            ageGroupBox.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -80,34 +83,26 @@
             groupBox6.SuspendLayout();
             groupBox8.SuspendLayout();
             groupBox9.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.AutoScroll = true;
             panel1.AutoScrollMinSize = new Size(25, 5);
-            panel1.Controls.Add(button1);
+            panel1.AutoSize = true;
             panel1.Controls.Add(flowLayoutPanel1);
-            panel1.Location = new Point(12, 12);
+            panel1.Controls.Add(savedAnketaButton);
+            panel1.Location = new Point(-4, -452);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1075, 2010);
+            panel1.Size = new Size(1608, 2642);
             panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(75, 136, 158);
-            button1.Font = new Font("Segoe UI", 13F);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(444, 1902);
-            button1.Name = "button1";
-            button1.Size = new Size(281, 80);
-            button1.TabIndex = 10;
-            button1.Text = "ЗАВЕРШИТЬ";
-            button1.UseVisualStyleBackColor = false;
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(groupBox1);
+            flowLayoutPanel1.Anchor = AnchorStyles.None;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Controls.Add(ageGroupBox);
             flowLayoutPanel1.Controls.Add(groupBox2);
             flowLayoutPanel1.Controls.Add(groupBox3);
             flowLayoutPanel1.Controls.Add(groupBox4);
@@ -115,24 +110,26 @@
             flowLayoutPanel1.Controls.Add(groupBox6);
             flowLayoutPanel1.Controls.Add(groupBox8);
             flowLayoutPanel1.Controls.Add(groupBox9);
-            flowLayoutPanel1.Location = new Point(168, 3);
+            flowLayoutPanel1.Location = new Point(377, 553);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(798, 1878);
+            flowLayoutPanel1.Size = new Size(821, 1800);
             flowLayoutPanel1.TabIndex = 9;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
-            // groupBox1
+            // ageGroupBox
             // 
-            groupBox1.Controls.Add(checkBox5);
-            groupBox1.Controls.Add(checkBox4);
-            groupBox1.Controls.Add(checkBox3);
-            groupBox1.Controls.Add(checkBox2);
-            groupBox1.Controls.Add(checkBox1);
-            groupBox1.Location = new Point(3, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(781, 271);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Возраст";
+            ageGroupBox.Controls.Add(checkBox5);
+            ageGroupBox.Controls.Add(checkBox4);
+            ageGroupBox.Controls.Add(checkBox3);
+            ageGroupBox.Controls.Add(checkBox2);
+            ageGroupBox.Controls.Add(checkBox1);
+            ageGroupBox.ForeColor = Color.White;
+            ageGroupBox.Location = new Point(3, 3);
+            ageGroupBox.Name = "ageGroupBox";
+            ageGroupBox.Size = new Size(781, 271);
+            ageGroupBox.TabIndex = 2;
+            ageGroupBox.TabStop = false;
+            ageGroupBox.Text = "Возраст";
             // 
             // checkBox5
             // 
@@ -191,6 +188,7 @@
             groupBox2.Controls.Add(checkBox8);
             groupBox2.Controls.Add(checkBox9);
             groupBox2.Controls.Add(checkBox10);
+            groupBox2.ForeColor = Color.White;
             groupBox2.Location = new Point(3, 280);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(781, 271);
@@ -254,6 +252,7 @@
             groupBox3.Controls.Add(checkBox11);
             groupBox3.Controls.Add(checkBox12);
             groupBox3.Controls.Add(checkBox13);
+            groupBox3.ForeColor = Color.White;
             groupBox3.Location = new Point(3, 557);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(781, 172);
@@ -297,12 +296,14 @@
             groupBox4.Controls.Add(checkBox14);
             groupBox4.Controls.Add(checkBox15);
             groupBox4.Controls.Add(checkBox16);
+            groupBox4.ForeColor = Color.White;
             groupBox4.Location = new Point(3, 735);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(781, 168);
             groupBox4.TabIndex = 5;
             groupBox4.TabStop = false;
             groupBox4.Text = "Предпочтительная длительность поездки:";
+            groupBox4.Enter += groupBox4_Enter;
             // 
             // checkBox14
             // 
@@ -341,6 +342,7 @@
             groupBox5.Controls.Add(checkBox19);
             groupBox5.Controls.Add(checkBox20);
             groupBox5.Controls.Add(checkBox21);
+            groupBox5.ForeColor = Color.White;
             groupBox5.Location = new Point(3, 909);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(781, 271);
@@ -404,6 +406,7 @@
             groupBox6.Controls.Add(checkBox23);
             groupBox6.Controls.Add(checkBox24);
             groupBox6.Controls.Add(checkBox25);
+            groupBox6.ForeColor = Color.White;
             groupBox6.Location = new Point(3, 1186);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(781, 208);
@@ -456,6 +459,7 @@
             groupBox8.Controls.Add(checkBox26);
             groupBox8.Controls.Add(checkBox27);
             groupBox8.Controls.Add(checkBox28);
+            groupBox8.ForeColor = Color.White;
             groupBox8.Location = new Point(3, 1400);
             groupBox8.Name = "groupBox8";
             groupBox8.Size = new Size(781, 179);
@@ -498,6 +502,7 @@
             groupBox9.Controls.Add(checkBox29);
             groupBox9.Controls.Add(checkBox30);
             groupBox9.Controls.Add(checkBox31);
+            groupBox9.ForeColor = Color.White;
             groupBox9.Location = new Point(3, 1585);
             groupBox9.Name = "groupBox9";
             groupBox9.Size = new Size(781, 179);
@@ -535,20 +540,56 @@
             checkBox31.Text = "Отдых";
             checkBox31.UseVisualStyleBackColor = true;
             // 
+            // savedAnketaButton
+            // 
+            savedAnketaButton.BackColor = Color.FromArgb(75, 136, 158);
+            savedAnketaButton.Font = new Font("Segoe UI", 13F);
+            savedAnketaButton.ForeColor = Color.White;
+            savedAnketaButton.Location = new Point(615, 2386);
+            savedAnketaButton.Name = "savedAnketaButton";
+            savedAnketaButton.Size = new Size(332, 66);
+            savedAnketaButton.TabIndex = 10;
+            savedAnketaButton.Text = "ЗАВЕРШИТЬ";
+            savedAnketaButton.UseVisualStyleBackColor = false;
+            savedAnketaButton.Click += savedAnketaButton_Click;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(287, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(984, 41);
+            label2.TabIndex = 1;
+            label2.Text = "Заполните анкету, чтобы мы могли подобрать для вас рекомендации!";
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BackColor = Color.FromArgb(59, 102, 118);
+            panel2.Controls.Add(label2);
+            panel2.Location = new Point(2, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1881, 72);
+            panel2.TabIndex = 2;
+            // 
             // AnketaForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(75, 136, 158);
-            ClientSize = new Size(1154, 1094);
+            ClientSize = new Size(1599, 1469);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "AnketaForm";
             Text = "AnketaForm";
             panel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            ageGroupBox.ResumeLayout(false);
+            ageGroupBox.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -563,53 +604,59 @@
             groupBox8.PerformLayout();
             groupBox9.ResumeLayout(false);
             groupBox9.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Panel panel1;
         private Label label1;
-        private GroupBox groupBox1;
-        private GroupBox groupBox4;
-        private GroupBox groupBox3;
-        private GroupBox groupBox2;
-        private GroupBox groupBox5;
-        private GroupBox groupBox6;
+        private Button savedAnketaButton;
+        private Label label2;
+        private Panel panel2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private GroupBox groupBox8;
-        private GroupBox groupBox9;
+        private GroupBox ageGroupBox;
         private CheckBox checkBox5;
         private CheckBox checkBox4;
         private CheckBox checkBox3;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
+        private GroupBox groupBox2;
         private CheckBox checkBox6;
         private CheckBox checkBox7;
         private CheckBox checkBox8;
         private CheckBox checkBox9;
         private CheckBox checkBox10;
+        private GroupBox groupBox3;
         private CheckBox checkBox11;
         private CheckBox checkBox12;
         private CheckBox checkBox13;
+        private GroupBox groupBox4;
         private CheckBox checkBox14;
         private CheckBox checkBox15;
         private CheckBox checkBox16;
+        private GroupBox groupBox5;
         private CheckBox checkBox17;
         private CheckBox checkBox18;
         private CheckBox checkBox19;
         private CheckBox checkBox20;
         private CheckBox checkBox21;
+        private GroupBox groupBox6;
         private CheckBox checkBox22;
         private CheckBox checkBox23;
         private CheckBox checkBox24;
         private CheckBox checkBox25;
+        private GroupBox groupBox8;
         private CheckBox checkBox26;
         private CheckBox checkBox27;
         private CheckBox checkBox28;
+        private GroupBox groupBox9;
         private CheckBox checkBox29;
         private CheckBox checkBox30;
         private CheckBox checkBox31;
-        private Button button1;
     }
 }
