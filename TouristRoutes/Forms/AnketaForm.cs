@@ -57,5 +57,23 @@ namespace TouristRoutes.Forms
         {
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            var currentCheckBox = sender as CheckBox;
+
+            var parent = currentCheckBox.Parent as GroupBox;
+
+            if (currentCheckBox.Checked)
+            {
+                foreach (var control in parent.Controls)
+                {
+                    if (control is CheckBox cb && cb != currentCheckBox)
+                    {
+                        cb.Checked = false;
+                    }
+                }
+            }
+        }
     }
 }

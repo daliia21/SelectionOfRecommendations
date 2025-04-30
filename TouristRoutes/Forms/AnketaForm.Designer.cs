@@ -140,6 +140,7 @@
             checkBox5.TabIndex = 4;
             checkBox5.Text = "50+";
             checkBox5.UseVisualStyleBackColor = true;
+            checkBox5.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // checkBox4
             // 
@@ -150,6 +151,7 @@
             checkBox4.TabIndex = 3;
             checkBox4.Text = "от 36 до 50";
             checkBox4.UseVisualStyleBackColor = true;
+            checkBox4.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // checkBox3
             // 
@@ -160,6 +162,7 @@
             checkBox3.TabIndex = 2;
             checkBox3.Text = "от 25 до 36";
             checkBox3.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // checkBox2
             // 
@@ -170,6 +173,7 @@
             checkBox2.TabIndex = 1;
             checkBox2.Text = "от 18 до 25";
             checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // checkBox1
             // 
@@ -180,6 +184,7 @@
             checkBox1.TabIndex = 0;
             checkBox1.Text = "до 18";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // groupBox2
             // 
@@ -269,6 +274,7 @@
             checkBox11.TabIndex = 12;
             checkBox11.Text = "Эконом (до 30 тыс. руб.)";
             checkBox11.UseVisualStyleBackColor = true;
+            checkBox11.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // checkBox12
             // 
@@ -279,7 +285,7 @@
             checkBox12.TabIndex = 11;
             checkBox12.Text = "Средний (от 30 - 70 тыс. руб.)";
             checkBox12.UseVisualStyleBackColor = true;
-            checkBox12.CheckedChanged += checkBox12_CheckedChanged;
+            checkBox12.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // checkBox13
             // 
@@ -290,6 +296,7 @@
             checkBox13.TabIndex = 10;
             checkBox13.Text = "Премиум (70+ тыс. руб.)";
             checkBox13.UseVisualStyleBackColor = true;
+            checkBox13.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // groupBox4
             // 
@@ -559,7 +566,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(287, 19);
+            label2.Location = new Point(297, 19);
             label2.Name = "label2";
             label2.Size = new Size(984, 41);
             label2.TabIndex = 1;
@@ -572,7 +579,7 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(2, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1881, 72);
+            panel2.Size = new Size(1901, 72);
             panel2.TabIndex = 2;
             // 
             // AnketaForm
