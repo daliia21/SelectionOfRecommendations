@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,17 +9,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TouristRoutes.Dtos;
+using TouristRoutes.Models.TagModels;
 using TouristRoutes.Services;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TouristRoutes.Forms
 {
     public partial class AnketaForm : Form
     {
         AccountService _accountServise;
+        GetTagsService _getTagsService;
+        private int _top = 20;
+
         public AnketaForm()
         {
             InitializeComponent();
+
+            // Заполнение тегов
+
+            List<AgeTag> ageTags = _getTagsService.GetAgeTags();
+
+            foreach (var ageTag in ageTags)
+            {
+                CheckBox ageCheckBox = new CheckBox();
+
+                ageCheckBox.Text = ageTag.TagName;
+
+
+
+                ageGroupBox.Controls.Add(ageCheckBox);
+            }
+
+
+
             _accountServise = new AccountService();
         }
 
@@ -27,16 +49,28 @@ namespace TouristRoutes.Forms
 
         private void savedAnketaButton_Click(object sender, EventArgs e)
         {
-            AnketaDto anketaDto = new AnketaDto();
+            string tourismTypes = "";
 
-            foreach (CheckBox rb in ageGroupBox.Controls.OfType<CheckBox>())
+            foreach (CheckBox rb in groupBox2.Controls.OfType<CheckBox>())
             {
                 if (rb.Checked)
                 {
-                    anketaDto.AgeCategory = rb.Text;
-                    break;
+                    if (string.IsNullOrEmpty(tourismTypes))
+                    {
+                        tourismTypes += rb.Text;
+                    }
+                    else
+                    {
+                        tourismTypes += $",{rb.Text}";
+                    }
                 }
             }
+
+
+            AnketaDto anketaDto = new AnketaDto
+            {
+                TypeOfTourism = tourismTypes
+            };
         }
 
 

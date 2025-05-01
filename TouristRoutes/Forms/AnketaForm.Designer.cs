@@ -31,11 +31,6 @@
             panel1 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             ageGroupBox = new GroupBox();
-            checkBox5 = new CheckBox();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
             groupBox2 = new GroupBox();
             checkBox6 = new CheckBox();
             checkBox7 = new CheckBox();
@@ -75,7 +70,6 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
-            ageGroupBox.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -117,11 +111,6 @@
             // 
             // ageGroupBox
             // 
-            ageGroupBox.Controls.Add(checkBox5);
-            ageGroupBox.Controls.Add(checkBox4);
-            ageGroupBox.Controls.Add(checkBox3);
-            ageGroupBox.Controls.Add(checkBox2);
-            ageGroupBox.Controls.Add(checkBox1);
             ageGroupBox.ForeColor = Color.White;
             ageGroupBox.Location = new Point(3, 3);
             ageGroupBox.Name = "ageGroupBox";
@@ -129,61 +118,6 @@
             ageGroupBox.TabIndex = 2;
             ageGroupBox.TabStop = false;
             ageGroupBox.Text = "Возраст";
-            // 
-            // checkBox5
-            // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(6, 206);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(88, 36);
-            checkBox5.TabIndex = 4;
-            checkBox5.Text = "50+";
-            checkBox5.UseVisualStyleBackColor = true;
-            checkBox5.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(6, 164);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(170, 36);
-            checkBox4.TabIndex = 3;
-            checkBox4.Text = "от 36 до 50";
-            checkBox4.UseVisualStyleBackColor = true;
-            checkBox4.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(6, 122);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(170, 36);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "от 25 до 36";
-            checkBox3.UseVisualStyleBackColor = true;
-            checkBox3.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(6, 80);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(170, 36);
-            checkBox2.TabIndex = 1;
-            checkBox2.Text = "от 18 до 25";
-            checkBox2.UseVisualStyleBackColor = true;
-            checkBox2.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 38);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(106, 36);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "до 18";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // groupBox2
             // 
@@ -563,7 +497,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(302, 19);
+            label2.Location = new Point(307, 19);
             label2.Name = "label2";
             label2.Size = new Size(984, 41);
             label2.TabIndex = 1;
@@ -576,7 +510,7 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(2, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1911, 72);
+            panel2.Size = new Size(1921, 72);
             panel2.TabIndex = 2;
             // 
             // AnketaForm
@@ -592,8 +526,6 @@
             Text = "AnketaForm";
             panel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
-            ageGroupBox.ResumeLayout(false);
-            ageGroupBox.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -624,11 +556,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private FlowLayoutPanel flowLayoutPanel1;
         private GroupBox ageGroupBox;
-        private CheckBox checkBox5;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
         private GroupBox groupBox2;
         private CheckBox checkBox6;
         private CheckBox checkBox7;
