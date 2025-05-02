@@ -30,12 +30,14 @@
         {
             panel1 = new Panel();
             label1 = new Label();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 247, 233);
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(1, 65);
             panel1.Name = "panel1";
@@ -52,6 +54,14 @@
             label1.Size = new Size(384, 47);
             label1.TabIndex = 0;
             label1.Text = "Список рекомендаций";
+            // 
+            // panel2
+            // 
+            panel2.AutoScroll = true;
+            panel2.Location = new Point(0, 82);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1418, 810);
+            panel2.TabIndex = 1;
             // 
             // RecommendationsListForm
             // 
@@ -71,5 +81,6 @@
 
         private Panel panel1;
         private Label label1;
+        private Panel panel2;
     }
 }

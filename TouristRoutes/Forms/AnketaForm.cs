@@ -25,23 +25,222 @@ namespace TouristRoutes.Forms
             InitializeComponent();
 
             // Заполнение тегов
+            int yPosition = 50;
+            const int verticalSpacing = 40;
 
+
+            _getTagsService = new GetTagsService();
             List<AgeTag> ageTags = _getTagsService.GetAgeTags();
+
+
+            
 
             foreach (var ageTag in ageTags)
             {
-                CheckBox ageCheckBox = new CheckBox();
+                CheckBox ageCheckBox = new CheckBox
+                {
+                    Text = ageTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true 
+                };
 
-                ageCheckBox.Text = ageTag.TagName;
-
-
+                ageCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 ageGroupBox.Controls.Add(ageCheckBox);
+                yPosition += verticalSpacing;
             }
 
 
+            List<BudgetTag> budgetTags = _getTagsService.GetBudgetTags();
 
-            _accountServise = new AccountService();
+
+            yPosition = 50;
+
+            foreach (var budgetTag in budgetTags)
+            {
+                CheckBox budgetCheckBox = new CheckBox
+                {
+                    Text = budgetTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
+
+                budgetCheckBox.CheckedChanged += Group_CheckedChanged;
+
+                budgetGroupBox.Controls.Add(budgetCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+
+            
+            List<DurationTag> durationTags = _getTagsService.GetDurationTags();
+
+
+
+            
+
+            foreach (var durationTag in durationTags)
+            {
+                CheckBox durationCheckBox = new CheckBox
+                {
+                    Text = durationTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
+
+                durationCheckBox.CheckedChanged += Group_CheckedChanged;
+
+                durationGroupBox.Controls.Add(durationCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+
+        //    List<AgeTag> ageTags = _getTagsService.GetAgeTags();
+
+        //    if (ageTags == null)
+        //    {
+        //        _fillTagsService = new FillTagsService();
+        //        _fillTagsService.FillAgeTags();
+        //        ageTags = _getTagsService.GetAgeTags();
+
+        //    }
+
+
+            
+
+        //    foreach (var ageTag in ageTags)
+        //    {
+        //        CheckBox ageCheckBox = new CheckBox
+        //        {
+        //            Text = ageTag.TagName,
+        //            Location = new Point(20, yPosition),
+        //            AutoSize = true
+        //        };
+
+        //        ageCheckBox.CheckedChanged += Group_CheckedChanged;
+
+        //        ageGroupBox.Controls.Add(ageCheckBox);
+        //        yPosition += verticalSpacing;
+        //    }
+
+
+        //    List<AgeTag> ageTags = _getTagsService.GetAgeTags();
+
+        //    if (ageTags == null)
+        //    {
+        //        _fillTagsService = new FillTagsService();
+        //        _fillTagsService.FillAgeTags();
+        //        ageTags = _getTagsService.GetAgeTags();
+
+        //    }
+
+
+            
+
+        //    foreach (var ageTag in ageTags)
+        //    {
+        //        CheckBox ageCheckBox = new CheckBox
+        //        {
+        //            Text = ageTag.TagName,
+        //            Location = new Point(20, yPosition),
+        //            AutoSize = true
+        //        };
+
+        //        ageCheckBox.CheckedChanged += Group_CheckedChanged;
+
+        //        ageGroupBox.Controls.Add(ageCheckBox);
+        //        yPosition += verticalSpacing;
+        //    }
+
+
+        //    List<AgeTag> ageTags = _getTagsService.GetAgeTags();
+
+        //    if (ageTags == null)
+        //    {
+        //        _fillTagsService = new FillTagsService();
+        //        _fillTagsService.FillAgeTags();
+        //        ageTags = _getTagsService.GetAgeTags();
+
+        //    }
+
+
+            
+
+        //    foreach (var ageTag in ageTags)
+        //    {
+        //        CheckBox ageCheckBox = new CheckBox
+        //        {
+        //            Text = ageTag.TagName,
+        //            Location = new Point(20, yPosition),
+        //            AutoSize = true
+        //        };
+
+        //        ageCheckBox.CheckedChanged += Group_CheckedChanged;
+
+        //        ageGroupBox.Controls.Add(ageCheckBox);
+        //        yPosition += verticalSpacing;
+        //    }
+
+
+        //    List<AgeTag> ageTags = _getTagsService.GetAgeTags();
+
+        //    if (ageTags == null)
+        //    {
+        //        _fillTagsService = new FillTagsService();
+        //        _fillTagsService.FillAgeTags();
+        //        ageTags = _getTagsService.GetAgeTags();
+
+        //    }
+
+
+            
+
+        //    foreach (var ageTag in ageTags)
+        //    {
+        //        CheckBox ageCheckBox = new CheckBox
+        //        {
+        //            Text = ageTag.TagName,
+        //            Location = new Point(20, yPosition),
+        //            AutoSize = true
+        //        };
+
+        //        ageCheckBox.CheckedChanged += Group_CheckedChanged;
+
+        //        ageGroupBox.Controls.Add(ageCheckBox);
+        //        yPosition += verticalSpacing;
+        //    }
+
+
+        //    List<AgeTag> ageTags = _getTagsService.GetAgeTags();
+
+        //    if (ageTags == null)
+        //    {
+        //        _fillTagsService = new FillTagsService();
+        //        _fillTagsService.FillAgeTags();
+        //        ageTags = _getTagsService.GetAgeTags();
+
+        //    }
+
+
+            
+        //    foreach (var ageTag in ageTags)
+        //    {
+        //        CheckBox ageCheckBox = new CheckBox
+        //        {
+        //            Text = ageTag.TagName,
+        //            Location = new Point(20, yPosition),
+        //            AutoSize = true
+        //        };
+
+        //        ageCheckBox.CheckedChanged += Group_CheckedChanged;
+
+        //        ageGroupBox.Controls.Add(ageCheckBox);
+        //        yPosition += verticalSpacing;
+        //    }
+
+
+
+        //    _accountServise = new AccountService();
         }
 
 
@@ -51,7 +250,7 @@ namespace TouristRoutes.Forms
         {
             string tourismTypes = "";
 
-            foreach (CheckBox rb in groupBox2.Controls.OfType<CheckBox>())
+            foreach (CheckBox rb in typeOfTourismGroupBox.Controls.OfType<CheckBox>())
             {
                 if (rb.Checked)
                 {
@@ -76,7 +275,7 @@ namespace TouristRoutes.Forms
 
 
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void Group_CheckedChanged(object sender, EventArgs e)
         {
             var currentCheckBox = sender as CheckBox;
 

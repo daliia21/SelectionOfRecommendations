@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TouristRoutes.Forms;
 using TouristRoutes.Models.TagModels;
+using TouristRoutes.Services;
 
 namespace TouristRoutes
 {
@@ -19,6 +20,9 @@ namespace TouristRoutes
                 if (!databaseExist)
                 {
                     context.Database.Migrate();
+
+                    FillTagsService tagsService = new FillTagsService();
+                    tagsService.FillTags();
                 }
             }
 
