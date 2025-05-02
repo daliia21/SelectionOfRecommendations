@@ -31,7 +31,7 @@ namespace TouristRoutes
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new AnketaForm());
+            Application.Run(new AccountForm());
         }
     }
 }
