@@ -18,15 +18,25 @@ namespace TouristRoutes.Forms
     {
         AccountService _accountServise;
         GetTagsService _getTagsService;
-        private int _top = 20;
+
 
         public AnketaForm()
         {
             InitializeComponent();
 
+            float curDpi;
+            using (Graphics g = this.CreateGraphics())
+            {
+                curDpi = g.DpiY;
+            }
+
+            double k = curDpi / 192.0;
+
             // Заполнение тегов
-            int yPosition = 50;
-            const int verticalSpacing = 40;
+            double yPosition = 50 * k;
+            double verticalSpacing = 40 * k;
+
+            
 
 
             _getTagsService = new GetTagsService();
@@ -40,17 +50,17 @@ namespace TouristRoutes.Forms
                 CheckBox ageCheckBox = new CheckBox
                 {
                     Text = ageTag.TagName,
-                    Location = new Point(20, yPosition),
+                    Location = new Point((int)(20 * k), (int)yPosition),
                     AutoSize = true 
                 };
 
                 ageCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 ageGroupBox.Controls.Add(ageCheckBox);
-                yPosition += verticalSpacing;
+                yPosition += verticalSpacing * k;
             }
 
-            yPosition = 50;
+            yPosition = 50 * k;
             List<Tag> budgetTags = _getTagsService.GetBudgetTags();
 
 
@@ -60,18 +70,18 @@ namespace TouristRoutes.Forms
                 CheckBox budgetCheckBox = new CheckBox
                 {
                     Text = budgetTag.TagName,
-                    Location = new Point(20, yPosition),
+                    Location = new Point((int)(20 * k), (int)yPosition),
                     AutoSize = true
                 };
 
                 budgetCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 budgetGroupBox.Controls.Add(budgetCheckBox);
-                yPosition += verticalSpacing;
+                yPosition += verticalSpacing * k;
             }
 
 
-            yPosition = 50;
+            yPosition = 50 * k;
             List<Tag> durationTags = _getTagsService.GetDurationTags();
 
             foreach (var durationTag in durationTags)
@@ -79,18 +89,18 @@ namespace TouristRoutes.Forms
                 CheckBox durationCheckBox = new CheckBox
                 {
                     Text = durationTag.TagName,
-                    Location = new Point(20, yPosition),
+                    Location = new Point((int)(20 * k), (int)yPosition),
                     AutoSize = true
                 };
 
                 durationCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 durationGroupBox.Controls.Add(durationCheckBox);
-                yPosition += verticalSpacing;
+                yPosition += verticalSpacing * k;
             }
 
 
-            yPosition = 50;
+            yPosition = 50 * k;
             List<Tag> levelOfTrainingTags = _getTagsService.GetLevelOfTrainingTags();
 
             foreach (var levelOfTrainingTag in levelOfTrainingTags)
@@ -98,17 +108,17 @@ namespace TouristRoutes.Forms
                 CheckBox levelOfTrainingCheckBox = new CheckBox
                 {
                     Text = levelOfTrainingTag.TagName,
-                    Location = new Point(20, yPosition),
+                    Location = new Point((int)(20 * k), (int)yPosition),
                     AutoSize = true
                 };
 
                 levelOfTrainingCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 levelOfTrainingGroupBox.Controls.Add(levelOfTrainingCheckBox);
-                yPosition += verticalSpacing;
+                yPosition += verticalSpacing * k;
             }
 
-            yPosition = 50;
+            yPosition = 50 * k;
             List<Tag> locationTags = _getTagsService.GetLocationTags();
 
             foreach (var locationTag in locationTags)
@@ -116,15 +126,15 @@ namespace TouristRoutes.Forms
                 CheckBox locationCheckBox = new CheckBox
                 {
                     Text = locationTag.TagName,
-                    Location = new Point(20, yPosition),
+                    Location = new Point((int)(20 * k), (int)yPosition),
                     AutoSize = true
                 };
 
                 locationGroupBox.Controls.Add(locationCheckBox);
-                yPosition += verticalSpacing;
+                yPosition += verticalSpacing * k;
             }
 
-            yPosition = 50;
+            yPosition = 50 * k;
             List<Tag> purposeTags = _getTagsService.GetPurposeTags();
 
             foreach (var purposeTag in purposeTags)
@@ -132,17 +142,17 @@ namespace TouristRoutes.Forms
                 CheckBox purposeCheckBox = new CheckBox
                 {
                     Text = purposeTag.TagName,
-                    Location = new Point(20, yPosition),
+                    Location = new Point((int)(20 * k), (int)yPosition),
                     AutoSize = true
                 };
 
                 purposeCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 purposeGroupBox.Controls.Add(purposeCheckBox);
-                yPosition += verticalSpacing;
+                yPosition += verticalSpacing * k;
             }
 
-            yPosition = 50;
+            yPosition = 50 * k;
             List<Tag> seasonTags = _getTagsService.GetSeasonTags();
          
             foreach (var seasonTag in seasonTags)
@@ -150,15 +160,15 @@ namespace TouristRoutes.Forms
                 CheckBox seasonCheckBox = new CheckBox
                 {
                     Text = seasonTag.TagName,
-                    Location = new Point(20, yPosition),
+                    Location = new Point((int)(20 * k), (int)yPosition),
                     AutoSize = true
                 };
 
                 seasonGroupBox.Controls.Add(seasonCheckBox);
-                yPosition += verticalSpacing;
+                yPosition += verticalSpacing * k;
             }
 
-            yPosition = 50;
+            yPosition = 50 * k;
             List<Tag> typeOfTourismTags = _getTagsService.GetTypeOfTourismTags();
 
             foreach (var typeOfTourismTag in typeOfTourismTags)
@@ -166,12 +176,12 @@ namespace TouristRoutes.Forms
                 CheckBox typeOfTourismCheckBox = new CheckBox
                 {
                     Text = typeOfTourismTag.TagName,
-                    Location = new Point(20, yPosition),
+                    Location = new Point((int)(20 * k), (int)yPosition),
                     AutoSize = true
                 };
 
                 typeOfTourismGroupBox.Controls.Add(typeOfTourismCheckBox);
-                yPosition += verticalSpacing;
+                yPosition += verticalSpacing * k;
             }
 
 
