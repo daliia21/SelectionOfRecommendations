@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TouristRoutes.Forms;
-using TouristRoutes.Models.TagModels;
+using TouristRoutes.Models;
 using TouristRoutes.Services;
 
 namespace TouristRoutes

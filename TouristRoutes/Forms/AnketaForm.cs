@@ -54,7 +54,6 @@ namespace TouristRoutes.Forms
             List<Tag> budgetTags = _getTagsService.GetBudgetTags();
 
 
-            yPosition = 50;
 
             foreach (var budgetTag in budgetTags)
             {
@@ -121,8 +120,6 @@ namespace TouristRoutes.Forms
                     AutoSize = true
                 };
 
-                locationCheckBox.CheckedChanged += Group_CheckedChanged;
-
                 locationGroupBox.Controls.Add(locationCheckBox);
                 yPosition += verticalSpacing;
             }
@@ -157,43 +154,29 @@ namespace TouristRoutes.Forms
                     AutoSize = true
                 };
 
-                seasonCheckBox.CheckedChanged += Group_CheckedChanged;
-
                 seasonGroupBox.Controls.Add(seasonCheckBox);
                 yPosition += verticalSpacing;
             }
 
 
-            //    List<AgeTag> ageTags = _getTagsService.GetAgeTags();
+            List<Tag> typeOfTourismTags = _getTagsService.GetTypeOfTourismTags();
 
-            //    if (ageTags == null)
-            //    {
-            //        _fillTagsService = new FillTagsService();
-            //        _fillTagsService.FillAgeTags();
-            //        ageTags = _getTagsService.GetAgeTags();
+            foreach (var typeOfTourismTag in typeOfTourismTags)
+            {
+                CheckBox typeOfTourismCheckBox = new CheckBox
+                {
+                    Text = typeOfTourismTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
 
-            //    }
-
-
-
-            //    foreach (var ageTag in ageTags)
-            //    {
-            //        CheckBox ageCheckBox = new CheckBox
-            //        {
-            //            Text = ageTag.TagName,
-            //            Location = new Point(20, yPosition),
-            //            AutoSize = true
-            //        };
-
-            //        ageCheckBox.CheckedChanged += Group_CheckedChanged;
-
-            //        ageGroupBox.Controls.Add(ageCheckBox);
-            //        yPosition += verticalSpacing;
-            //    }
+                typeOfTourismGroupBox.Controls.Add(typeOfTourismCheckBox);
+                yPosition += verticalSpacing;
+            }
 
 
 
-            //    _accountServise = new AccountService();
+            _accountServise = new AccountService();
         }
 
 
