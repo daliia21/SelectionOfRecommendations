@@ -2,7 +2,6 @@
 using System.Data.Common;
 using System.Reflection.Emit;
 using TouristRoutes.Models;
-using TouristRoutes.Models.TagModels;
 
 namespace TouristRoutes
 {
@@ -11,19 +10,8 @@ namespace TouristRoutes
         public DbSet<AppUser> Users { get; set; }
         public DbSet<AppUserInfo> UserInfos { get; set; }
 
-        public DbSet<AgeTag> AgeTags { get; set; }
-        public DbSet<BudgetTag> BudgetTags { get; set; }
-        public DbSet<DurationTag> DurationTags { get; set; }
-        public DbSet<LevelOfTrainingTag> LevelOfTrainingTags { get; set; }
-        public DbSet<LocationTag> LocationTags { get; set; }
-        public DbSet<PurposeTag> PurposeTags { get; set; }
-        public DbSet<SeasonTag> SeasonTags { get; set; }
-        public DbSet<TypeOfTourismTag> TypeOfTourismTags { get; set; }
-
-
-
-
-
+        public DbSet<Tag> Tags { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +19,10 @@ namespace TouristRoutes
                 .HasOne(u => u.AppUserInfo)
                 .WithOne(ui => ui.AppUser)
                 .HasForeignKey<AppUserInfo>(ui => ui.AppUserId);
+
+            modelBuilder.Entity<Tag>()
+                .Property(t => t.TagType)
+                .HasConversion<int>();
 
             base.OnModelCreating(modelBuilder);
         }

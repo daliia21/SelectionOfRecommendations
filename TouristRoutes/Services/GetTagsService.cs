@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TouristRoutes.Models.TagModels;
+using TouristRoutes.Enums;
+using TouristRoutes.Models;
 
 namespace TouristRoutes.Services
 {
@@ -16,44 +17,44 @@ namespace TouristRoutes.Services
             _dbContext = new AppDbContext();
         }
 
-        public List<AgeTag> GetAgeTags()
+        public List<Tag> GetAgeTags()
         {
-            return _dbContext.AgeTags.ToList();             
+            return _dbContext.Tags.Where(t => t.TagType == TagType.AgeTag).ToList();             
         }
 
-        public List<BudgetTag> GetBudgetTags()
+        public List<Tag> GetBudgetTags()
         {
-            return _dbContext.BudgetTags.ToList();
+            return _dbContext.Tags.Where(t => t.TagType == TagType.BudgetTag).ToList();
         }
 
-        public List<DurationTag> GetDurationTags()
+        public List<Tag> GetDurationTags()
         {
-            return _dbContext.DurationTags.ToList();
+            return _dbContext.Tags.Where(t => t.TagType == TagType.DurationTag).ToList();
         }
 
-        public List<LevelOfTrainingTag> GetLevelOfTrainingTags()
+        public List<Tag> GetLevelOfTrainingTags()
         {
-            return _dbContext.LevelOfTrainingTags.ToList();
+            return _dbContext.Tags.Where(t => t.TagType == TagType.LevelOfTrainingTag).ToList();
         }
 
-        public List<LocationTag> GetLocationTags()
+        public List<Tag> GetLocationTags()
         {
-            return _dbContext.LocationTags.ToList();
+            return _dbContext.Tags.Where(t => t.TagType == TagType.LocationTag).ToList();
         }
 
-        public List<PurposeTag> GetPurposeTags()
+        public List<Tag> GetPurposeTags()
         {
-            return _dbContext.PurposeTags.ToList();
+            return _dbContext.Tags.Where(t => t.TagType == TagType.PurposeTag).ToList();
         }
 
-        public List<SeasonTag> GetSeasonTags()
+        public List<Tag> GetSeasonTags()
         {
-            return _dbContext.SeasonTags.ToList();
+            return _dbContext.Tags.Where(t => t.TagType == TagType.SeasonTag).ToList();
         }
 
-        public List<TypeOfTourismTag> GetTypeOfTourismTags()
+        public List<Tag> GetTypeOfTourismTags()
         {
-            return _dbContext.TypeOfTourismTags.ToList();
+            return _dbContext.Tags.Where(t => t.TagType == TagType.TypeOfTourismTag).ToList();
         }
     }
 }

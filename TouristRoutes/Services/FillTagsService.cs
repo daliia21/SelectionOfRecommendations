@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TouristRoutes.Enums;
 using TouristRoutes.Models.TagModels;
 
 namespace TouristRoutes.Services
@@ -33,7 +34,7 @@ namespace TouristRoutes.Services
             List<string> ageTags = new List<string> { "до 18", "от 18 до 25", "от 25 до 36", "от 36 до 50", "50+" };
             foreach (string t in ageTags)
             {
-                _dbContext.AgeTags.Add(new AgeTag { TagName = t });
+                _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.AgeTag });
             }
 
             _dbContext.SaveChanges();
@@ -44,7 +45,7 @@ namespace TouristRoutes.Services
             List<string> budgetTags = new List<string> { "Эконом (до 30 тыс. руб.)", "Средний (от 30 - 70 тыс. руб.)", "Премиум (70+ тыс. руб.)"};
             foreach (string t in budgetTags)
             {
-                _dbContext.BudgetTags.Add(new BudgetTag { TagName = t });
+                _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.BudgetTag });
             }
 
             _dbContext.SaveChanges();
@@ -55,7 +56,7 @@ namespace TouristRoutes.Services
             List<string> durationTags = new List<string> { "1-3 дня", "5-7 дней", "10+ дней" };
             foreach (string t in durationTags)
             {
-                _dbContext.DurationTags.Add(new DurationTag { TagName = t });
+                _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.DurationTag });
             }
         }
 
@@ -64,7 +65,7 @@ namespace TouristRoutes.Services
             List<string> levelOfTrainingTags = new List<string> { "Новичок", "Любитель", "Профессионал" };
             foreach (string t in levelOfTrainingTags)
             {
-                _dbContext.LevelOfTrainingTags.Add(new LevelOfTrainingTag { TagName = t });
+                _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.LevelOfTrainingTag });
             }
 
             _dbContext.SaveChanges();
@@ -75,7 +76,7 @@ namespace TouristRoutes.Services
             List<string> locationTags = new List<string> { "Горные районы", "Лесные зоны", "Прибрежные регионы", "Исторические места", "Экзотические направления" };
             foreach (string t in locationTags)
             {
-                _dbContext.LocationTags.Add(new LocationTag { TagName = t });
+                _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.LocationTag });
             }
 
             _dbContext.SaveChanges();
@@ -86,7 +87,7 @@ namespace TouristRoutes.Services
             List<string> purposeTags = new List<string> { "Отдых", "Обучение", "Культурное обогащение" };
             foreach (string t in purposeTags)
             {
-                _dbContext.PurposeTags.Add(new PurposeTag { TagName = t });
+                _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.PurposeTag });
             }
 
             _dbContext.SaveChanges();
@@ -97,7 +98,7 @@ namespace TouristRoutes.Services
             List<string> seasonTags = new List<string> { "Лето", "Осень", "Зима", "Весна" };
             foreach (string t in seasonTags)
             {
-                _dbContext.SeasonTags.Add(new SeasonTag { TagName = t });
+                _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.SeasonTag });
             }
 
             _dbContext.SaveChanges();
@@ -105,10 +106,10 @@ namespace TouristRoutes.Services
 
         private void FillTypeOfTourismTags()
         {
-            List<string> typeOfTourismTags = new List<string> { "Лето", "Осень", "Зима", "Весна" };
+            List<string> typeOfTourismTags = new List<string> { "Рекреационный", "Экскурсионный", "Приключенческий", "Спортивный", "Шопинг" };
             foreach (string t in typeOfTourismTags)
             {
-                _dbContext.TypeOfTourismTags.Add(new TypeOfTourismTag { TagName = t });
+                _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.TypeOfTourismTag });
             }
 
             _dbContext.SaveChanges();
