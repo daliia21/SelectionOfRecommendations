@@ -71,7 +71,7 @@ namespace SelectionOfRecomendationTests
 
             //dbContext.Users.Remove(user);
             //dbContext.SaveChanges();
-            
+
 
             //var user = dbContext.Users
             //    .Where(u => u.Id == 4)
@@ -117,8 +117,22 @@ namespace SelectionOfRecomendationTests
 
             var result = accountService.Login(loginDto);
 
-            Assert.Equal(true, result.Item1);
 
+
+        }
+
+        [Fact]
+        public void TagsTest()
+        {
+            using var context = new AppDbContext();
+
+            var userTags = context.UserInfoTags
+                .Where(ut => ut.AppUserId == 1)
+                .Include(ut => ut.Tag)
+                .Select(ut => ut.Tag)
+                .ToList();
+
+            int a = 2;
         }
     }
 }

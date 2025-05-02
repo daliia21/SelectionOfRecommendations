@@ -50,7 +50,7 @@ namespace TouristRoutes.Forms
                 yPosition += verticalSpacing;
             }
 
-
+            yPosition = 50;
             List<Tag> budgetTags = _getTagsService.GetBudgetTags();
 
 
@@ -71,7 +71,7 @@ namespace TouristRoutes.Forms
             }
 
 
-            
+            yPosition = 50;
             List<Tag> durationTags = _getTagsService.GetDurationTags();
 
             foreach (var durationTag in durationTags)
@@ -90,7 +90,7 @@ namespace TouristRoutes.Forms
             }
 
 
-            
+            yPosition = 50;
             List<Tag> levelOfTrainingTags = _getTagsService.GetLevelOfTrainingTags();
 
             foreach (var levelOfTrainingTag in levelOfTrainingTags)
@@ -108,7 +108,7 @@ namespace TouristRoutes.Forms
                 yPosition += verticalSpacing;
             }
 
-
+            yPosition = 50;
             List<Tag> locationTags = _getTagsService.GetLocationTags();
 
             foreach (var locationTag in locationTags)
@@ -124,7 +124,7 @@ namespace TouristRoutes.Forms
                 yPosition += verticalSpacing;
             }
 
-
+            yPosition = 50;
             List<Tag> purposeTags = _getTagsService.GetPurposeTags();
 
             foreach (var purposeTag in purposeTags)
@@ -138,11 +138,11 @@ namespace TouristRoutes.Forms
 
                 purposeCheckBox.CheckedChanged += Group_CheckedChanged;
 
-                ageGroupBox.Controls.Add(purposeCheckBox);
+                purposeGroupBox.Controls.Add(purposeCheckBox);
                 yPosition += verticalSpacing;
             }
 
-
+            yPosition = 50;
             List<Tag> seasonTags = _getTagsService.GetSeasonTags();
          
             foreach (var seasonTag in seasonTags)
@@ -158,7 +158,7 @@ namespace TouristRoutes.Forms
                 yPosition += verticalSpacing;
             }
 
-
+            yPosition = 50;
             List<Tag> typeOfTourismTags = _getTagsService.GetTypeOfTourismTags();
 
             foreach (var typeOfTourismTag in typeOfTourismTags)
@@ -184,28 +184,31 @@ namespace TouristRoutes.Forms
 
         private void savedAnketaButton_Click(object sender, EventArgs e)
         {
-            string tourismTypes = "";
+            List<GroupBox> groupBoxes = new List<GroupBox> { ageGroupBox, budgetGroupBox, durationGroupBox,
+            levelOfTrainingGroupBox, locationGroupBox, purposeGroupBox, seasonGroupBox, typeOfTourismGroupBox };
+        
+            List<string> tagNames = new List<string>();
 
-            foreach (CheckBox rb in typeOfTourismGroupBox.Controls.OfType<CheckBox>())
+            foreach (var groupBox in groupBoxes)
             {
-                if (rb.Checked)
+                foreach (var obj in groupBox.Controls)
                 {
-                    if (string.IsNullOrEmpty(tourismTypes))
+                    var checkBox = obj as CheckBox;
+
+                    if (checkBox != null && checkBox.Checked)
                     {
-                        tourismTypes += rb.Text;
-                    }
-                    else
-                    {
-                        tourismTypes += $",{rb.Text}";
+                        tagNames.Add(checkBox.Text);
                     }
                 }
             }
 
 
-            AnketaDto anketaDto = new AnketaDto
-            {
-                TypeOfTourism = tourismTypes
-            };
+            _accountServise.AddTags(tagNames);
+
+            MessageBox.Show("Ваши данные успешно сохранены");
+            this.Hide();
+            RecommendationsListForm recommendationsListForm = new RecommendationsListForm();
+            recommendationsListForm.Show();
         }
 
 

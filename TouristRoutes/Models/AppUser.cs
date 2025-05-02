@@ -18,7 +18,8 @@ namespace TouristRoutes.Models
         /// </summary>
         public int Id { get; set; }
 
-        public AppUserInfo? AppUserInfo { get; set; }
+
+        public List<AppUserTag> UserTags { get; set; } = new List<AppUserTag>();
 
 
         /// <summary>

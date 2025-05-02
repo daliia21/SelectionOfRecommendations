@@ -56,6 +56,42 @@ namespace TouristRoutes.Services
             return (true, "");
         }
 
+        public (bool, string) AddTags(List<string> tags)
+        {
+            var dbTags = _dbContext.Tags
+                .Where(t => tags.Contains(t.TagName))
+                .ToList();
+
+            var currentUser = AppState.CurrentAppUser;
+
+            if (currentUser == null)
+            {
+                return (false, "Текущий пользователь не вошел в систему");
+            }
+
+            if (dbTags.Count != tags.Count)
+            {
+                return (false, "Не все теги найдены");
+            }
+
+            foreach (var tag in dbTags)
+            {
+                if (!currentUser.UserTags.Any(ut => ut.TagId == tag.Id))
+                {
+                    currentUser.UserTags.Add(new AppUserTag
+                    {
+                        AppUserId = currentUser.Id,
+                        TagId = tag.Id
+                    });
+                }
+            }
+
+            _dbContext.SaveChanges();
+
+
+            return (true, "Ok");
+        }
+
         
         private bool CheckComplexityPassword(string password)
         {
