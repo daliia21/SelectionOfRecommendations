@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,54 +9,227 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TouristRoutes.Dtos;
+using TouristRoutes.Models;
 using TouristRoutes.Services;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TouristRoutes.Forms
 {
     public partial class AnketaForm : Form
     {
         AccountService _accountServise;
+        GetTagsService _getTagsService;
+        private int _top = 20;
+
         public AnketaForm()
         {
             InitializeComponent();
+
+            // Заполнение тегов
+            int yPosition = 50;
+            const int verticalSpacing = 40;
+
+
+            _getTagsService = new GetTagsService();
+            List<Tag> ageTags = _getTagsService.GetAgeTags();
+
+
+            
+
+            foreach (var ageTag in ageTags)
+            {
+                CheckBox ageCheckBox = new CheckBox
+                {
+                    Text = ageTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true 
+                };
+
+                ageCheckBox.CheckedChanged += Group_CheckedChanged;
+
+                ageGroupBox.Controls.Add(ageCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+            yPosition = 50;
+            List<Tag> budgetTags = _getTagsService.GetBudgetTags();
+
+
+
+            foreach (var budgetTag in budgetTags)
+            {
+                CheckBox budgetCheckBox = new CheckBox
+                {
+                    Text = budgetTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
+
+                budgetCheckBox.CheckedChanged += Group_CheckedChanged;
+
+                budgetGroupBox.Controls.Add(budgetCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+
+            yPosition = 50;
+            List<Tag> durationTags = _getTagsService.GetDurationTags();
+
+            foreach (var durationTag in durationTags)
+            {
+                CheckBox durationCheckBox = new CheckBox
+                {
+                    Text = durationTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
+
+                durationCheckBox.CheckedChanged += Group_CheckedChanged;
+
+                durationGroupBox.Controls.Add(durationCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+
+            yPosition = 50;
+            List<Tag> levelOfTrainingTags = _getTagsService.GetLevelOfTrainingTags();
+
+            foreach (var levelOfTrainingTag in levelOfTrainingTags)
+            {
+                CheckBox levelOfTrainingCheckBox = new CheckBox
+                {
+                    Text = levelOfTrainingTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
+
+                levelOfTrainingCheckBox.CheckedChanged += Group_CheckedChanged;
+
+                levelOfTrainingGroupBox.Controls.Add(levelOfTrainingCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+            yPosition = 50;
+            List<Tag> locationTags = _getTagsService.GetLocationTags();
+
+            foreach (var locationTag in locationTags)
+            {
+                CheckBox locationCheckBox = new CheckBox
+                {
+                    Text = locationTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
+
+                locationGroupBox.Controls.Add(locationCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+            yPosition = 50;
+            List<Tag> purposeTags = _getTagsService.GetPurposeTags();
+
+            foreach (var purposeTag in purposeTags)
+            {
+                CheckBox purposeCheckBox = new CheckBox
+                {
+                    Text = purposeTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
+
+                purposeCheckBox.CheckedChanged += Group_CheckedChanged;
+
+                purposeGroupBox.Controls.Add(purposeCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+            yPosition = 50;
+            List<Tag> seasonTags = _getTagsService.GetSeasonTags();
+         
+            foreach (var seasonTag in seasonTags)
+            {
+                CheckBox seasonCheckBox = new CheckBox
+                {
+                    Text = seasonTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
+
+                seasonGroupBox.Controls.Add(seasonCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+            yPosition = 50;
+            List<Tag> typeOfTourismTags = _getTagsService.GetTypeOfTourismTags();
+
+            foreach (var typeOfTourismTag in typeOfTourismTags)
+            {
+                CheckBox typeOfTourismCheckBox = new CheckBox
+                {
+                    Text = typeOfTourismTag.TagName,
+                    Location = new Point(20, yPosition),
+                    AutoSize = true
+                };
+
+                typeOfTourismGroupBox.Controls.Add(typeOfTourismCheckBox);
+                yPosition += verticalSpacing;
+            }
+
+
+
             _accountServise = new AccountService();
         }
 
 
 
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox12_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void savedAnketaButton_Click(object sender, EventArgs e)
         {
-            AnketaDto anketaDto = new AnketaDto();
+            List<GroupBox> groupBoxes = new List<GroupBox> { ageGroupBox, budgetGroupBox, durationGroupBox,
+            levelOfTrainingGroupBox, locationGroupBox, purposeGroupBox, seasonGroupBox, typeOfTourismGroupBox };
+        
+            List<string> tagNames = new List<string>();
 
-            foreach (CheckBox rb in ageGroupBox.Controls.OfType<CheckBox>())
+            foreach (var groupBox in groupBoxes)
             {
-                if (rb.Checked)
+                foreach (var obj in groupBox.Controls)
                 {
-                    anketaDto.AgeCategory = rb.Text;
-                    break;
+                    var checkBox = obj as CheckBox;
+
+                    if (checkBox != null && checkBox.Checked)
+                    {
+                        tagNames.Add(checkBox.Text);
+                    }
                 }
             }
+
+
+            _accountServise.AddTags(tagNames);
+
+            MessageBox.Show("Ваши данные успешно сохранены");
+            this.Hide();
+            RecommendationsListForm recommendationsListForm = new RecommendationsListForm();
+            recommendationsListForm.Show();
         }
 
-        private void groupBox4_Enter(object sender, EventArgs e)
+
+
+
+        private void Group_CheckedChanged(object sender, EventArgs e)
         {
+            var currentCheckBox = sender as CheckBox;
 
-        }
+            var parent = currentCheckBox.Parent as GroupBox;
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            if (currentCheckBox.Checked)
+            {
+                foreach (var control in parent.Controls)
+                {
+                    if (control is CheckBox cb && cb != currentCheckBox)
+                    {
+                        cb.Checked = false;
+                    }
+                }
+            }
         }
     }
 }
