@@ -57,7 +57,7 @@ namespace TouristRoutes.Forms
                 ageCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 ageGroupBox.Controls.Add(ageCheckBox);
-                yPosition += verticalSpacing * k;
+                yPosition += verticalSpacing;
             }
 
             yPosition = 50 * k;
@@ -77,7 +77,7 @@ namespace TouristRoutes.Forms
                 budgetCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 budgetGroupBox.Controls.Add(budgetCheckBox);
-                yPosition += verticalSpacing * k;
+                yPosition += verticalSpacing;
             }
 
 
@@ -96,7 +96,7 @@ namespace TouristRoutes.Forms
                 durationCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 durationGroupBox.Controls.Add(durationCheckBox);
-                yPosition += verticalSpacing * k;
+                yPosition += verticalSpacing;
             }
 
 
@@ -115,7 +115,7 @@ namespace TouristRoutes.Forms
                 levelOfTrainingCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 levelOfTrainingGroupBox.Controls.Add(levelOfTrainingCheckBox);
-                yPosition += verticalSpacing * k;
+                yPosition += verticalSpacing;
             }
 
             yPosition = 50 * k;
@@ -131,7 +131,7 @@ namespace TouristRoutes.Forms
                 };
 
                 locationGroupBox.Controls.Add(locationCheckBox);
-                yPosition += verticalSpacing * k;
+                yPosition += verticalSpacing;
             }
 
             yPosition = 50 * k;
@@ -149,7 +149,7 @@ namespace TouristRoutes.Forms
                 purposeCheckBox.CheckedChanged += Group_CheckedChanged;
 
                 purposeGroupBox.Controls.Add(purposeCheckBox);
-                yPosition += verticalSpacing * k;
+                yPosition += verticalSpacing;
             }
 
             yPosition = 50 * k;
@@ -165,7 +165,7 @@ namespace TouristRoutes.Forms
                 };
 
                 seasonGroupBox.Controls.Add(seasonCheckBox);
-                yPosition += verticalSpacing * k;
+                yPosition += verticalSpacing;
             }
 
             yPosition = 50 * k;
@@ -181,7 +181,7 @@ namespace TouristRoutes.Forms
                 };
 
                 typeOfTourismGroupBox.Controls.Add(typeOfTourismCheckBox);
-                yPosition += verticalSpacing * k;
+                yPosition += verticalSpacing;
             }
 
 

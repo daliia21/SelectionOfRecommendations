@@ -1,10 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using TouristRoutes.Dtos;
 using TouristRoutes.Models;
 using static BCrypt.Net.BCrypt;

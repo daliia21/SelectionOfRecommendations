@@ -2,11 +2,10 @@
 
 namespace TouristRoutes.Models
 {
-    public class AppUserTag
+    public class RouteTag
     {
-        public int AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
-
+        public int RouteId { get; set; }
+        public Route Route { get; set; }
         public int TagId { get; set; }
         public Tag Tag { get; set; }
     }
