@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TouristRoutes;
 using TouristRoutes.Dtos;
-using TouristRoutes.Models;
 using TouristRoutes.Services;
 
 namespace SelectionOfRecomendationTests

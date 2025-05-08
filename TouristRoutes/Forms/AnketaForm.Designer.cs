@@ -73,7 +73,7 @@
             flowLayoutPanel1.Controls.Add(typeOfTourismGroupBox);
             flowLayoutPanel1.Location = new Point(392, 539);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(821, 1776);
+            flowLayoutPanel1.Size = new Size(851, 1776);
             flowLayoutPanel1.TabIndex = 9;
             // 
             // ageGroupBox
@@ -81,7 +81,7 @@
             ageGroupBox.ForeColor = Color.White;
             ageGroupBox.Location = new Point(3, 3);
             ageGroupBox.Name = "ageGroupBox";
-            ageGroupBox.Size = new Size(781, 254);
+            ageGroupBox.Size = new Size(824, 254);
             ageGroupBox.TabIndex = 2;
             ageGroupBox.TabStop = false;
             ageGroupBox.Text = "Возраст";
@@ -91,7 +91,7 @@
             durationGroupBox.ForeColor = Color.White;
             durationGroupBox.Location = new Point(3, 263);
             durationGroupBox.Name = "durationGroupBox";
-            durationGroupBox.Size = new Size(781, 178);
+            durationGroupBox.Size = new Size(824, 178);
             durationGroupBox.TabIndex = 5;
             durationGroupBox.TabStop = false;
             durationGroupBox.Text = "Предпочтительная длительность поездки:";
@@ -101,7 +101,7 @@
             locationGroupBox.ForeColor = Color.White;
             locationGroupBox.Location = new Point(3, 447);
             locationGroupBox.Name = "locationGroupBox";
-            locationGroupBox.Size = new Size(781, 261);
+            locationGroupBox.Size = new Size(824, 261);
             locationGroupBox.TabIndex = 6;
             locationGroupBox.TabStop = false;
             locationGroupBox.Text = "Куда чаще всего ездите?";
@@ -111,7 +111,7 @@
             seasonGroupBox.ForeColor = Color.White;
             seasonGroupBox.Location = new Point(3, 714);
             seasonGroupBox.Name = "seasonGroupBox";
-            seasonGroupBox.Size = new Size(781, 220);
+            seasonGroupBox.Size = new Size(824, 220);
             seasonGroupBox.TabIndex = 7;
             seasonGroupBox.TabStop = false;
             seasonGroupBox.Text = "В какой сезон хотите путешествовать? (можно выбрать несколько):";
@@ -121,7 +121,7 @@
             levelOfTrainingGroupBox.ForeColor = Color.White;
             levelOfTrainingGroupBox.Location = new Point(3, 940);
             levelOfTrainingGroupBox.Name = "levelOfTrainingGroupBox";
-            levelOfTrainingGroupBox.Size = new Size(781, 179);
+            levelOfTrainingGroupBox.Size = new Size(824, 179);
             levelOfTrainingGroupBox.TabIndex = 8;
             levelOfTrainingGroupBox.TabStop = false;
             levelOfTrainingGroupBox.Text = "Уровень подготовки:";
@@ -131,7 +131,7 @@
             purposeGroupBox.ForeColor = Color.White;
             purposeGroupBox.Location = new Point(3, 1125);
             purposeGroupBox.Name = "purposeGroupBox";
-            purposeGroupBox.Size = new Size(781, 179);
+            purposeGroupBox.Size = new Size(824, 179);
             purposeGroupBox.TabIndex = 9;
             purposeGroupBox.TabStop = false;
             purposeGroupBox.Text = "Какова цель вашей поездки?";
@@ -141,7 +141,7 @@
             budgetGroupBox.ForeColor = Color.White;
             budgetGroupBox.Location = new Point(3, 1310);
             budgetGroupBox.Name = "budgetGroupBox";
-            budgetGroupBox.Size = new Size(781, 185);
+            budgetGroupBox.Size = new Size(824, 185);
             budgetGroupBox.TabIndex = 4;
             budgetGroupBox.TabStop = false;
             budgetGroupBox.Text = "Какой бюджет на поездку (на человека)?";
@@ -151,7 +151,7 @@
             typeOfTourismGroupBox.ForeColor = Color.White;
             typeOfTourismGroupBox.Location = new Point(3, 1501);
             typeOfTourismGroupBox.Name = "typeOfTourismGroupBox";
-            typeOfTourismGroupBox.Size = new Size(781, 269);
+            typeOfTourismGroupBox.Size = new Size(824, 269);
             typeOfTourismGroupBox.TabIndex = 3;
             typeOfTourismGroupBox.TabStop = false;
             typeOfTourismGroupBox.Text = "Какой вид туризма вам ближе? (можно выбрать несколько):";
@@ -175,7 +175,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(327, 19);
+            label2.Location = new Point(330, 19);
             label2.Name = "label2";
             label2.Size = new Size(984, 41);
             label2.TabIndex = 1;
@@ -188,7 +188,7 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(2, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1961, 72);
+            panel2.Size = new Size(1966, 72);
             panel2.TabIndex = 2;
             // 
             // AnketaForm
