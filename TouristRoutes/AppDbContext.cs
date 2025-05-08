@@ -9,6 +9,7 @@ namespace TouristRoutes
         public DbSet<Tag> Tags { get; set; }
         public DbSet<AppUserTag> UserInfoTags { get; set; }
         public DbSet<RouteTag> RouteInfoTags { get; set; }
+        public DbSet<Route> Routes { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
