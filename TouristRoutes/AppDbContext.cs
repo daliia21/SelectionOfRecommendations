@@ -13,11 +13,7 @@ namespace TouristRoutes
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            //modelBuilder.Entity<AppUser>()
-            //    .HasOne(u => u.AppUserInfo)
-            //    .WithOne(ui => ui.AppUser)
-            //    .HasForeignKey<AppUserInfo>(ui => ui.AppUserId);
+        {        
 
             modelBuilder.Entity<Tag>()
                 .Property(t => t.TagType)
