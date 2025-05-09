@@ -7,5 +7,6 @@ namespace TouristRoutes
     {
         public static bool IsAuthenticated { get; set; } = false;
         public static AppUser? CurrentAppUser { get; set; } = null;
+        public static bool IsAdmin { get; set; } = false;
     }
 }

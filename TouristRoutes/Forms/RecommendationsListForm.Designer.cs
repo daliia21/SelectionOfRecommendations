@@ -31,7 +31,7 @@
             panel1 = new Panel();
             panel2 = new Panel();
             label1 = new Label();
-            listBox1 = new ListBox();
+            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -49,7 +49,7 @@
             // panel2
             // 
             panel2.AutoScroll = true;
-            panel2.Controls.Add(listBox1);
+            panel2.Controls.Add(button1);
             panel2.Location = new Point(0, 82);
             panel2.Name = "panel2";
             panel2.Size = new Size(1418, 810);
@@ -66,13 +66,16 @@
             label1.TabIndex = 0;
             label1.Text = "Список рекомендаций";
             // 
-            // listBox1
+            // button1
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(0, 0);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(1418, 804);
-            listBox1.TabIndex = 0;
+            button1.BackColor = Color.FromArgb(96, 118, 85);
+            button1.ForeColor = Color.FromArgb(255, 247, 233);
+            button1.Location = new Point(1077, 719);
+            button1.Name = "button1";
+            button1.Size = new Size(285, 57);
+            button1.TabIndex = 2;
+            button1.Text = "Добавить маршрут";
+            button1.UseVisualStyleBackColor = false;
             // 
             // RecommendationsListForm
             // 
@@ -94,6 +97,6 @@
         private Panel panel1;
         private Label label1;
         private Panel panel2;
-        private ListBox listBox1;
+        private Button button1;
     }
 }

@@ -48,6 +48,7 @@ namespace TouristRoutes.Services
 
             AppState.IsAuthenticated = true;
             AppState.CurrentAppUser = user;
+
             return (true, "");
         }
 
@@ -152,6 +153,7 @@ namespace TouristRoutes.Services
             {
                 AppState.IsAuthenticated = true;
                 AppState.CurrentAppUser = dbUser;
+                AppState.IsAdmin = dbUser.IsAdmin;
 
                 return (true, "");
             } else
