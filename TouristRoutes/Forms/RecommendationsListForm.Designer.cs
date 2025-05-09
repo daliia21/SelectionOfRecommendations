@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
             panel2 = new Panel();
+            label1 = new Label();
+            listBox1 = new ListBox();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -44,6 +46,15 @@
             panel1.Size = new Size(1418, 892);
             panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            panel2.AutoScroll = true;
+            panel2.Controls.Add(listBox1);
+            panel2.Location = new Point(0, 82);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1418, 810);
+            panel2.TabIndex = 1;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -55,13 +66,13 @@
             label1.TabIndex = 0;
             label1.Text = "Список рекомендаций";
             // 
-            // panel2
+            // listBox1
             // 
-            panel2.AutoScroll = true;
-            panel2.Location = new Point(0, 82);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1418, 810);
-            panel2.TabIndex = 1;
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(0, 0);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(1418, 804);
+            listBox1.TabIndex = 0;
             // 
             // RecommendationsListForm
             // 
@@ -71,9 +82,10 @@
             ClientSize = new Size(1414, 953);
             Controls.Add(panel1);
             Name = "RecommendationsListForm";
-            Text = "RecommendationsListForm";
+            Text = "Список рекомендаций";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -82,5 +94,6 @@
         private Panel panel1;
         private Label label1;
         private Panel panel2;
+        private ListBox listBox1;
     }
 }

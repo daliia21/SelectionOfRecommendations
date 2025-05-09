@@ -51,20 +51,27 @@ namespace TouristRoutes.Services
             return routes;
         }
 
-        public void UpdateRoute(int Id, Route newRoute)
+        public bool UpdateRoute(int Id, Route newRoute)
         {
             var route = _dbContext.Routes
                 .Include(route => route.RouteTags)
                 .Where(r => r.Id == Id)
                 .FirstOrDefault();
 
+            if (route == null)
+            {
+                return false;
+            }
+            
             route.RoutePrice = newRoute.RoutePrice;
             route.RouteLocation = newRoute.RouteLocation;
             route.RouteDescription = newRoute.RouteDescription;
             route.RouteDuration = newRoute.RouteDuration;
             route.RouteImagePath = newRoute.RouteImagePath;
-
+            
             _dbContext.SaveChanges();
+
+            return true;
         }
 
         public void AddTagsToRoute(int Id, List<Tag> tags)
