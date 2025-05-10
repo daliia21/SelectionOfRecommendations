@@ -240,7 +240,6 @@
             MaximizeBox = false;
             Name = "AccountForm";
             Text = "Регистрация/Вход";
-            Load += AccountForm_Load;
             registerTabPage.ResumeLayout(false);
             registerTabPage.PerformLayout();
             loginTabPage.ResumeLayout(false);

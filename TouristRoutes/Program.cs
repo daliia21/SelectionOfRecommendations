@@ -14,13 +14,13 @@ namespace TouristRoutes
         {
             using (var context = new AppDbContext())
             {
-                bool databaseExist = context.Database.CanConnect();
+                var databaseExist = context.Database.CanConnect();
 
                 if (!databaseExist)
                 {
                     context.Database.Migrate();
 
-                    FillTagsService tagsService = new FillTagsService();
+                    var tagsService = new FillTagsService();
                     tagsService.FillTags();
                 }
             }
@@ -30,7 +30,7 @@ namespace TouristRoutes
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new AdministratorForm());
+            Application.Run(new AccountForm());
         }
     }
 }

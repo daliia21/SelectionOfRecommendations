@@ -14,12 +14,17 @@ using TouristRoutes.Services;
 
 namespace TouristRoutes.Forms
 {
+    /// <summary>
+    /// Форма для заполнения анкеты
+    /// </summary>
     public partial class AnketaForm : Form
     {
         AccountService _accountServise;
         GetTagsService _getTagsService;
 
-
+        /// <summary>
+        /// Конструктор формы для заполнения анкеты
+        /// </summary>
         public AnketaForm()
         {
             InitializeComponent();
@@ -36,15 +41,10 @@ namespace TouristRoutes.Forms
             double yPosition = 50 * k;
             double verticalSpacing = 40 * k;
 
-            
-
-
             _getTagsService = new GetTagsService();
             List<Tag> ageTags = _getTagsService.GetAgeTags();
-
-
+           
             
-
             foreach (var ageTag in ageTags)
             {
                 CheckBox ageCheckBox = new CheckBox
@@ -60,11 +60,10 @@ namespace TouristRoutes.Forms
                 yPosition += verticalSpacing;
             }
 
+            
             yPosition = 50 * k;
             List<Tag> budgetTags = _getTagsService.GetBudgetTags();
-
-
-
+            
             foreach (var budgetTag in budgetTags)
             {
                 CheckBox budgetCheckBox = new CheckBox
@@ -118,6 +117,7 @@ namespace TouristRoutes.Forms
                 yPosition += verticalSpacing;
             }
 
+            
             yPosition = 50 * k;
             List<Tag> locationTags = _getTagsService.GetLocationTags();
 
@@ -134,6 +134,7 @@ namespace TouristRoutes.Forms
                 yPosition += verticalSpacing;
             }
 
+            
             yPosition = 50 * k;
             List<Tag> purposeTags = _getTagsService.GetPurposeTags();
 
@@ -152,6 +153,7 @@ namespace TouristRoutes.Forms
                 yPosition += verticalSpacing;
             }
 
+            
             yPosition = 50 * k;
             List<Tag> seasonTags = _getTagsService.GetSeasonTags();
          
@@ -168,6 +170,7 @@ namespace TouristRoutes.Forms
                 yPosition += verticalSpacing;
             }
 
+            
             yPosition = 50 * k;
             List<Tag> typeOfTourismTags = _getTagsService.GetTypeOfTourismTags();
 
@@ -183,8 +186,6 @@ namespace TouristRoutes.Forms
                 typeOfTourismGroupBox.Controls.Add(typeOfTourismCheckBox);
                 yPosition += verticalSpacing;
             }
-
-
 
             _accountServise = new AccountService();
         }

@@ -1,18 +1,26 @@
-﻿
-using TouristRoutes.Enums;
+﻿using TouristRoutes.Enums;
 using TouristRoutes.Models;
 
 namespace TouristRoutes.Services
 {
+    /// <summary>
+    /// Сервис для заполнения тегов
+    /// </summary>
     public class FillTagsService
     {
         private AppDbContext _dbContext;
 
+        /// <summary>
+        /// Конструктор сервиса
+        /// </summary>
         public FillTagsService()
         {
             _dbContext = new AppDbContext();
         }
 
+        /// <summary>
+        /// Метод для заполнения всех тегов
+        /// </summary>
         public void FillTags()
         {
             FillAgeTags();
@@ -25,6 +33,9 @@ namespace TouristRoutes.Services
             FillTypeOfTourismTags();
         }
 
+        /// <summary>
+        /// Метод для заполнения тегов возраста
+        /// </summary>
         private void FillAgeTags()
         {
             List<string> ageTags = new List<string> { "до 18", "от 18 до 25", "от 25 до 36", "от 36 до 50", "50+" };
@@ -36,6 +47,9 @@ namespace TouristRoutes.Services
             _dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Метод для заполнения тегов бюджета
+        /// </summary>
         private void FillBudgetTags()
         {
             List<string> budgetTags = new List<string> { "Эконом (до 30 тыс. руб.)", "Средний (от 30 - 70 тыс. руб.)", "Премиум (70+ тыс. руб.)"};
@@ -47,6 +61,9 @@ namespace TouristRoutes.Services
             _dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Метод для заполнения тегов длительности
+        /// </summary>
         private void FillDurationTags()
         {
             List<string> durationTags = new List<string> { "1-3 дня", "5-7 дней", "10+ дней" };
@@ -54,8 +71,14 @@ namespace TouristRoutes.Services
             {
                 _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.DurationTag });
             }
+
+            _dbContext.SaveChanges();
+
         }
 
+        /// <summary>
+        /// Метод для заполнения тегов уровня подготовки
+        /// </summary>
         private void FillLevelOfTrainingTags()
         {
             List<string> levelOfTrainingTags = new List<string> { "Новичок", "Любитель", "Профессионал" };
@@ -67,6 +90,9 @@ namespace TouristRoutes.Services
             _dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Метод для заполнения тегов расположения
+        /// </summary>
         private void FillLocationTags()
         {
             List<string> locationTags = new List<string> { "Горные районы", "Лесные зоны", "Прибрежные регионы", "Исторические места", "Экзотические направления" };
@@ -78,6 +104,9 @@ namespace TouristRoutes.Services
             _dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Метод для заполнения тегов целей
+        /// </summary>
         private void FillPurposeTags()
         {
             List<string> purposeTags = new List<string> { "Отдых", "Обучение", "Культурное обогащение" };
@@ -89,6 +118,9 @@ namespace TouristRoutes.Services
             _dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Метод для заполнения тегов сезона
+        /// </summary>
         private void FillSeasonTags()
         {
             List<string> seasonTags = new List<string> { "Лето", "Осень", "Зима", "Весна" };
@@ -100,6 +132,9 @@ namespace TouristRoutes.Services
             _dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Метод для заполнения тегов типа туризма
+        /// </summary>
         private void FillTypeOfTourismTags()
         {
             List<string> typeOfTourismTags = new List<string> { "Рекреационный", "Экскурсионный", "Приключенческий", "Спортивный", "Шопинг" };

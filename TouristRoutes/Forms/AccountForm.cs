@@ -4,10 +4,16 @@ using TouristRoutes.Services;
 
 namespace TouristRoutes
 {
+    /// <summary>
+    /// Форма входа/регистрации
+    /// </summary>
     public partial class AccountForm : Form
     {
         AccountService _accountService;
 
+        /// <summary>
+        /// Конструктор формы входа/регистрации
+        /// </summary>
         public AccountForm()
         {
             InitializeComponent();
@@ -15,9 +21,9 @@ namespace TouristRoutes
             _accountService = new AccountService();
         }
 
-
-
-
+        /// <summary>
+        /// Обработка нажатия на кнопку входа
+        /// </summary>
         private void logIn_Click(object sender, EventArgs e)
         {
             LoginDto loginDto = new LoginDto
@@ -42,6 +48,9 @@ namespace TouristRoutes
 
         }
 
+        /// <summary>
+        /// Обработка нажатия на кнопку регистрации
+        /// </summary>
         private void registration_Click(object sender, EventArgs e)
         {
             RegisterDto registerDto = new RegisterDto
@@ -67,13 +76,6 @@ namespace TouristRoutes
             {
                 MessageBox.Show(result.Item2);
             }
-
-
-        }
-
-        private void AccountForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

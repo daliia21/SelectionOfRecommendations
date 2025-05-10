@@ -147,7 +147,6 @@
             label7.Size = new Size(241, 41);
             label7.TabIndex = 14;
             label7.Text = "Фото маршрута:";
-            label7.Click += label7_Click;
             // 
             // pictureBox1
             // 
@@ -229,7 +228,6 @@
             label5.Size = new Size(716, 41);
             label5.TabIndex = 4;
             label5.Text = "Уровень подготовки, необходимый для маршрута:";
-            label5.Click += label5_Click;
             // 
             // label4
             // 
@@ -494,7 +492,6 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(344, 1124);
             listBox1.TabIndex = 0;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // AdministratorForm
             // 

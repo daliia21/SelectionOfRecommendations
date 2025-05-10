@@ -1,7 +1,8 @@
-﻿
-
-namespace TouristRoutes.Enums
+﻿namespace TouristRoutes.Enums
 {
+    /// <summary>
+    /// Тип тега
+    /// </summary>
     public enum TagType
     {
         AgeTag,
