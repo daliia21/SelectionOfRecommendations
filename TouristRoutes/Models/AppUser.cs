@@ -35,5 +35,7 @@ namespace TouristRoutes.Models
         /// Пароль пользователя
         /// </summary>
         public string PasswordHash { get; set; }
+
+        public bool IsAdmin { get; set; } = false;
     }
 }

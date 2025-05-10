@@ -239,7 +239,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "AccountForm";
-            Text = "Registration";
+            Text = "Регистрация/Вход";
             Load += AccountForm_Load;
             registerTabPage.ResumeLayout(false);
             registerTabPage.PerformLayout();

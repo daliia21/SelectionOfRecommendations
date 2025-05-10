@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using TouristRoutes.Forms;
 using TouristRoutes.Services;
 
 namespace TouristRoutes
@@ -29,7 +30,7 @@ namespace TouristRoutes
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new AccountForm());
+            Application.Run(new AdministratorForm());
         }
     }
 }

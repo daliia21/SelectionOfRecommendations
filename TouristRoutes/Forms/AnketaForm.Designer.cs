@@ -175,7 +175,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(330, 19);
+            label2.Location = new Point(332, 19);
             label2.Name = "label2";
             label2.Size = new Size(984, 41);
             label2.TabIndex = 1;
@@ -188,7 +188,7 @@
             panel2.Controls.Add(label2);
             panel2.Location = new Point(2, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1966, 72);
+            panel2.Size = new Size(1971, 72);
             panel2.TabIndex = 2;
             // 
             // AnketaForm
@@ -203,7 +203,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "AnketaForm";
-            Text = "AnketaForm";
+            Text = "Анкета";
             panel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
