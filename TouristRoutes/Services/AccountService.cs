@@ -133,17 +133,9 @@ namespace TouristRoutes.Services
         }
 
         private bool CheckCorrectEmail(string email)
-        {            
-            try
-            {               
-                string pattern = @"^(([a-zA-Z0-9_\-\.%\+]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,})|("".+"")@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,}))$";
-                return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
-            }
-            catch
-            {
-                return false;
-            }
-
+        {                                     
+            string pattern = @"^(([a-zA-Z0-9_\-\.%\+]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,})|("".+"")@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,}))$";
+            return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
         }
 
         /// <summary>
