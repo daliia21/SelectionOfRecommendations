@@ -26,7 +26,7 @@ namespace TouristRoutes
         /// </summary>
         private void logIn_Click(object sender, EventArgs e)
         {
-            LoginDto loginDto = new LoginDto
+            var loginDto = new LoginDto
             {
                 Email = loginEmail.Text,
                 Password = loginPassword.Text
@@ -53,7 +53,7 @@ namespace TouristRoutes
         /// </summary>
         private void registration_Click(object sender, EventArgs e)
         {
-            RegisterDto registerDto = new RegisterDto
+            var registerDto = new RegisterDto
             {
                 FirstName = registerFirstName.Text,
                 LastName = registerLastName.Text,

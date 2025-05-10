@@ -38,7 +38,7 @@ namespace TouristRoutes.Services
         /// </summary>
         private void FillAgeTags()
         {
-            List<string> ageTags = new List<string> { "до 18", "от 18 до 25", "от 25 до 36", "от 36 до 50", "50+" };
+            var ageTags = new List<string> { "до 18", "от 18 до 25", "от 25 до 36", "от 36 до 50", "50+" };
             foreach (string t in ageTags)
             {
                 _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.AgeTag });
@@ -52,7 +52,7 @@ namespace TouristRoutes.Services
         /// </summary>
         private void FillBudgetTags()
         {
-            List<string> budgetTags = new List<string> { "Эконом (до 30 тыс. руб.)", "Средний (от 30 - 70 тыс. руб.)", "Премиум (70+ тыс. руб.)"};
+            var budgetTags = new List<string> { "Эконом (до 30 тыс. руб.)", "Средний (от 30 - 70 тыс. руб.)", "Премиум (70+ тыс. руб.)"};
             foreach (string t in budgetTags)
             {
                 _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.BudgetTag });
@@ -66,7 +66,7 @@ namespace TouristRoutes.Services
         /// </summary>
         private void FillDurationTags()
         {
-            List<string> durationTags = new List<string> { "1-3 дня", "5-7 дней", "10+ дней" };
+            var durationTags = new List<string> { "1-3 дня", "5-7 дней", "10+ дней" };
             foreach (string t in durationTags)
             {
                 _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.DurationTag });
@@ -81,7 +81,7 @@ namespace TouristRoutes.Services
         /// </summary>
         private void FillLevelOfTrainingTags()
         {
-            List<string> levelOfTrainingTags = new List<string> { "Новичок", "Любитель", "Профессионал" };
+            var levelOfTrainingTags = new List<string> { "Новичок", "Любитель", "Профессионал" };
             foreach (string t in levelOfTrainingTags)
             {
                 _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.LevelOfTrainingTag });
@@ -95,7 +95,7 @@ namespace TouristRoutes.Services
         /// </summary>
         private void FillLocationTags()
         {
-            List<string> locationTags = new List<string> { "Горные районы", "Лесные зоны", "Прибрежные регионы", "Исторические места", "Экзотические направления" };
+            var locationTags = new List<string> { "Горные районы", "Лесные зоны", "Прибрежные регионы", "Исторические места", "Экзотические направления" };
             foreach (string t in locationTags)
             {
                 _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.LocationTag });
@@ -109,7 +109,7 @@ namespace TouristRoutes.Services
         /// </summary>
         private void FillPurposeTags()
         {
-            List<string> purposeTags = new List<string> { "Отдых", "Обучение", "Культурное обогащение" };
+            var purposeTags = new List<string> { "Отдых", "Обучение", "Культурное обогащение" };
             foreach (string t in purposeTags)
             {
                 _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.PurposeTag });
@@ -123,7 +123,7 @@ namespace TouristRoutes.Services
         /// </summary>
         private void FillSeasonTags()
         {
-            List<string> seasonTags = new List<string> { "Лето", "Осень", "Зима", "Весна" };
+            var seasonTags = new List<string> { "Лето", "Осень", "Зима", "Весна" };
             foreach (string t in seasonTags)
             {
                 _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.SeasonTag });
@@ -137,7 +137,7 @@ namespace TouristRoutes.Services
         /// </summary>
         private void FillTypeOfTourismTags()
         {
-            List<string> typeOfTourismTags = new List<string> { "Рекреационный", "Экскурсионный", "Приключенческий", "Спортивный", "Шопинг" };
+            var typeOfTourismTags = new List<string> { "Рекреационный", "Экскурсионный", "Приключенческий", "Спортивный", "Шопинг" };
             foreach (string t in typeOfTourismTags)
             {
                 _dbContext.Tags.Add(new Tag { TagName = t, TagType = TagType.TypeOfTourismTag });

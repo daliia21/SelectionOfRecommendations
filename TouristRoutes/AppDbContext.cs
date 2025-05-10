@@ -33,10 +33,8 @@ namespace TouristRoutes
         /// </summary>
         public DbSet<Route> Routes { get; set; }
 
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {        
-
             modelBuilder.Entity<Tag>()
                 .Property(t => t.TagType)
                 .HasConversion<int>();

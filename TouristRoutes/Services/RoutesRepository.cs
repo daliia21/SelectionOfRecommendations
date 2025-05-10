@@ -108,7 +108,7 @@ namespace TouristRoutes.Services
 
             foreach (var tag in tags)
             {
-                RouteTag routeTag = new RouteTag
+                var routeTag = new RouteTag
                 {
                     RouteId = route.Id,
                     TagId = tag.Id,

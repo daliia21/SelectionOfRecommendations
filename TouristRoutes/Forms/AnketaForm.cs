@@ -42,12 +42,12 @@ namespace TouristRoutes.Forms
             double verticalSpacing = 40 * k;
 
             _getTagsService = new GetTagsService();
-            List<Tag> ageTags = _getTagsService.GetAgeTags();
+            var ageTags = _getTagsService.GetAgeTags();
            
             
             foreach (var ageTag in ageTags)
             {
-                CheckBox ageCheckBox = new CheckBox
+                var ageCheckBox = new CheckBox
                 {
                     Text = ageTag.TagName,
                     Location = new Point((int)(20 * k), (int)yPosition),
@@ -62,7 +62,7 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            List<Tag> budgetTags = _getTagsService.GetBudgetTags();
+            var budgetTags = _getTagsService.GetBudgetTags();
             
             foreach (var budgetTag in budgetTags)
             {
@@ -81,11 +81,11 @@ namespace TouristRoutes.Forms
 
 
             yPosition = 50 * k;
-            List<Tag> durationTags = _getTagsService.GetDurationTags();
+            var durationTags = _getTagsService.GetDurationTags();
 
             foreach (var durationTag in durationTags)
             {
-                CheckBox durationCheckBox = new CheckBox
+                var durationCheckBox = new CheckBox
                 {
                     Text = durationTag.TagName,
                     Location = new Point((int)(20 * k), (int)yPosition),
@@ -100,11 +100,11 @@ namespace TouristRoutes.Forms
 
 
             yPosition = 50 * k;
-            List<Tag> levelOfTrainingTags = _getTagsService.GetLevelOfTrainingTags();
+            var levelOfTrainingTags = _getTagsService.GetLevelOfTrainingTags();
 
             foreach (var levelOfTrainingTag in levelOfTrainingTags)
             {
-                CheckBox levelOfTrainingCheckBox = new CheckBox
+                var levelOfTrainingCheckBox = new CheckBox
                 {
                     Text = levelOfTrainingTag.TagName,
                     Location = new Point((int)(20 * k), (int)yPosition),
@@ -119,11 +119,11 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            List<Tag> locationTags = _getTagsService.GetLocationTags();
+            var locationTags = _getTagsService.GetLocationTags();
 
             foreach (var locationTag in locationTags)
             {
-                CheckBox locationCheckBox = new CheckBox
+                var locationCheckBox = new CheckBox
                 {
                     Text = locationTag.TagName,
                     Location = new Point((int)(20 * k), (int)yPosition),
@@ -136,11 +136,11 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            List<Tag> purposeTags = _getTagsService.GetPurposeTags();
+            var purposeTags = _getTagsService.GetPurposeTags();
 
             foreach (var purposeTag in purposeTags)
             {
-                CheckBox purposeCheckBox = new CheckBox
+                var purposeCheckBox = new CheckBox
                 {
                     Text = purposeTag.TagName,
                     Location = new Point((int)(20 * k), (int)yPosition),
@@ -155,11 +155,11 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            List<Tag> seasonTags = _getTagsService.GetSeasonTags();
+            var seasonTags = _getTagsService.GetSeasonTags();
          
             foreach (var seasonTag in seasonTags)
             {
-                CheckBox seasonCheckBox = new CheckBox
+                var seasonCheckBox = new CheckBox
                 {
                     Text = seasonTag.TagName,
                     Location = new Point((int)(20 * k), (int)yPosition),
@@ -172,11 +172,11 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            List<Tag> typeOfTourismTags = _getTagsService.GetTypeOfTourismTags();
+            var typeOfTourismTags = _getTagsService.GetTypeOfTourismTags();
 
             foreach (var typeOfTourismTag in typeOfTourismTags)
             {
-                CheckBox typeOfTourismCheckBox = new CheckBox
+                var typeOfTourismCheckBox = new CheckBox
                 {
                     Text = typeOfTourismTag.TagName,
                     Location = new Point((int)(20 * k), (int)yPosition),
@@ -190,15 +190,15 @@ namespace TouristRoutes.Forms
             _accountServise = new AccountService();
         }
 
-
-
-
+        /// <summary>
+        /// Обработка нажатия на кнопку сохранения анкеты
+        /// </summary>
         private void savedAnketaButton_Click(object sender, EventArgs e)
         {
-            List<GroupBox> groupBoxes = new List<GroupBox> { ageGroupBox, budgetGroupBox, durationGroupBox,
+            var groupBoxes = new List<GroupBox> { ageGroupBox, budgetGroupBox, durationGroupBox,
             levelOfTrainingGroupBox, locationGroupBox, purposeGroupBox, seasonGroupBox, typeOfTourismGroupBox };
         
-            List<string> tagNames = new List<string>();
+            var tagNames = new List<string>();
 
             foreach (var groupBox in groupBoxes)
             {
@@ -213,7 +213,6 @@ namespace TouristRoutes.Forms
                 }
             }
 
-
             _accountServise.AddTags(tagNames);
 
             MessageBox.Show("Ваши данные успешно сохранены");
@@ -222,9 +221,9 @@ namespace TouristRoutes.Forms
             recommendationsListForm.Show();
         }
 
-
-
-
+        /// <summary>
+        /// Метод, позволяющий выбирать только один пункт из категории
+        /// </summary>
         private void Group_CheckedChanged(object sender, EventArgs e)
         {
             var currentCheckBox = sender as CheckBox;
