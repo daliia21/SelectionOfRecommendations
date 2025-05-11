@@ -28,447 +28,445 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            button2 = new Button();
-            button1 = new Button();
-            label7 = new Label();
-            pictureBox1 = new PictureBox();
-            richTextBox1 = new RichTextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            tabPage2 = new TabPage();
-            button4 = new Button();
-            button3 = new Button();
-            label9 = new Label();
-            pictureBox2 = new PictureBox();
-            richTextBox2 = new RichTextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
+            administratorsTabControl = new TabControl();
+            addRouteTabPage = new TabPage();
+            routeBackButton = new Button();
+            routeSaveButton = new Button();
+            routePictureLabel = new Label();
+            routePictureBox = new PictureBox();
+            routeDescriptionRichTextBox = new RichTextBox();
+            routeLevelOfTrainingTextBox = new TextBox();
+            routeDurationTextBox = new TextBox();
+            routeLocationTextBox = new TextBox();
+            routePriceTextBox = new TextBox();
+            routeNameTextBox = new TextBox();
+            routeDescriptionLabel = new Label();
+            routeLevelOfTrainingLabel = new Label();
+            routeDurationLabel = new Label();
+            routeLocationLabel = new Label();
+            routePriceLabel = new Label();
+            routeNameLabel = new Label();
+            updateRouteTabPage = new TabPage();
+            routeDeleteButton = new Button();
+            routeSaveButton2 = new Button();
+            routePictureLabel2 = new Label();
+            routePictureBox2 = new PictureBox();
+            routeDescriptionRichTextBox2 = new RichTextBox();
+            routeLevelOfTrainingTextBox2 = new TextBox();
+            routeDurationTextBox2 = new TextBox();
+            routeLocationTextBox2 = new TextBox();
+            routePriceTextBox2 = new TextBox();
+            routeNameTextBox2 = new TextBox();
+            routeDescriptionLabel2 = new Label();
+            routeLevelOfTrainingLabel2 = new Label();
+            routeDurationLabel2 = new Label();
+            routeLocationLabel2 = new Label();
+            routePriceLabel2 = new Label();
+            routeNameLabel2 = new Label();
             panel1 = new Panel();
-            label8 = new Label();
-            listBox1 = new ListBox();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            routeListBoxLabel = new Label();
+            routesListBox = new ListBox();
+            administratorsTabControl.SuspendLayout();
+            addRouteTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)routePictureBox).BeginInit();
+            updateRouteTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)routePictureBox2).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
             // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(-5, 12);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1712, 1334);
-            tabControl1.TabIndex = 0;
+            administratorsTabControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            administratorsTabControl.Controls.Add(addRouteTabPage);
+            administratorsTabControl.Controls.Add(updateRouteTabPage);
+            administratorsTabControl.Location = new Point(-5, 12);
+            administratorsTabControl.Name = "tabControl1";
+            administratorsTabControl.SelectedIndex = 0;
+            administratorsTabControl.Size = new Size(1712, 1334);
+            administratorsTabControl.TabIndex = 0;
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = Color.FromArgb(75, 136, 158);
-            tabPage1.Controls.Add(button2);
-            tabPage1.Controls.Add(button1);
-            tabPage1.Controls.Add(label7);
-            tabPage1.Controls.Add(pictureBox1);
-            tabPage1.Controls.Add(richTextBox1);
-            tabPage1.Controls.Add(textBox5);
-            tabPage1.Controls.Add(textBox4);
-            tabPage1.Controls.Add(textBox3);
-            tabPage1.Controls.Add(textBox2);
-            tabPage1.Controls.Add(textBox1);
-            tabPage1.Controls.Add(label6);
-            tabPage1.Controls.Add(label5);
-            tabPage1.Controls.Add(label4);
-            tabPage1.Controls.Add(label3);
-            tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(label1);
-            tabPage1.Location = new Point(8, 46);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1696, 1280);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Добавление нового маршрута";
+            addRouteTabPage.BackColor = Color.FromArgb(75, 136, 158);
+            addRouteTabPage.Controls.Add(routeBackButton);
+            addRouteTabPage.Controls.Add(routeSaveButton);
+            addRouteTabPage.Controls.Add(routePictureLabel);
+            addRouteTabPage.Controls.Add(routePictureBox);
+            addRouteTabPage.Controls.Add(routeDescriptionRichTextBox);
+            addRouteTabPage.Controls.Add(routeLevelOfTrainingTextBox);
+            addRouteTabPage.Controls.Add(routeDurationTextBox);
+            addRouteTabPage.Controls.Add(routeLocationTextBox);
+            addRouteTabPage.Controls.Add(routePriceTextBox);
+            addRouteTabPage.Controls.Add(routeNameTextBox);
+            addRouteTabPage.Controls.Add(routeDescriptionLabel);
+            addRouteTabPage.Controls.Add(routeLevelOfTrainingLabel);
+            addRouteTabPage.Controls.Add(routeDurationLabel);
+            addRouteTabPage.Controls.Add(routeLocationLabel);
+            addRouteTabPage.Controls.Add(routePriceLabel);
+            addRouteTabPage.Controls.Add(routeNameLabel);
+            addRouteTabPage.Location = new Point(8, 46);
+            addRouteTabPage.Name = "tabPage1";
+            addRouteTabPage.Padding = new Padding(3);
+            addRouteTabPage.Size = new Size(1696, 1280);
+            addRouteTabPage.TabIndex = 0;
+            addRouteTabPage.Text = "Добавление нового маршрута";
             // 
             // button2
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.BackColor = Color.FromArgb(59, 102, 118);
-            button2.Font = new Font("Segoe UI", 11F);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(1245, 1150);
-            button2.Name = "button2";
-            button2.Size = new Size(267, 72);
-            button2.TabIndex = 16;
-            button2.Text = "ОТМЕНА";
-            button2.UseVisualStyleBackColor = false;
+            routeBackButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            routeBackButton.BackColor = Color.FromArgb(59, 102, 118);
+            routeBackButton.Font = new Font("Segoe UI", 11F);
+            routeBackButton.ForeColor = Color.White;
+            routeBackButton.Location = new Point(1245, 1150);
+            routeBackButton.Name = "button2";
+            routeBackButton.Size = new Size(267, 72);
+            routeBackButton.TabIndex = 16;
+            routeBackButton.Text = "ОТМЕНА";
+            routeBackButton.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(59, 102, 118);
-            button1.Font = new Font("Segoe UI", 11F);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(945, 1150);
-            button1.Name = "button1";
-            button1.Size = new Size(267, 72);
-            button1.TabIndex = 15;
-            button1.Text = "СОХРАНИТЬ";
-            button1.UseVisualStyleBackColor = false;
+            routeSaveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            routeSaveButton.BackColor = Color.FromArgb(59, 102, 118);
+            routeSaveButton.Font = new Font("Segoe UI", 11F);
+            routeSaveButton.ForeColor = Color.White;
+            routeSaveButton.Location = new Point(945, 1150);
+            routeSaveButton.Name = "button1";
+            routeSaveButton.Size = new Size(267, 72);
+            routeSaveButton.TabIndex = 15;
+            routeSaveButton.Text = "СОХРАНИТЬ";
+            routeSaveButton.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 11F);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(167, 876);
-            label7.Name = "label7";
-            label7.Size = new Size(241, 41);
-            label7.TabIndex = 14;
-            label7.Text = "Фото маршрута:";
-            label7.Click += label7_Click;
+            routePictureLabel.AutoSize = true;
+            routePictureLabel.Font = new Font("Segoe UI", 11F);
+            routePictureLabel.ForeColor = Color.White;
+            routePictureLabel.Location = new Point(167, 876);
+            routePictureLabel.Name = "label7";
+            routePictureLabel.Size = new Size(241, 41);
+            routePictureLabel.TabIndex = 14;
+            routePictureLabel.Text = "Фото маршрута:";
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(167, 923);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(505, 299);
-            pictureBox1.TabIndex = 13;
-            pictureBox1.TabStop = false;
+            routePictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            routePictureBox.BackColor = Color.White;
+            routePictureBox.Location = new Point(167, 923);
+            routePictureBox.Name = "pictureBox1";
+            routePictureBox.Size = new Size(505, 299);
+            routePictureBox.TabIndex = 13;
+            routePictureBox.TabStop = false;
             // 
             // richTextBox1
             // 
-            richTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            richTextBox1.Location = new Point(167, 626);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(1345, 198);
-            richTextBox1.TabIndex = 12;
-            richTextBox1.Text = "";
+            routeDescriptionRichTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeDescriptionRichTextBox.Location = new Point(167, 626);
+            routeDescriptionRichTextBox.Name = "richTextBox1";
+            routeDescriptionRichTextBox.Size = new Size(1345, 198);
+            routeDescriptionRichTextBox.TabIndex = 12;
+            routeDescriptionRichTextBox.Text = "";
             // 
             // textBox5
             // 
-            textBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox5.Location = new Point(167, 503);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(1345, 39);
-            textBox5.TabIndex = 10;
+            routeLevelOfTrainingTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeLevelOfTrainingTextBox.Location = new Point(167, 503);
+            routeLevelOfTrainingTextBox.Name = "textBox5";
+            routeLevelOfTrainingTextBox.Size = new Size(1345, 39);
+            routeLevelOfTrainingTextBox.TabIndex = 10;
             // 
             // textBox4
             // 
-            textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox4.Location = new Point(167, 396);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(1345, 39);
-            textBox4.TabIndex = 9;
+            routeDurationTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeDurationTextBox.Location = new Point(167, 396);
+            routeDurationTextBox.Name = "textBox4";
+            routeDurationTextBox.Size = new Size(1345, 39);
+            routeDurationTextBox.TabIndex = 9;
             // 
             // textBox3
             // 
-            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.Location = new Point(167, 275);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(1345, 39);
-            textBox3.TabIndex = 8;
+            routeLocationTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeLocationTextBox.Location = new Point(167, 275);
+            routeLocationTextBox.Name = "textBox3";
+            routeLocationTextBox.Size = new Size(1345, 39);
+            routeLocationTextBox.TabIndex = 8;
             // 
             // textBox2
             // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Location = new Point(167, 160);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(1345, 39);
-            textBox2.TabIndex = 7;
+            routePriceTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routePriceTextBox.Location = new Point(167, 160);
+            routePriceTextBox.Name = "textBox2";
+            routePriceTextBox.Size = new Size(1345, 39);
+            routePriceTextBox.TabIndex = 7;
             // 
             // textBox1
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(167, 57);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(1345, 39);
-            textBox1.TabIndex = 6;
+            routeNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeNameTextBox.Location = new Point(167, 57);
+            routeNameTextBox.Name = "textBox1";
+            routeNameTextBox.Size = new Size(1345, 39);
+            routeNameTextBox.TabIndex = 6;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 11F);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(167, 562);
-            label6.Name = "label6";
-            label6.Size = new Size(307, 41);
-            label6.TabIndex = 5;
-            label6.Text = "Описание маршрута:";
+            routeDescriptionLabel.AutoSize = true;
+            routeDescriptionLabel.Font = new Font("Segoe UI", 11F);
+            routeDescriptionLabel.ForeColor = Color.White;
+            routeDescriptionLabel.Location = new Point(167, 562);
+            routeDescriptionLabel.Name = "label6";
+            routeDescriptionLabel.Size = new Size(307, 41);
+            routeDescriptionLabel.TabIndex = 5;
+            routeDescriptionLabel.Text = "Описание маршрута:";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11F);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(167, 450);
-            label5.Name = "label5";
-            label5.Size = new Size(716, 41);
-            label5.TabIndex = 4;
-            label5.Text = "Уровень подготовки, необходимый для маршрута:";
-            label5.Click += label5_Click;
+            routeLevelOfTrainingLabel.AutoSize = true;
+            routeLevelOfTrainingLabel.Font = new Font("Segoe UI", 11F);
+            routeLevelOfTrainingLabel.ForeColor = Color.White;
+            routeLevelOfTrainingLabel.Location = new Point(167, 450);
+            routeLevelOfTrainingLabel.Name = "label5";
+            routeLevelOfTrainingLabel.Size = new Size(716, 41);
+            routeLevelOfTrainingLabel.TabIndex = 4;
+            routeLevelOfTrainingLabel.Text = "Уровень подготовки, необходимый для маршрута:";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 11F);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(167, 338);
-            label4.Name = "label4";
-            label4.Size = new Size(360, 41);
-            label4.TabIndex = 3;
-            label4.Text = "Длительность маршрута:";
+            routeDurationLabel.AutoSize = true;
+            routeDurationLabel.Font = new Font("Segoe UI", 11F);
+            routeDurationLabel.ForeColor = Color.White;
+            routeDurationLabel.Location = new Point(167, 338);
+            routeDurationLabel.Name = "label4";
+            routeDurationLabel.Size = new Size(360, 41);
+            routeDurationLabel.TabIndex = 3;
+            routeDurationLabel.Text = "Длительность маршрута:";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11F);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(167, 219);
-            label3.Name = "label3";
-            label3.Size = new Size(374, 41);
-            label3.TabIndex = 2;
-            label3.Text = "Расположение маршрута:";
+            routeLocationLabel.AutoSize = true;
+            routeLocationLabel.Font = new Font("Segoe UI", 11F);
+            routeLocationLabel.ForeColor = Color.White;
+            routeLocationLabel.Location = new Point(167, 219);
+            routeLocationLabel.Name = "label3";
+            routeLocationLabel.Size = new Size(374, 41);
+            routeLocationLabel.TabIndex = 2;
+            routeLocationLabel.Text = "Расположение маршрута:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11F);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(167, 116);
-            label2.Name = "label2";
-            label2.Size = new Size(317, 41);
-            label2.TabIndex = 1;
-            label2.Text = "Стоимость маршрута:";
+            routePriceLabel.AutoSize = true;
+            routePriceLabel.Font = new Font("Segoe UI", 11F);
+            routePriceLabel.ForeColor = Color.White;
+            routePriceLabel.Location = new Point(167, 116);
+            routePriceLabel.Name = "label2";
+            routePriceLabel.Size = new Size(317, 41);
+            routePriceLabel.TabIndex = 1;
+            routePriceLabel.Text = "Стоимость маршрута:";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11F);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(167, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(301, 41);
-            label1.TabIndex = 0;
-            label1.Text = "Название маршрута:";
+            routeNameLabel.AutoSize = true;
+            routeNameLabel.Font = new Font("Segoe UI", 11F);
+            routeNameLabel.ForeColor = Color.White;
+            routeNameLabel.Location = new Point(167, 13);
+            routeNameLabel.Name = "label1";
+            routeNameLabel.Size = new Size(301, 41);
+            routeNameLabel.TabIndex = 0;
+            routeNameLabel.Text = "Название маршрута:";
             // 
             // tabPage2
             // 
-            tabPage2.BackColor = Color.FromArgb(75, 136, 158);
-            tabPage2.Controls.Add(button4);
-            tabPage2.Controls.Add(button3);
-            tabPage2.Controls.Add(label9);
-            tabPage2.Controls.Add(pictureBox2);
-            tabPage2.Controls.Add(richTextBox2);
-            tabPage2.Controls.Add(textBox6);
-            tabPage2.Controls.Add(textBox7);
-            tabPage2.Controls.Add(textBox8);
-            tabPage2.Controls.Add(textBox9);
-            tabPage2.Controls.Add(textBox10);
-            tabPage2.Controls.Add(label10);
-            tabPage2.Controls.Add(label11);
-            tabPage2.Controls.Add(label12);
-            tabPage2.Controls.Add(label13);
-            tabPage2.Controls.Add(label14);
-            tabPage2.Controls.Add(label15);
-            tabPage2.Controls.Add(panel1);
-            tabPage2.Controls.Add(listBox1);
-            tabPage2.Location = new Point(8, 46);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1696, 1280);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Редактирование маршрута";
+            updateRouteTabPage.BackColor = Color.FromArgb(75, 136, 158);
+            updateRouteTabPage.Controls.Add(routeDeleteButton);
+            updateRouteTabPage.Controls.Add(routeSaveButton2);
+            updateRouteTabPage.Controls.Add(routePictureLabel2);
+            updateRouteTabPage.Controls.Add(routePictureBox2);
+            updateRouteTabPage.Controls.Add(routeDescriptionRichTextBox2);
+            updateRouteTabPage.Controls.Add(routeLevelOfTrainingTextBox2);
+            updateRouteTabPage.Controls.Add(routeDurationTextBox2);
+            updateRouteTabPage.Controls.Add(routeLocationTextBox2);
+            updateRouteTabPage.Controls.Add(routePriceTextBox2);
+            updateRouteTabPage.Controls.Add(routeNameTextBox2);
+            updateRouteTabPage.Controls.Add(routeDescriptionLabel2);
+            updateRouteTabPage.Controls.Add(routeLevelOfTrainingLabel2);
+            updateRouteTabPage.Controls.Add(routeDurationLabel2);
+            updateRouteTabPage.Controls.Add(routeLocationLabel2);
+            updateRouteTabPage.Controls.Add(routePriceLabel2);
+            updateRouteTabPage.Controls.Add(routeNameLabel2);
+            updateRouteTabPage.Controls.Add(panel1);
+            updateRouteTabPage.Controls.Add(routesListBox);
+            updateRouteTabPage.Location = new Point(8, 46);
+            updateRouteTabPage.Name = "tabPage2";
+            updateRouteTabPage.Padding = new Padding(3);
+            updateRouteTabPage.Size = new Size(1696, 1280);
+            updateRouteTabPage.TabIndex = 1;
+            updateRouteTabPage.Text = "Редактирование маршрута";
             // 
             // button4
             // 
-            button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button4.BackColor = Color.FromArgb(59, 102, 118);
-            button4.Font = new Font("Segoe UI", 11F);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(1050, 1150);
-            button4.Name = "button4";
-            button4.Size = new Size(267, 72);
-            button4.TabIndex = 30;
-            button4.Text = "УДАЛИТЬ";
-            button4.UseVisualStyleBackColor = false;
+            routeDeleteButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            routeDeleteButton.BackColor = Color.FromArgb(59, 102, 118);
+            routeDeleteButton.Font = new Font("Segoe UI", 11F);
+            routeDeleteButton.ForeColor = Color.White;
+            routeDeleteButton.Location = new Point(1050, 1150);
+            routeDeleteButton.Name = "button4";
+            routeDeleteButton.Size = new Size(267, 72);
+            routeDeleteButton.TabIndex = 30;
+            routeDeleteButton.Text = "УДАЛИТЬ";
+            routeDeleteButton.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button3.BackColor = Color.FromArgb(59, 102, 118);
-            button3.Font = new Font("Segoe UI", 11F);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(1361, 1150);
-            button3.Name = "button3";
-            button3.Size = new Size(267, 72);
-            button3.TabIndex = 29;
-            button3.Text = "СОХРАНИТЬ";
-            button3.UseVisualStyleBackColor = false;
+            routeSaveButton2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            routeSaveButton2.BackColor = Color.FromArgb(59, 102, 118);
+            routeSaveButton2.Font = new Font("Segoe UI", 11F);
+            routeSaveButton2.ForeColor = Color.White;
+            routeSaveButton2.Location = new Point(1361, 1150);
+            routeSaveButton2.Name = "button3";
+            routeSaveButton2.Size = new Size(267, 72);
+            routeSaveButton2.TabIndex = 29;
+            routeSaveButton2.Text = "СОХРАНИТЬ";
+            routeSaveButton2.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 11F);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(426, 891);
-            label9.Name = "label9";
-            label9.Size = new Size(241, 41);
-            label9.TabIndex = 28;
-            label9.Text = "Фото маршрута:";
+            routePictureLabel2.AutoSize = true;
+            routePictureLabel2.Font = new Font("Segoe UI", 11F);
+            routePictureLabel2.ForeColor = Color.White;
+            routePictureLabel2.Location = new Point(426, 891);
+            routePictureLabel2.Name = "label9";
+            routePictureLabel2.Size = new Size(241, 41);
+            routePictureLabel2.TabIndex = 28;
+            routePictureLabel2.Text = "Фото маршрута:";
             // 
             // pictureBox2
             // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox2.BackColor = Color.White;
-            pictureBox2.Location = new Point(426, 938);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(403, 299);
-            pictureBox2.TabIndex = 27;
-            pictureBox2.TabStop = false;
+            routePictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            routePictureBox2.BackColor = Color.White;
+            routePictureBox2.Location = new Point(426, 938);
+            routePictureBox2.Name = "pictureBox2";
+            routePictureBox2.Size = new Size(403, 299);
+            routePictureBox2.TabIndex = 27;
+            routePictureBox2.TabStop = false;
             // 
             // richTextBox2
             // 
-            richTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            richTextBox2.Location = new Point(426, 641);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(1202, 198);
-            richTextBox2.TabIndex = 26;
-            richTextBox2.Text = "";
+            routeDescriptionRichTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeDescriptionRichTextBox2.Location = new Point(426, 641);
+            routeDescriptionRichTextBox2.Name = "richTextBox2";
+            routeDescriptionRichTextBox2.Size = new Size(1202, 198);
+            routeDescriptionRichTextBox2.TabIndex = 26;
+            routeDescriptionRichTextBox2.Text = "";
             // 
             // textBox6
             // 
-            textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox6.Location = new Point(426, 518);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(1202, 39);
-            textBox6.TabIndex = 25;
+            routeLevelOfTrainingTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeLevelOfTrainingTextBox2.Location = new Point(426, 518);
+            routeLevelOfTrainingTextBox2.Name = "textBox6";
+            routeLevelOfTrainingTextBox2.Size = new Size(1202, 39);
+            routeLevelOfTrainingTextBox2.TabIndex = 25;
             // 
             // textBox7
             // 
-            textBox7.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox7.Location = new Point(426, 411);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(1202, 39);
-            textBox7.TabIndex = 24;
+            routeDurationTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeDurationTextBox2.Location = new Point(426, 411);
+            routeDurationTextBox2.Name = "textBox7";
+            routeDurationTextBox2.Size = new Size(1202, 39);
+            routeDurationTextBox2.TabIndex = 24;
             // 
             // textBox8
             // 
-            textBox8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox8.Location = new Point(426, 290);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(1202, 39);
-            textBox8.TabIndex = 23;
+            routeLocationTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeLocationTextBox2.Location = new Point(426, 290);
+            routeLocationTextBox2.Name = "textBox8";
+            routeLocationTextBox2.Size = new Size(1202, 39);
+            routeLocationTextBox2.TabIndex = 23;
             // 
             // textBox9
             // 
-            textBox9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox9.Location = new Point(426, 175);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(1202, 39);
-            textBox9.TabIndex = 22;
+            routePriceTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routePriceTextBox2.Location = new Point(426, 175);
+            routePriceTextBox2.Name = "textBox9";
+            routePriceTextBox2.Size = new Size(1202, 39);
+            routePriceTextBox2.TabIndex = 22;
             // 
             // textBox10
             // 
-            textBox10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBox10.Location = new Point(426, 72);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(1202, 39);
-            textBox10.TabIndex = 21;
+            routeNameTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            routeNameTextBox2.Location = new Point(426, 72);
+            routeNameTextBox2.Name = "textBox10";
+            routeNameTextBox2.Size = new Size(1202, 39);
+            routeNameTextBox2.TabIndex = 21;
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 11F);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(426, 577);
-            label10.Name = "label10";
-            label10.Size = new Size(307, 41);
-            label10.TabIndex = 20;
-            label10.Text = "Описание маршрута:";
+            routeDescriptionLabel2.AutoSize = true;
+            routeDescriptionLabel2.Font = new Font("Segoe UI", 11F);
+            routeDescriptionLabel2.ForeColor = Color.White;
+            routeDescriptionLabel2.Location = new Point(426, 577);
+            routeDescriptionLabel2.Name = "label10";
+            routeDescriptionLabel2.Size = new Size(307, 41);
+            routeDescriptionLabel2.TabIndex = 20;
+            routeDescriptionLabel2.Text = "Описание маршрута:";
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 11F);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(426, 465);
-            label11.Name = "label11";
-            label11.Size = new Size(716, 41);
-            label11.TabIndex = 19;
-            label11.Text = "Уровень подготовки, необходимый для маршрута:";
+            routeLevelOfTrainingLabel2.AutoSize = true;
+            routeLevelOfTrainingLabel2.Font = new Font("Segoe UI", 11F);
+            routeLevelOfTrainingLabel2.ForeColor = Color.White;
+            routeLevelOfTrainingLabel2.Location = new Point(426, 465);
+            routeLevelOfTrainingLabel2.Name = "label11";
+            routeLevelOfTrainingLabel2.Size = new Size(716, 41);
+            routeLevelOfTrainingLabel2.TabIndex = 19;
+            routeLevelOfTrainingLabel2.Text = "Уровень подготовки, необходимый для маршрута:";
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 11F);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(426, 353);
-            label12.Name = "label12";
-            label12.Size = new Size(360, 41);
-            label12.TabIndex = 18;
-            label12.Text = "Длительность маршрута:";
+            routeDurationLabel2.AutoSize = true;
+            routeDurationLabel2.Font = new Font("Segoe UI", 11F);
+            routeDurationLabel2.ForeColor = Color.White;
+            routeDurationLabel2.Location = new Point(426, 353);
+            routeDurationLabel2.Name = "label12";
+            routeDurationLabel2.Size = new Size(360, 41);
+            routeDurationLabel2.TabIndex = 18;
+            routeDurationLabel2.Text = "Длительность маршрута:";
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 11F);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(426, 234);
-            label13.Name = "label13";
-            label13.Size = new Size(374, 41);
-            label13.TabIndex = 17;
-            label13.Text = "Расположение маршрута:";
+            routeLocationLabel2.AutoSize = true;
+            routeLocationLabel2.Font = new Font("Segoe UI", 11F);
+            routeLocationLabel2.ForeColor = Color.White;
+            routeLocationLabel2.Location = new Point(426, 234);
+            routeLocationLabel2.Name = "label13";
+            routeLocationLabel2.Size = new Size(374, 41);
+            routeLocationLabel2.TabIndex = 17;
+            routeLocationLabel2.Text = "Расположение маршрута:";
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 11F);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(426, 131);
-            label14.Name = "label14";
-            label14.Size = new Size(317, 41);
-            label14.TabIndex = 16;
-            label14.Text = "Стоимость маршрута:";
+            routePriceLabel2.AutoSize = true;
+            routePriceLabel2.Font = new Font("Segoe UI", 11F);
+            routePriceLabel2.ForeColor = Color.White;
+            routePriceLabel2.Location = new Point(426, 131);
+            routePriceLabel2.Name = "label14";
+            routePriceLabel2.Size = new Size(317, 41);
+            routePriceLabel2.TabIndex = 16;
+            routePriceLabel2.Text = "Стоимость маршрута:";
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 11F);
-            label15.ForeColor = Color.White;
-            label15.Location = new Point(426, 28);
-            label15.Name = "label15";
-            label15.Size = new Size(301, 41);
-            label15.TabIndex = 15;
-            label15.Text = "Название маршрута:";
+            routeNameLabel2.AutoSize = true;
+            routeNameLabel2.Font = new Font("Segoe UI", 11F);
+            routeNameLabel2.ForeColor = Color.White;
+            routeNameLabel2.Location = new Point(426, 28);
+            routeNameLabel2.Name = "label15";
+            routeNameLabel2.Size = new Size(301, 41);
+            routeNameLabel2.TabIndex = 15;
+            routeNameLabel2.Text = "Название маршрута:";
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(59, 102, 118);
-            panel1.Controls.Add(label8);
+            panel1.Controls.Add(routeListBoxLabel);
             panel1.Location = new Point(35, 41);
             panel1.Name = "panel1";
             panel1.Size = new Size(344, 70);
@@ -476,25 +474,24 @@
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.FromArgb(59, 102, 118);
-            label8.Font = new Font("Segoe UI", 11F);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(26, 18);
-            label8.Name = "label8";
-            label8.Size = new Size(283, 41);
-            label8.TabIndex = 1;
-            label8.Text = "Список маршрутов";
+            routeListBoxLabel.AutoSize = true;
+            routeListBoxLabel.BackColor = Color.FromArgb(59, 102, 118);
+            routeListBoxLabel.Font = new Font("Segoe UI", 11F);
+            routeListBoxLabel.ForeColor = Color.White;
+            routeListBoxLabel.Location = new Point(26, 18);
+            routeListBoxLabel.Name = "label8";
+            routeListBoxLabel.Size = new Size(283, 41);
+            routeListBoxLabel.TabIndex = 1;
+            routeListBoxLabel.Text = "Список маршрутов";
             // 
             // listBox1
             // 
-            listBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(35, 113);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(344, 1124);
-            listBox1.TabIndex = 0;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            routesListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            routesListBox.FormattingEnabled = true;
+            routesListBox.Location = new Point(35, 113);
+            routesListBox.Name = "listBox1";
+            routesListBox.Size = new Size(344, 1124);
+            routesListBox.TabIndex = 0;
             // 
             // AdministratorForm
             // 
@@ -502,16 +499,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(75, 136, 158);
             ClientSize = new Size(1700, 1336);
-            Controls.Add(tabControl1);
+            Controls.Add(administratorsTabControl);
             Name = "AdministratorForm";
             Text = "Управление маршрутами";
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            administratorsTabControl.ResumeLayout(false);
+            addRouteTabPage.ResumeLayout(false);
+            addRouteTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)routePictureBox).EndInit();
+            updateRouteTabPage.ResumeLayout(false);
+            updateRouteTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)routePictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -519,43 +516,43 @@
 
         #endregion
 
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private Label label4;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label6;
-        private Label label5;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private RichTextBox richTextBox1;
-        private Label label7;
-        private PictureBox pictureBox1;
-        private Button button1;
-        private Button button2;
-        private Label label8;
-        private ListBox listBox1;
+        private TabControl administratorsTabControl;
+        private TabPage addRouteTabPage;
+        private TabPage updateRouteTabPage;
+        private Label routeLocationLabel;
+        private Label routePriceLabel;
+        private Label routeNameLabel;
+        private Label routeDurationLabel;
+        private TextBox routePriceTextBox;
+        private TextBox routeNameTextBox;
+        private Label routeDescriptionLabel;
+        private Label routeLevelOfTrainingLabel;
+        private TextBox routeLevelOfTrainingTextBox;
+        private TextBox routeDurationTextBox;
+        private TextBox routeLocationTextBox;
+        private RichTextBox routeDescriptionRichTextBox;
+        private Label routePictureLabel;
+        private PictureBox routePictureBox;
+        private Button routeSaveButton;
+        private Button routeBackButton;
+        private Label routeListBoxLabel;
+        private ListBox routesListBox;
         private Panel panel1;
-        private Label label9;
-        private PictureBox pictureBox2;
-        private RichTextBox richTextBox2;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Button button4;
-        private Button button3;
+        private Label routePictureLabel2;
+        private PictureBox routePictureBox2;
+        private RichTextBox routeDescriptionRichTextBox2;
+        private TextBox routeLevelOfTrainingTextBox2;
+        private TextBox routeDurationTextBox2;
+        private TextBox routeLocationTextBox2;
+        private TextBox routePriceTextBox2;
+        private TextBox routeNameTextBox2;
+        private Label routeDescriptionLabel2;
+        private Label routeLevelOfTrainingLabel2;
+        private Label routeDurationLabel2;
+        private Label routeLocationLabel2;
+        private Label routePriceLabel2;
+        private Label routeNameLabel2;
+        private Button routeDeleteButton;
+        private Button routeSaveButton2;
     }
 }

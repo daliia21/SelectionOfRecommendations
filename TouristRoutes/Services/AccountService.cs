@@ -1,19 +1,28 @@
-﻿
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using TouristRoutes.Dtos;
 using TouristRoutes.Models;
 using static BCrypt.Net.BCrypt;
 
 namespace TouristRoutes.Services
 {
+    /// <summary>
+    /// Сервис для входа/регистрации
+    /// </summary>
     public class AccountService
     {
         private AppDbContext _dbContext;
+
+        /// <summary>
+        /// Конструтор сервиса
+        /// </summary>
         public AccountService()
         {
             _dbContext = new AppDbContext();
         }
 
+        /// <summary>
+        /// Метод для регистрации
+        /// </summary>
         public (bool, string) Register(RegisterDto registerDto)
         {
             var dbUser = _dbContext.Users
@@ -52,6 +61,9 @@ namespace TouristRoutes.Services
             return (true, "");
         }
 
+        /// <summary>
+        /// Метод для добавления тегов пользователя
+        /// </summary>
         public (bool, string) AddTags(List<string> tags)
         {
             var dbTags = _dbContext.Tags
@@ -83,7 +95,6 @@ namespace TouristRoutes.Services
             }
 
             _dbContext.SaveChanges();
-
 
             return (true, "Ok");
         }
@@ -122,19 +133,14 @@ namespace TouristRoutes.Services
         }
 
         private bool CheckCorrectEmail(string email)
-        {            
-            try
-            {               
-                string pattern = @"^(([a-zA-Z0-9_\-\.%\+]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,})|("".+"")@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,}))$";
-                return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
-            }
-            catch
-            {
-                return false;
-            }
-
+        {                                     
+            var pattern = @"^(([a-zA-Z0-9_\-\.%\+]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,})|("".+"")@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,}))$";
+            return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
         }
 
+        /// <summary>
+        /// Метод для входа
+        /// </summary>
         public (bool, string) Login(LoginDto loginDto)
         {
             var dbUser = _dbContext.Users
@@ -147,7 +153,7 @@ namespace TouristRoutes.Services
             }
 
 
-            bool isValid = Verify(loginDto.Password, dbUser.PasswordHash);
+            var isValid = Verify(loginDto.Password, dbUser.PasswordHash);
 
             if (isValid)
             {

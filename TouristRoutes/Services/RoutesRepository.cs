@@ -1,25 +1,35 @@
-﻿
-
-using Microsoft.EntityFrameworkCore;
-using TouristRoutes.Dtos;
+﻿using Microsoft.EntityFrameworkCore;
 using TouristRoutes.Models;
 
 namespace TouristRoutes.Services
 {
+    /// <summary>
+    /// Сервис для управления маршрутами
+    /// </summary>
     public class RoutesRepository
     {
         private AppDbContext _dbContext;
+
+        /// <summary>
+        /// Конструктор сервиса
+        /// </summary>
         public RoutesRepository()
         {
             _dbContext = new AppDbContext();
         }
 
+        /// <summary>
+        /// Метод для добавления нового маршрута
+        /// </summary>
         public void AddNewRoute(Route route)
         {
             _dbContext.Routes.Add(route);
             _dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Метод для получения маршрута по ID
+        /// </summary>
         public Route GetRouteById(int Id)
         {
             var route = _dbContext.Routes
@@ -28,6 +38,9 @@ namespace TouristRoutes.Services
             return route;
         }
 
+        /// <summary>
+        /// Метод для получения маршрута с тегами
+        /// </summary>
         public Route GetRouteWithTags(int Id)
         {
             var route = _dbContext.Routes
@@ -38,11 +51,17 @@ namespace TouristRoutes.Services
             return route;
         }
 
+        /// <summary>
+        /// Метод для получения всех маршрутов
+        /// </summary>
         public List<Route> GetAllRoutes()
         {
             return _dbContext.Routes.ToList();
         }
 
+        /// <summary>
+        /// Метод для получения всех маршрутов с тегами 
+        /// </summary>
         public List<Route> GetAllRoutesWithTags()
         {
             var routes = _dbContext.Routes
@@ -51,6 +70,9 @@ namespace TouristRoutes.Services
             return routes;
         }
 
+        /// <summary>
+        /// Метод для обновления маршрута
+        /// </summary>
         public bool UpdateRoute(int Id, Route newRoute)
         {
             var route = _dbContext.Routes
@@ -74,6 +96,9 @@ namespace TouristRoutes.Services
             return true;
         }
 
+        /// <summary>
+        /// Метод для добавления тегов к маршруту
+        /// </summary>
         public void AddTagsToRoute(int Id, List<Tag> tags)
         {
             var route = _dbContext.Routes
@@ -83,7 +108,7 @@ namespace TouristRoutes.Services
 
             foreach (var tag in tags)
             {
-                RouteTag routeTag = new RouteTag
+                var routeTag = new RouteTag
                 {
                     RouteId = route.Id,
                     TagId = tag.Id,

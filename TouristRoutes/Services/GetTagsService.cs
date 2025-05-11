@@ -1,18 +1,24 @@
-﻿
-using TouristRoutes.Enums;
+﻿using TouristRoutes.Enums;
 using TouristRoutes.Models;
 
 namespace TouristRoutes.Services
 {
+    /// <summary>
+    /// Сервис для получения тегов
+    /// </summary>
     public class GetTagsService
     {
         private AppDbContext _dbContext;
 
+        /// <summary>
+        /// Конструтор сервиса
+        /// </summary>
         public GetTagsService()
         {
             _dbContext = new AppDbContext();
         }
 
+        //todo
         public List<Tag> GetAgeTags()
         {
             return _dbContext.Tags.Where(t => t.TagType == TagType.AgeTag).ToList();             

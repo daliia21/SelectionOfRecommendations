@@ -3,18 +3,38 @@ using TouristRoutes.Models;
 
 namespace TouristRoutes
 {
+    /// <summary>
+    /// Класс контекста базы данных
+    /// </summary>
     public class AppDbContext : DbContext
     {
+        /// <summary>
+        /// Таблица пользователей
+        /// </summary>
         public DbSet<AppUser> Users { get; set; }
-        public DbSet<Tag> Tags { get; set; }
-        public DbSet<AppUserTag> UserInfoTags { get; set; }
-        public DbSet<RouteTag> RouteInfoTags { get; set; }
-        public DbSet<Route> Routes { get; set; }
 
+        /// <summary>
+        /// Таблица тегов
+        /// </summary>
+        public DbSet<Tag> Tags { get; set; }
+
+        /// <summary>
+        /// Таблица тегов пользователей
+        /// </summary>
+        public DbSet<AppUserTag> UserInfoTags { get; set; }
+
+        /// <summary>
+        /// Таблица тегов маршрутов
+        /// </summary>
+        public DbSet<RouteTag> RouteInfoTags { get; set; }
+
+        /// <summary>
+        /// Таблица маршрутов
+        /// </summary>
+        public DbSet<Route> Routes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {        
-
             modelBuilder.Entity<Tag>()
                 .Property(t => t.TagType)
                 .HasConversion<int>();

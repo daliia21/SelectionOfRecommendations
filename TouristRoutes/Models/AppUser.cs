@@ -1,9 +1,7 @@
-﻿
-
-namespace TouristRoutes.Models
+﻿namespace TouristRoutes.Models
 {
     /// <summary>
-    /// Модель для хранения данных при регистрации
+    /// Модель для хранения данных пользователя при регистрации
     /// <summary>
     public class AppUser
     {
@@ -12,7 +10,9 @@ namespace TouristRoutes.Models
         /// </summary>
         public int Id { get; set; }
 
-
+        /// <summary>
+        /// Список тегов пользователя
+        /// </summary>
         public List<AppUserTag> UserTags { get; set; } = new List<AppUserTag>();
 
 
@@ -36,6 +36,9 @@ namespace TouristRoutes.Models
         /// </summary>
         public string PasswordHash { get; set; }
 
+        /// <summary>
+        /// Метка администратора
+        /// </summary>
         public bool IsAdmin { get; set; } = false;
     }
 }
