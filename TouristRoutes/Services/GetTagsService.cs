@@ -18,6 +18,11 @@ namespace TouristRoutes.Services
             _dbContext = new AppDbContext();
         }
 
+        public List<Tag> GetAllTags()
+        {
+            return _dbContext.Tags.ToList();
+        }
+
         //todo
         public List<Tag> GetAgeTags()
         {

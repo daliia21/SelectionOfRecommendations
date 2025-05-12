@@ -18,7 +18,7 @@
         /// <summary>
         /// Стоимость маршрута
         /// </summary>
-        public decimal RoutePrice { get; set; }
+        public string RoutePrice { get; set; }
 
         /// <summary>
         /// Расположение маршрута

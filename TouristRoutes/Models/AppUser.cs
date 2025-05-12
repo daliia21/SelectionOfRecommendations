@@ -15,7 +15,6 @@
         /// </summary>
         public List<AppUserTag> UserTags { get; set; } = new List<AppUserTag>();
 
-
         /// <summary>
         /// Имя пользователя
         /// </summary>
