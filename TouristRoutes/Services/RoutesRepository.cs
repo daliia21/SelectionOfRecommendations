@@ -129,5 +129,19 @@ namespace TouristRoutes.Services
             _dbContext.SaveChanges();
         }
 
+        /// <summary>
+        /// Метод для удаления маршрута по ID
+        /// </summary>
+        public void DeleteRouteById(Route route)
+        {
+            using (var context = new AppDbContext())
+            {
+                if (route != null)
+                {
+                    context.Routes.Remove(route);
+                    context.SaveChanges();
+                }
+            }
+        }
     }
 }
