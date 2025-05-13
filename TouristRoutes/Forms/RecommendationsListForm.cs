@@ -3,7 +3,7 @@
     /// <summary>
     /// Форма списка рекомендаций
     /// <summary>
-    public partial class RecommendationsListForm: Form
+    public partial class RecommendationsListForm : Form
     {
         /// <summary>
         /// Конструтор списка рекомендаций
@@ -11,6 +11,12 @@
         public RecommendationsListForm()
         {
             InitializeComponent();
+        }
+
+        private void openAdministratorFormButton_Click(object sender, EventArgs e)
+        {
+            var administratorForm = new AdministratorForm();
+            administratorForm.Show();
         }
     }
 }

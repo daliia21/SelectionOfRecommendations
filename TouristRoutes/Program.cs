@@ -30,7 +30,7 @@ namespace TouristRoutes
             ApplicationConfiguration.Initialize();
 
 
-            Application.Run(new AdministratorForm());
+            Application.Run(new RecommendationsListForm());
         }
     }
 }
