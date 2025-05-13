@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 using TouristRoutes.Models;
 using TouristRoutes.Services;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TouristRoutes.Forms
 {
@@ -29,36 +30,7 @@ namespace TouristRoutes.Forms
             routesListBox.DisplayMember = "RouteName";
             routesListBox.ValueMember = "Id";
 
-            selectedRoute = (Route)routesListBox.SelectedItem;
-
-            if (selectedRoute != null)
-            {
-                routeNameTextBox2.Text = selectedRoute.RouteName;
-                routePriceTextBox2.Text = selectedRoute.RoutePrice;
-                routeLocationTextBox2.Text = selectedRoute.RouteLocation;
-                routeDurationTextBox2.Text = selectedRoute.RouteDuration;
-                routeLevelOfTrainingTextBox2.Text = selectedRoute.LevelOfTraining;
-                routeDescriptionRichTextBox2.Text = selectedRoute.RouteDescription;
-                string basePath = Path.Combine(Application.StartupPath, "Images");
-                string imagePath = Path.Combine(basePath, selectedRoute.RouteImagePath);
-                if (File.Exists(imagePath))
-                {
-                    routePictureBox.Image = Image.FromFile(imagePath);
-                }
-            }
-
-            foreach (var tag in selectedRoute.RouteTags)
-            {
-                for (int i = 0; i < checkedListBox2.Items.Count; i++)
-                {
-                    var item = checkedListBox2.Items[i];
-                    if (tag.Tag.TagName == item.ToString())
-                    {
-                        checkedListBox2.SetItemChecked(i, true);
-                    }
-                }
-            }
-
+            
         }
 
         private void routeSaveButton_Click(object sender, EventArgs e)
@@ -95,6 +67,7 @@ namespace TouristRoutes.Forms
             _routesRepository.AddTagsToRoute(route.Id, routeTags);
 
             MessageBox.Show("Маршрут добавлен!");
+            RefreshRouteList();
         }
 
         private void pictureLoadButton_Click(object sender, EventArgs e)
@@ -118,7 +91,7 @@ namespace TouristRoutes.Forms
                 }
             }
         }
-       
+
 
         private void routeBackButton_Click(object sender, EventArgs e)
         {
@@ -197,14 +170,52 @@ namespace TouristRoutes.Forms
 
             var selectedRoute = (Route)routesListBox.SelectedItem;
             _routesRepository.UpdateRoute(selectedRoute.Id, route);
+            RefreshRouteList();
         }
 
         private void routeDeleteButton_Click(object sender, EventArgs e)
         {
-            var selectedRoute = (Route)routesListBox.SelectedItem;
+            selectedRoute = (Route)routesListBox.SelectedItem;
             _routesRepository.DeleteRouteById(selectedRoute);
-           
+
             RefreshRouteList();
+        }
+
+        
+        private void routesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedRoute = (Route)routesListBox.SelectedItem;
+
+            if (selectedRoute != null)
+            {
+                routeNameTextBox2.Text = selectedRoute.RouteName;
+                routePriceTextBox2.Text = selectedRoute.RoutePrice;
+                routeLocationTextBox2.Text = selectedRoute.RouteLocation;
+                routeDurationTextBox2.Text = selectedRoute.RouteDuration;
+                routeLevelOfTrainingTextBox2.Text = selectedRoute.LevelOfTraining;
+                routeDescriptionRichTextBox2.Text = selectedRoute.RouteDescription;
+                string basePath = Path.Combine(Application.StartupPath, "Images");
+                string imagePath = Path.Combine(basePath, selectedRoute.RouteImagePath);
+                if (File.Exists(imagePath))
+                {
+                    routePictureBox.Image = Image.FromFile(imagePath);
+                }
+            }
+
+            
+            foreach (var tag in selectedRoute.RouteTags)
+            {
+                if (tag.Tag == null) continue;
+
+                for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                {
+                    var item = checkedListBox2.Items[i];
+                    if (tag.Tag.TagName == item.ToString())
+                    {
+                        checkedListBox2.SetItemChecked(i, true);
+                    }
+                }
+            }
         }
 
         private void RefreshRouteList()
@@ -215,11 +226,8 @@ namespace TouristRoutes.Forms
             routesListBox.DisplayMember = "RouteName";
             routesListBox.ValueMember = "Id";
         }
-
-        /// <summary>
-        /// Метод для загрузки изображения
-        /// </summary>
-        public void LoadRouteImageToPictureBox(PictureBox pictureBox, string imagePath)
+       
+        private void LoadRouteImageToPictureBox(PictureBox pictureBox, string imagePath)
         {
             if (File.Exists(imagePath))
             {
