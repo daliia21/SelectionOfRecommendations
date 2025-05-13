@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Text.RegularExpressions;
 using TouristRoutes.Dtos;
 using TouristRoutes.Models;
 using static BCrypt.Net.BCrypt;
@@ -97,6 +98,23 @@ namespace TouristRoutes.Services
             _dbContext.SaveChanges();
 
             return (true, "Ok");
+        }
+
+        public List<Tag> GetAllCurrentUserTags()
+        {            
+            var currentUser = AppState.CurrentAppUser;
+            var userId = currentUser.Id;
+
+            var tagIds = _dbContext.UserInfoTags
+                .Where(ut => ut.AppUserId == userId)
+                .Select(ut => ut.TagId)
+                .ToList();
+
+            var tags = _dbContext.Tags
+                .Where(t => tagIds.Contains(t.Id))
+                .ToList();
+
+            return tags;
         }
 
         

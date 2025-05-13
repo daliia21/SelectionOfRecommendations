@@ -45,6 +45,7 @@ namespace TouristRoutes.Services
         {
             var route = _dbContext.Routes
                 .Include(route => route.RouteTags)
+                .ThenInclude(routeTag => routeTag.Tag)
                 .Where(r => r.Id == Id)
                 .FirstOrDefault();
                            
@@ -66,6 +67,7 @@ namespace TouristRoutes.Services
         {
             var routes = _dbContext.Routes
                 .Include(route => route.RouteTags)
+                .ThenInclude(routeTag => routeTag.Tag)
                 .ToList();
             return routes;
         }
@@ -77,6 +79,7 @@ namespace TouristRoutes.Services
         {
             var route = _dbContext.Routes
                 .Include(route => route.RouteTags)
+                .ThenInclude(routeTag => routeTag.Tag)
                 .Where(r => r.Id == Id)
                 .FirstOrDefault();
 
@@ -90,7 +93,9 @@ namespace TouristRoutes.Services
             route.RouteDescription = newRoute.RouteDescription;
             route.RouteDuration = newRoute.RouteDuration;
             route.RouteImagePath = newRoute.RouteImagePath;
-            
+
+            route.RouteTags.Clear();
+                        
             _dbContext.SaveChanges();
 
             return true;
@@ -103,6 +108,7 @@ namespace TouristRoutes.Services
         {
             var route = _dbContext.Routes
                 .Include(route => route.RouteTags)
+                .ThenInclude(routeTag => routeTag.Tag)
                 .Where(r => r.Id == Id)
                 .FirstOrDefault();
 

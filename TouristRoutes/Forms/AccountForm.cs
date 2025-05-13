@@ -37,7 +37,9 @@ namespace TouristRoutes
             if (result.Item1)
             {
                 MessageBox.Show("Аутентификация прошла успешно!");
-
+                this.Hide();
+                var recomendationForm = new RecommendationsListForm();
+                recomendationForm.Show();
             }
             else
             {
@@ -68,7 +70,7 @@ namespace TouristRoutes
                 MessageBox.Show("Регистрация прошла успешно!");
 
                 this.Hide();
-                AnketaForm anketaForm = new AnketaForm();
+                var anketaForm = new AnketaForm();
                 anketaForm.Show();
 
             }

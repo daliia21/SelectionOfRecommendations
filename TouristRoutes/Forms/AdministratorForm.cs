@@ -95,6 +95,7 @@ namespace TouristRoutes.Forms
 
         private void routeBackButton_Click(object sender, EventArgs e)
         {
+
             routeNameTextBox.Text = string.Empty;
             routePriceTextBox.Text = string.Empty;
             routeLocationTextBox.Text = string.Empty;
@@ -168,22 +169,60 @@ namespace TouristRoutes.Forms
                 RouteImagePath = _savedImageFileName
             };
 
+            var routeTags = new List<Tag>();
+
+            var _getTagsService = new GetTagsService();
+            var allTags = _getTagsService.GetAllTags();
+
+            foreach (var tg in checkedListBox1.CheckedItems)
+            {
+                foreach (var _tg in allTags)
+                {
+                    if ((string)tg == _tg.TagName)
+                    {
+                        routeTags.Add(_tg);
+                    }
+                }
+            }
+
             var selectedRoute = (Route)routesListBox.SelectedItem;
+
             _routesRepository.UpdateRoute(selectedRoute.Id, route);
+            _routesRepository.AddTagsToRoute(selectedRoute.Id, routeTags);
             RefreshRouteList();
         }
 
         private void routeDeleteButton_Click(object sender, EventArgs e)
         {
             selectedRoute = (Route)routesListBox.SelectedItem;
-            _routesRepository.DeleteRouteById(selectedRoute);
+            var result = MessageBox.Show(
+                "Вы уверены, что хотите удалить выбранный маршрут?",
+                "Подтверждение удаления",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
-            RefreshRouteList();
+            if (result == DialogResult.Yes)
+            {
+                selectedRoute = (Route)routesListBox.SelectedItem;
+                _routesRepository.DeleteRouteById(selectedRoute);
+                MessageBox.Show("Маршрут удален!");
+                RefreshRouteList();
+            }                
         }
 
         
         private void routesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            routePictureBox.Image?.Dispose();
+            routePictureBox.Image = null;
+
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                checkedListBox2.SetItemChecked(i, false);
+            }
+
+            _selectedImagePath = null;
+
             selectedRoute = (Route)routesListBox.SelectedItem;
 
             if (selectedRoute != null)
@@ -198,21 +237,23 @@ namespace TouristRoutes.Forms
                 string imagePath = Path.Combine(basePath, selectedRoute.RouteImagePath);
                 if (File.Exists(imagePath))
                 {
-                    routePictureBox.Image = Image.FromFile(imagePath);
+                    routePictureBox2.Image = Image.FromFile(imagePath);
                 }
             }
 
-            
-            foreach (var tag in selectedRoute.RouteTags)
+            if (selectedRoute != null)
             {
-                if (tag.Tag == null) continue;
-
-                for (int i = 0; i < checkedListBox2.Items.Count; i++)
+                foreach (var tag in selectedRoute.RouteTags)
                 {
-                    var item = checkedListBox2.Items[i];
-                    if (tag.Tag.TagName == item.ToString())
+                    if (tag.Tag == null) continue;
+
+                    for (int i = 0; i < checkedListBox2.Items.Count; i++)
                     {
-                        checkedListBox2.SetItemChecked(i, true);
+                        var item = checkedListBox2.Items[i];
+                        if (tag.Tag.TagName == item.ToString())
+                        {
+                            checkedListBox2.SetItemChecked(i, true);
+                        }
                     }
                 }
             }

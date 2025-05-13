@@ -57,7 +57,6 @@
             routeDeleteButton = new Button();
             routeSaveButton2 = new Button();
             routePictureLabel2 = new Label();
-            routePictureBox2 = new PictureBox();
             routeDescriptionRichTextBox2 = new RichTextBox();
             routeLevelOfTrainingTextBox2 = new TextBox();
             routeDurationTextBox2 = new TextBox();
@@ -73,12 +72,13 @@
             panel1 = new Panel();
             routeListBoxLabel = new Label();
             routesListBox = new ListBox();
+            routePictureBox2 = new PictureBox();
             administratorsTabControl.SuspendLayout();
             addRouteTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)routePictureBox).BeginInit();
             updateRouteTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)routePictureBox2).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)routePictureBox2).BeginInit();
             SuspendLayout();
             // 
             // administratorsTabControl
@@ -438,16 +438,6 @@
             routePictureLabel2.TabIndex = 28;
             routePictureLabel2.Text = "Фото маршрута:";
             // 
-            // routePictureBox2
-            // 
-            routePictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            routePictureBox2.BackColor = Color.White;
-            routePictureBox2.Location = new Point(426, 938);
-            routePictureBox2.Name = "routePictureBox2";
-            routePictureBox2.Size = new Size(403, 400);
-            routePictureBox2.TabIndex = 27;
-            routePictureBox2.TabStop = false;
-            // 
             // routeDescriptionRichTextBox2
             // 
             routeDescriptionRichTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -594,6 +584,16 @@
             routesListBox.TabIndex = 0;
             routesListBox.SelectedIndexChanged += routesListBox_SelectedIndexChanged;
             // 
+            // routePictureBox2
+            // 
+            routePictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            routePictureBox2.BackColor = Color.White;
+            routePictureBox2.Location = new Point(426, 938);
+            routePictureBox2.Name = "routePictureBox2";
+            routePictureBox2.Size = new Size(403, 400);
+            routePictureBox2.TabIndex = 27;
+            routePictureBox2.TabStop = false;
+            // 
             // AdministratorForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -609,9 +609,9 @@
             ((System.ComponentModel.ISupportInitialize)routePictureBox).EndInit();
             updateRouteTabPage.ResumeLayout(false);
             updateRouteTabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)routePictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)routePictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -640,7 +640,6 @@
         private ListBox routesListBox;
         private Panel panel1;
         private Label routePictureLabel2;
-        private PictureBox routePictureBox2;
         private RichTextBox routeDescriptionRichTextBox2;
         private TextBox routeLevelOfTrainingTextBox2;
         private TextBox routeDurationTextBox2;
@@ -662,5 +661,6 @@
         private Button pictureLoadButton;
         private Button addNewRouteButton;
         private Button pictureLoadButton2;
+        private PictureBox routePictureBox2;
     }
 }

@@ -206,7 +206,7 @@ namespace TouristRoutes.Forms
 
             MessageBox.Show("Ваши данные успешно сохранены");
             this.Hide();
-            RecommendationsListForm recommendationsListForm = new RecommendationsListForm();
+            var recommendationsListForm = new RecommendationsListForm();
             recommendationsListForm.Show();
         }
 
