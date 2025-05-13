@@ -38,8 +38,8 @@ namespace TouristRoutes
             {
                 MessageBox.Show("Аутентификация прошла успешно!");
                 this.Hide();
-                var anketaForm = new AnketaForm();
-                anketaForm.Show();
+                var recomendationForm = new RecommendationsListForm();
+                recomendationForm.Show();
             }
             else
             {

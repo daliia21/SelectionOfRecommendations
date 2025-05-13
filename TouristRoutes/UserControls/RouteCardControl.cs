@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using TouristRoutes.Models;
 
 namespace TouristRoutes
 {
@@ -15,6 +7,22 @@ namespace TouristRoutes
         public RouteCardControl()
         {
             InitializeComponent();
+        }
+
+        public void SetRoute(Route route)
+        {
+            routeNameLabel.Text = route.RouteName;
+            routePriceLabel.Text = route.RoutePrice;
+            routeLocationLabel.Text = route.RouteLocation;
+            routeDurationLabel.Text = route.RouteDuration;
+            routeLevelOfTrainingLabel.Text = route.LevelOfTraining;
+            routeDescriptionRichTextBox.Text = route.RouteDescription;
+
+            string imagePath = Path.Combine(Application.StartupPath, "Images", route.RouteImagePath);
+            if (File.Exists(imagePath))
+            {
+                pictureBox1.Image = Image.FromFile(imagePath);
+            }
         }
     }
 }

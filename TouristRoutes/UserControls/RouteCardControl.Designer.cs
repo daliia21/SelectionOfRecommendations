@@ -52,10 +52,11 @@
             // routeDescriptionRichTextBox
             // 
             routeDescriptionRichTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            routeDescriptionRichTextBox.Enabled = false;
             routeDescriptionRichTextBox.Location = new Point(582, 260);
             routeDescriptionRichTextBox.Name = "routeDescriptionRichTextBox";
             routeDescriptionRichTextBox.ReadOnly = true;
-            routeDescriptionRichTextBox.Size = new Size(752, 143);
+            routeDescriptionRichTextBox.Size = new Size(1209, 143);
             routeDescriptionRichTextBox.TabIndex = 2;
             routeDescriptionRichTextBox.Text = "";
             // 
@@ -65,13 +66,13 @@
             panel1.Controls.Add(routeNameLabel);
             panel1.Location = new Point(582, 48);
             panel1.Name = "panel1";
-            panel1.Size = new Size(752, 49);
+            panel1.Size = new Size(1209, 48);
             panel1.TabIndex = 1;
             // 
             // routeNameLabel
             // 
             routeNameLabel.AutoSize = true;
-            routeNameLabel.Location = new Point(300, 14);
+            routeNameLabel.Location = new Point(500, 8);
             routeNameLabel.Name = "routeNameLabel";
             routeNameLabel.Size = new Size(117, 32);
             routeNameLabel.TabIndex = 3;
@@ -98,7 +99,7 @@
             // routeLocationLabel
             // 
             routeLocationLabel.AutoSize = true;
-            routeLocationLabel.Location = new Point(938, 126);
+            routeLocationLabel.Location = new Point(1235, 126);
             routeLocationLabel.Name = "routeLocationLabel";
             routeLocationLabel.Size = new Size(178, 32);
             routeLocationLabel.TabIndex = 5;
@@ -107,7 +108,7 @@
             // routeLevelOfTrainingLabel
             // 
             routeLevelOfTrainingLabel.AutoSize = true;
-            routeLevelOfTrainingLabel.Location = new Point(938, 197);
+            routeLevelOfTrainingLabel.Location = new Point(1235, 197);
             routeLevelOfTrainingLabel.Name = "routeLevelOfTrainingLabel";
             routeLevelOfTrainingLabel.Size = new Size(240, 32);
             routeLevelOfTrainingLabel.TabIndex = 6;
@@ -126,7 +127,7 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Name = "RouteCardControl";
-            Size = new Size(1393, 428);
+            Size = new Size(1876, 428);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
