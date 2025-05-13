@@ -1,15 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TouristRoutes.Dtos;
-using TouristRoutes.Models;
+﻿using TouristRoutes.Enums;
 using TouristRoutes.Services;
 
 namespace TouristRoutes.Forms
@@ -42,7 +31,7 @@ namespace TouristRoutes.Forms
             double verticalSpacing = 40 * k;
 
             _getTagsService = new GetTagsService();
-            var ageTags = _getTagsService.GetAgeTags();
+            var ageTags = _getTagsService.GetTagsForTagType(TagType.AgeTag);
            
             
             foreach (var ageTag in ageTags)
@@ -62,7 +51,7 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            var budgetTags = _getTagsService.GetBudgetTags();
+            var budgetTags = _getTagsService.GetTagsForTagType(TagType.BudgetTag);
             
             foreach (var budgetTag in budgetTags)
             {
@@ -81,7 +70,7 @@ namespace TouristRoutes.Forms
 
 
             yPosition = 50 * k;
-            var durationTags = _getTagsService.GetDurationTags();
+            var durationTags = _getTagsService.GetTagsForTagType(TagType.DurationTag);
 
             foreach (var durationTag in durationTags)
             {
@@ -100,7 +89,7 @@ namespace TouristRoutes.Forms
 
 
             yPosition = 50 * k;
-            var levelOfTrainingTags = _getTagsService.GetLevelOfTrainingTags();
+            var levelOfTrainingTags = _getTagsService.GetTagsForTagType(TagType.LevelOfTrainingTag);
 
             foreach (var levelOfTrainingTag in levelOfTrainingTags)
             {
@@ -119,7 +108,7 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            var locationTags = _getTagsService.GetLocationTags();
+            var locationTags = _getTagsService.GetTagsForTagType(TagType.LocationTag);
 
             foreach (var locationTag in locationTags)
             {
@@ -136,7 +125,7 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            var purposeTags = _getTagsService.GetPurposeTags();
+            var purposeTags = _getTagsService.GetTagsForTagType(TagType.PurposeTag);
 
             foreach (var purposeTag in purposeTags)
             {
@@ -155,7 +144,7 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            var seasonTags = _getTagsService.GetSeasonTags();
+            var seasonTags = _getTagsService.GetTagsForTagType(TagType.SeasonTag);
          
             foreach (var seasonTag in seasonTags)
             {
@@ -172,7 +161,7 @@ namespace TouristRoutes.Forms
 
             
             yPosition = 50 * k;
-            var typeOfTourismTags = _getTagsService.GetTypeOfTourismTags();
+            var typeOfTourismTags = _getTagsService.GetTagsForTagType(TagType.TypeOfTourismTag);
 
             foreach (var typeOfTourismTag in typeOfTourismTags)
             {

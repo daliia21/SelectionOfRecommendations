@@ -592,6 +592,7 @@
             routesListBox.Name = "routesListBox";
             routesListBox.Size = new Size(344, 1220);
             routesListBox.TabIndex = 0;
+            routesListBox.SelectedIndexChanged += routesListBox_SelectedIndexChanged;
             // 
             // AdministratorForm
             // 
