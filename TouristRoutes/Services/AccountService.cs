@@ -101,7 +101,7 @@ namespace TouristRoutes.Services
             return (true, "Ok");
         }
 
-        public List<Tag> GetAllCurrentUserTags()
+        public List<Tag> GetAllTagsForCurrentUser()
         {            
             var currentUser = AppState.CurrentAppUser;
             var userId = currentUser.Id;

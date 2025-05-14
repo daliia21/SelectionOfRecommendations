@@ -8,7 +8,7 @@ namespace TouristRoutes.Forms
     /// <summary>
     public partial class RecommendationsListForm : Form
     {
-        private RecomendationListService _recomendationListService;
+        private RoutesSortService _recomendationListService;
 
         /// <summary>
         /// Конструтор списка рекомендаций
@@ -22,7 +22,7 @@ namespace TouristRoutes.Forms
                 button1.Visible = false;
             }
 
-            _recomendationListService = new RecomendationListService();
+            _recomendationListService = new RoutesSortService();
             var routeList = _recomendationListService.SortedRoutesByTagCount();
             foreach (var route in routeList)
             {
