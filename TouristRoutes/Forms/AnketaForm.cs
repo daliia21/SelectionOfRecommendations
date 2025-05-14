@@ -1,5 +1,6 @@
 ﻿using TouristRoutes.Enums;
 using TouristRoutes.Services;
+using static TouristRoutes.Properties.Resources;
 
 namespace TouristRoutes.Forms
 {
@@ -8,8 +9,8 @@ namespace TouristRoutes.Forms
     /// </summary>
     public partial class AnketaForm : Form
     {
-        AccountService _accountServise;
-        GetTagsService _getTagsService;
+        private AccountService _accountServise;
+        private GetTagsService _getTagsService;
 
         /// <summary>
         /// Конструктор формы для заполнения анкеты
@@ -18,7 +19,7 @@ namespace TouristRoutes.Forms
         {
             InitializeComponent();
 
-            float curDpi;
+            double curDpi;
             using (Graphics g = this.CreateGraphics())
             {
                 curDpi = g.DpiY;
@@ -55,7 +56,7 @@ namespace TouristRoutes.Forms
             
             foreach (var budgetTag in budgetTags)
             {
-                CheckBox budgetCheckBox = new CheckBox
+                var budgetCheckBox = new CheckBox
                 {
                     Text = budgetTag.TagName,
                     Location = new Point((int)(20 * k), (int)yPosition),
@@ -179,9 +180,7 @@ namespace TouristRoutes.Forms
             _accountServise = new AccountService();
         }
 
-        /// <summary>
-        /// Обработка нажатия на кнопку сохранения анкеты
-        /// </summary>
+
         private void savedAnketaButton_Click(object sender, EventArgs e)
         {
             var groupBoxes = new List<GroupBox> { ageGroupBox, budgetGroupBox, durationGroupBox,
@@ -204,15 +203,12 @@ namespace TouristRoutes.Forms
 
             _accountServise.AddTags(tagNames);
 
-            MessageBox.Show("Ваши данные успешно сохранены");
+            MessageBox.Show(AnketaDataSavedMessage);
             this.Hide();
             var recommendationsListForm = new RecommendationsListForm();
             recommendationsListForm.Show();
         }
 
-        /// <summary>
-        /// Метод, позволяющий выбирать только один пункт из категории
-        /// </summary>
         private void Group_CheckedChanged(object sender, EventArgs e)
         {
             var currentCheckBox = sender as CheckBox;

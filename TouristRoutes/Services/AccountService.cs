@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using TouristRoutes.Dtos;
 using TouristRoutes.Models;
 using static BCrypt.Net.BCrypt;
+using static TouristRoutes.Properties.Resources;
 
 namespace TouristRoutes.Services
 {
@@ -32,17 +33,17 @@ namespace TouristRoutes.Services
 
             if (dbUser != null)
             {
-                return (false, "Пользователь с таким email уже есть");
+                return (false, EmailRepeatMessage);
             }
 
             if (!CheckComplexityPassword(registerDto.Password))
             {
-                return (false, "Ненадежный пароль");
+                return (false, PasswordUnsecureMessage);
             }
 
             if (!CheckCorrectEmail(registerDto.Email))
             {
-                return (false, "Неправильный формат email");
+                return (false, EmailUncorrectMessage);
             }
 
             var user = new AppUser
@@ -75,12 +76,12 @@ namespace TouristRoutes.Services
 
             if (currentUser == null)
             {
-                return (false, "Текущий пользователь не вошел в систему");
+                return (false, UserUnloggedMessage);
             }
 
             if (dbTags.Count != tags.Count)
             {
-                return (false, "Не все теги найдены");
+                return (false, TagsNotFindMessage);
             }
 
             foreach (var tag in dbTags)
@@ -100,7 +101,7 @@ namespace TouristRoutes.Services
             return (true, "Ok");
         }
 
-        public List<Tag> GetAllCurrentUserTags()
+        public List<Tag> GetAllTagsForCurrentUser()
         {            
             var currentUser = AppState.CurrentAppUser;
             var userId = currentUser.Id;
@@ -120,7 +121,7 @@ namespace TouristRoutes.Services
         
         private bool CheckComplexityPassword(string password)
         {
-            string specialSymbols = "!@#$%^&*()~`;:?";
+            string specialSymbols = SpecialSymbols;
             if (password.Length < 8)
             {
                 return false;
@@ -167,7 +168,7 @@ namespace TouristRoutes.Services
 
             if (dbUser == null)
             {
-                return (false, "Нет такого пользователя");
+                return (false, UserUnregisterMessage);
             }
 
 
@@ -182,7 +183,7 @@ namespace TouristRoutes.Services
                 return (true, "");
             } else
             {
-                return (false, "Неверный пароль");
+                return (false, PasswordInvalidMessage);
             }
         }
     }

@@ -1,6 +1,7 @@
 using TouristRoutes.Dtos;
 using TouristRoutes.Forms;
 using TouristRoutes.Services;
+using static TouristRoutes.Properties.Resources;
 
 namespace TouristRoutes
 {
@@ -21,9 +22,6 @@ namespace TouristRoutes
             _accountService = new AccountService();
         }
 
-        /// <summary>
-        /// Обработка нажатия на кнопку входа
-        /// </summary>
         private void logIn_Click(object sender, EventArgs e)
         {
             var loginDto = new LoginDto
@@ -36,7 +34,7 @@ namespace TouristRoutes
 
             if (result.Item1)
             {
-                MessageBox.Show("Аутентификация прошла успешно!");
+                MessageBox.Show(AuthMessage);
                 this.Hide();
                 var recomendationForm = new RecommendationsListForm();
                 recomendationForm.Show();
@@ -45,14 +43,9 @@ namespace TouristRoutes
             {
                 MessageBox.Show(result.Item2);
             }
-
-
-
         }
 
-        /// <summary>
-        /// Обработка нажатия на кнопку регистрации
-        /// </summary>
+
         private void registration_Click(object sender, EventArgs e)
         {
             var registerDto = new RegisterDto
@@ -67,12 +60,11 @@ namespace TouristRoutes
 
             if (result.Item1)
             {
-                MessageBox.Show("Регистрация прошла успешно!");
+                MessageBox.Show(RegisterMessage);
 
                 this.Hide();
                 var anketaForm = new AnketaForm();
                 anketaForm.Show();
-
             }
             else
             {

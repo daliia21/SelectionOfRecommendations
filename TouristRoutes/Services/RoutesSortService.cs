@@ -5,7 +5,7 @@ namespace TouristRoutes.Services
     /// <summary>
     /// Сервис для создания списка рекомендаций
     /// </summary>
-    public class RecomendationListService
+    public class RoutesSortService
     {
         private RoutesRepository _routeRepository;
         private AccountService _accountService;
@@ -13,16 +13,19 @@ namespace TouristRoutes.Services
         /// <summary>
         /// Конструктор сервиса
         /// </summary>
-        public RecomendationListService()
+        public RoutesSortService()
         {
             _routeRepository = new RoutesRepository();
             _accountService = new AccountService();
         }
 
+        /// <summary>
+        /// Метод для выдачи списка рекомендаций по количеству совпавших тегов
+        /// </summary>
         public List<Route> SortedRoutesByTagCount()
         {            
             var routeList = _routeRepository.GetAllRoutesWithTags();
-            var currentUserTags = _accountService.GetAllCurrentUserTags();
+            var currentUserTags = _accountService.GetAllTagsForCurrentUser();
             var userTagIds = new HashSet<int>(currentUserTags.Select(t => t.Id));
 
             var sortedRoutes = routeList
@@ -33,7 +36,5 @@ namespace TouristRoutes.Services
             return sortedRoutes;
 
         }
-
-
     }
 }
