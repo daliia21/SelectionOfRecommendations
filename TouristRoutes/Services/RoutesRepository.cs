@@ -120,7 +120,6 @@ namespace TouristRoutes.Services
                     TagId = tag.Id,
                     Route = route,
                     Tag = tag
-
                 };
 
                 bool isAlreadyLinked = route.RouteTags
@@ -129,8 +128,7 @@ namespace TouristRoutes.Services
                 if (!isAlreadyLinked)
                 {
                     route.RouteTags.Add(routeTag);
-                }
-                
+                }                
             }
             _dbContext.SaveChanges();
         }

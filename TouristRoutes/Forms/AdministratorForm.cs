@@ -10,9 +10,9 @@ namespace TouristRoutes.Forms
     /// </summary>
     public partial class AdministratorForm : Form
     {
-        RoutesRepository _routesRepository;
-        List<Route> routeList;
-        Route selectedRoute;
+        private RoutesRepository _routesRepository;
+        private List<Route> _routeList;
+        private Route _selectedRoute;
         private string _selectedImagePath;
         private string _savedImageFileName;
 
@@ -24,9 +24,9 @@ namespace TouristRoutes.Forms
             InitializeComponent();
 
             _routesRepository = new RoutesRepository();
-            routeList = _routesRepository.GetAllRoutesWithTags();
+            _routeList = _routesRepository.GetAllRoutesWithTags();
 
-            routesListBox.DataSource = routeList;
+            routesListBox.DataSource = _routeList;
             routesListBox.DisplayMember = "RouteName";
             routesListBox.ValueMember = "Id";
 
@@ -79,11 +79,11 @@ namespace TouristRoutes.Forms
                 {
                     _selectedImagePath = ofd.FileName;
 
-                    string imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
+                    var imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
                     Directory.CreateDirectory(imagesFolder);
 
                     _savedImageFileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
-                    string destinationPath = Path.Combine(imagesFolder, _savedImageFileName);
+                    var destinationPath = Path.Combine(imagesFolder, _savedImageFileName);
 
                     File.Copy(_selectedImagePath, destinationPath, overwrite: true);
 
@@ -95,7 +95,6 @@ namespace TouristRoutes.Forms
 
         private void routeBackButton_Click(object sender, EventArgs e)
         {
-
             routeNameTextBox.Text = string.Empty;
             routePriceTextBox.Text = string.Empty;
             routeLocationTextBox.Text = string.Empty;
@@ -143,11 +142,11 @@ namespace TouristRoutes.Forms
                 {
                     _selectedImagePath = ofd.FileName;
 
-                    string imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
+                    var imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
                     Directory.CreateDirectory(imagesFolder);
 
                     _savedImageFileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
-                    string destinationPath = Path.Combine(imagesFolder, _savedImageFileName);
+                    var destinationPath = Path.Combine(imagesFolder, _savedImageFileName);
 
                     File.Copy(_selectedImagePath, destinationPath, overwrite: true);
 
@@ -194,7 +193,7 @@ namespace TouristRoutes.Forms
 
         private void routeDeleteButton_Click(object sender, EventArgs e)
         {
-            selectedRoute = (Route)routesListBox.SelectedItem;
+            _selectedRoute = (Route)routesListBox.SelectedItem;
             var result = MessageBox.Show(
                 RouteDeleteConfirmMessage,
                 RouteDeleteConfirm,
@@ -203,14 +202,14 @@ namespace TouristRoutes.Forms
 
             if (result == DialogResult.Yes)
             {
-                selectedRoute = (Route)routesListBox.SelectedItem;
-                _routesRepository.DeleteRouteById(selectedRoute);
+                _selectedRoute = (Route)routesListBox.SelectedItem;
+                _routesRepository.DeleteRouteById(_selectedRoute);
                 MessageBox.Show(RouteDeleteMessage);
                 RefreshRouteList();
             }                
         }
 
-        
+       
         private void routesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             routePictureBox.Image?.Dispose();
@@ -223,27 +222,27 @@ namespace TouristRoutes.Forms
 
             _selectedImagePath = null;
 
-            selectedRoute = (Route)routesListBox.SelectedItem;
+            _selectedRoute = (Route)routesListBox.SelectedItem;
 
-            if (selectedRoute != null)
+            if (_selectedRoute != null)
             {
-                routeNameTextBox2.Text = selectedRoute.RouteName;
-                routePriceTextBox2.Text = selectedRoute.RoutePrice;
-                routeLocationTextBox2.Text = selectedRoute.RouteLocation;
-                routeDurationTextBox2.Text = selectedRoute.RouteDuration;
-                routeLevelOfTrainingTextBox2.Text = selectedRoute.LevelOfTraining;
-                routeDescriptionRichTextBox2.Text = selectedRoute.RouteDescription;
-                string basePath = Path.Combine(Application.StartupPath, RoutePicturesFileName);
-                string imagePath = Path.Combine(basePath, selectedRoute.RouteImagePath);
+                routeNameTextBox2.Text = _selectedRoute.RouteName;
+                routePriceTextBox2.Text = _selectedRoute.RoutePrice;
+                routeLocationTextBox2.Text = _selectedRoute.RouteLocation;
+                routeDurationTextBox2.Text = _selectedRoute.RouteDuration;
+                routeLevelOfTrainingTextBox2.Text = _selectedRoute.LevelOfTraining;
+                routeDescriptionRichTextBox2.Text = _selectedRoute.RouteDescription;
+                var basePath = Path.Combine(Application.StartupPath, RoutePicturesFileName);
+                var imagePath = Path.Combine(basePath, _selectedRoute.RouteImagePath);
                 if (File.Exists(imagePath))
                 {
                     routePictureBox2.Image = Image.FromFile(imagePath);
                 }
             }
 
-            if (selectedRoute != null)
+            if (_selectedRoute != null)
             {
-                foreach (var tag in selectedRoute.RouteTags)
+                foreach (var tag in _selectedRoute.RouteTags)
                 {
                     if (tag.Tag == null) continue;
 

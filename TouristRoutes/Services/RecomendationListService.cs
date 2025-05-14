@@ -19,6 +19,9 @@ namespace TouristRoutes.Services
             _accountService = new AccountService();
         }
 
+        /// <summary>
+        /// Метод для выдачи списка рекомендаций по количеству совпавших тегов
+        /// </summary>
         public List<Route> SortedRoutesByTagCount()
         {            
             var routeList = _routeRepository.GetAllRoutesWithTags();
@@ -33,7 +36,5 @@ namespace TouristRoutes.Services
             return sortedRoutes;
 
         }
-
-
     }
 }

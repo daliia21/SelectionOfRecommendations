@@ -22,9 +22,6 @@ namespace TouristRoutes
             _accountService = new AccountService();
         }
 
-        /// <summary>
-        /// Обработка нажатия на кнопку входа
-        /// </summary>
         private void logIn_Click(object sender, EventArgs e)
         {
             var loginDto = new LoginDto
@@ -46,14 +43,9 @@ namespace TouristRoutes
             {
                 MessageBox.Show(result.Item2);
             }
-
-
-
         }
 
-        /// <summary>
-        /// Обработка нажатия на кнопку регистрации
-        /// </summary>
+
         private void registration_Click(object sender, EventArgs e)
         {
             var registerDto = new RegisterDto
@@ -73,7 +65,6 @@ namespace TouristRoutes
                 this.Hide();
                 var anketaForm = new AnketaForm();
                 anketaForm.Show();
-
             }
             else
             {
