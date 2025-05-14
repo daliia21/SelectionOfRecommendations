@@ -33,10 +33,8 @@ namespace TouristRoutes.Services
 
             FillTagsForTagType(
                 new List<string> { "1-3 дня", "5-7 дней", "10+ дней" },
-                TagType.DurationTag);
 
             FillTagsForTagType(
-                new List<string> { "Новичок", "Любитель", "Профессионал" },
                 TagType.LevelOfTrainingTag);
 
             FillTagsForTagType(
@@ -44,7 +42,6 @@ namespace TouristRoutes.Services
                 TagType.LocationTag);
 
             FillTagsForTagType(
-                new List<string> { "Отдых", "Обучение", "Культурное обогащение" },
                 TagType.PurposeTag);
 
             FillTagsForTagType(
