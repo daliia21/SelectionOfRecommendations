@@ -59,5 +59,149 @@ namespace TouristRoutes.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ваши данные успешно сохранены!.
+        /// </summary>
+        internal static string AnketaDataSavedMessage {
+            get {
+                return ResourceManager.GetString("AnketaDataSavedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Аутентификация прошла успешно!.
+        /// </summary>
+        internal static string AuthMessage {
+            get {
+                return ResourceManager.GetString("AuthMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пользователь с таким email уже есть.
+        /// </summary>
+        internal static string EmailRepeatMessage {
+            get {
+                return ResourceManager.GetString("EmailRepeatMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Неправильный формат email.
+        /// </summary>
+        internal static string EmailUncorrectMessage {
+            get {
+                return ResourceManager.GetString("EmailUncorrectMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Неверный пароль.
+        /// </summary>
+        internal static string PasswordInvalidMessage {
+            get {
+                return ResourceManager.GetString("PasswordInvalidMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ненадежный пароль.
+        /// </summary>
+        internal static string PasswordUnsecureMessage {
+            get {
+                return ResourceManager.GetString("PasswordUnsecureMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Регистрация прошла успешно!.
+        /// </summary>
+        internal static string RegisterMessage {
+            get {
+                return ResourceManager.GetString("RegisterMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Маршрут добавлен!.
+        /// </summary>
+        internal static string RouteAddMessage {
+            get {
+                return ResourceManager.GetString("RouteAddMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Подтверждение удаления.
+        /// </summary>
+        internal static string RouteDeleteConfirm {
+            get {
+                return ResourceManager.GetString("RouteDeleteConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы уверены, что хотите удалить выбранный маршрут?.
+        /// </summary>
+        internal static string RouteDeleteConfirmMessage {
+            get {
+                return ResourceManager.GetString("RouteDeleteConfirmMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Маршрут удален!.
+        /// </summary>
+        internal static string RouteDeleteMessage {
+            get {
+                return ResourceManager.GetString("RouteDeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Images.
+        /// </summary>
+        internal static string RoutePicturesFileName {
+            get {
+                return ResourceManager.GetString("RoutePicturesFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на &quot;!@#$%^&amp;*()~`;:?&quot;.
+        /// </summary>
+        internal static string SpecialSymbols {
+            get {
+                return ResourceManager.GetString("SpecialSymbols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не все теги найдены.
+        /// </summary>
+        internal static string TagsNotFindMessage {
+            get {
+                return ResourceManager.GetString("TagsNotFindMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Текущий пользователь не вошел в систему.
+        /// </summary>
+        internal static string UserUnloggedMessage {
+            get {
+                return ResourceManager.GetString("UserUnloggedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Нет такого пользователя.
+        /// </summary>
+        internal static string UserUnregisterMessage {
+            get {
+                return ResourceManager.GetString("UserUnregisterMessage", resourceCulture);
+            }
+        }
     }
 }

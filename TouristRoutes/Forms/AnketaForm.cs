@@ -1,5 +1,6 @@
 ﻿using TouristRoutes.Enums;
 using TouristRoutes.Services;
+using static TouristRoutes.Properties.Resources;
 
 namespace TouristRoutes.Forms
 {
@@ -204,7 +205,7 @@ namespace TouristRoutes.Forms
 
             _accountServise.AddTags(tagNames);
 
-            MessageBox.Show("Ваши данные успешно сохранены");
+            MessageBox.Show(AnketaDataSavedMessage);
             this.Hide();
             var recommendationsListForm = new RecommendationsListForm();
             recommendationsListForm.Show();

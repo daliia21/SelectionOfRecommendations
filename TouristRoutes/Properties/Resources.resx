@@ -117,4 +117,68 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AnketaDataSavedMessage" xml:space="preserve">
+    <value>Ваши данные успешно сохранены!</value>
+    <comment>AnketaForm</comment>
+  </data>
+  <data name="AuthMessage" xml:space="preserve">
+    <value>Аутентификация прошла успешно!</value>
+    <comment>AccountForm</comment>
+  </data>
+  <data name="EmailRepeatMessage" xml:space="preserve">
+    <value>Пользователь с таким email уже есть</value>
+    <comment>AccountService</comment>
+  </data>
+  <data name="EmailUncorrectMessage" xml:space="preserve">
+    <value>Неправильный формат email</value>
+    <comment>AccountService</comment>
+  </data>
+  <data name="PasswordInvalidMessage" xml:space="preserve">
+    <value>Неверный пароль</value>
+    <comment>AccountService</comment>
+  </data>
+  <data name="PasswordUnsecureMessage" xml:space="preserve">
+    <value>Ненадежный пароль</value>
+    <comment>AccountService</comment>
+  </data>
+  <data name="RegisterMessage" xml:space="preserve">
+    <value>Регистрация прошла успешно!</value>
+    <comment>AccountForm</comment>
+  </data>
+  <data name="RouteAddMessage" xml:space="preserve">
+    <value>Маршрут добавлен!</value>
+    <comment>AdministratorForm</comment>
+  </data>
+  <data name="RouteDeleteConfirm" xml:space="preserve">
+    <value>Подтверждение удаления</value>
+    <comment>AdministratorForm</comment>
+  </data>
+  <data name="RouteDeleteConfirmMessage" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить выбранный маршрут?</value>
+    <comment>AdministratorForm</comment>
+  </data>
+  <data name="RouteDeleteMessage" xml:space="preserve">
+    <value>Маршрут удален!</value>
+    <comment>AdministratorForm</comment>
+  </data>
+  <data name="RoutePicturesFileName" xml:space="preserve">
+    <value>Images</value>
+    <comment>AdministratorForm</comment>
+  </data>
+  <data name="SpecialSymbols" xml:space="preserve">
+    <value>"!@#$%^&amp;*()~`;:?"</value>
+    <comment>AccountService</comment>
+  </data>
+  <data name="TagsNotFindMessage" xml:space="preserve">
+    <value>Не все теги найдены</value>
+    <comment>AccountService</comment>
+  </data>
+  <data name="UserUnloggedMessage" xml:space="preserve">
+    <value>Текущий пользователь не вошел в систему</value>
+    <comment>AccountService</comment>
+  </data>
+  <data name="UserUnregisterMessage" xml:space="preserve">
+    <value>Нет такого пользователя</value>
+    <comment>AccountService</comment>
+  </data>
 </root>

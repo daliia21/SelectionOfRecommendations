@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using TouristRoutes.Models;
 using TouristRoutes.Services;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static TouristRoutes.Properties.Resources;
 
 namespace TouristRoutes.Forms
 {
@@ -66,7 +66,7 @@ namespace TouristRoutes.Forms
 
             _routesRepository.AddTagsToRoute(route.Id, routeTags);
 
-            MessageBox.Show("Маршрут добавлен!");
+            MessageBox.Show(RouteAddMessage);
             RefreshRouteList();
         }
 
@@ -79,7 +79,7 @@ namespace TouristRoutes.Forms
                 {
                     _selectedImagePath = ofd.FileName;
 
-                    string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                    string imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
                     Directory.CreateDirectory(imagesFolder);
 
                     _savedImageFileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
@@ -143,7 +143,7 @@ namespace TouristRoutes.Forms
                 {
                     _selectedImagePath = ofd.FileName;
 
-                    string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                    string imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
                     Directory.CreateDirectory(imagesFolder);
 
                     _savedImageFileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
@@ -196,8 +196,8 @@ namespace TouristRoutes.Forms
         {
             selectedRoute = (Route)routesListBox.SelectedItem;
             var result = MessageBox.Show(
-                "Вы уверены, что хотите удалить выбранный маршрут?",
-                "Подтверждение удаления",
+                RouteDeleteConfirmMessage,
+                RouteDeleteConfirm,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
@@ -205,7 +205,7 @@ namespace TouristRoutes.Forms
             {
                 selectedRoute = (Route)routesListBox.SelectedItem;
                 _routesRepository.DeleteRouteById(selectedRoute);
-                MessageBox.Show("Маршрут удален!");
+                MessageBox.Show(RouteDeleteMessage);
                 RefreshRouteList();
             }                
         }
@@ -233,7 +233,7 @@ namespace TouristRoutes.Forms
                 routeDurationTextBox2.Text = selectedRoute.RouteDuration;
                 routeLevelOfTrainingTextBox2.Text = selectedRoute.LevelOfTraining;
                 routeDescriptionRichTextBox2.Text = selectedRoute.RouteDescription;
-                string basePath = Path.Combine(Application.StartupPath, "Images");
+                string basePath = Path.Combine(Application.StartupPath, RoutePicturesFileName);
                 string imagePath = Path.Combine(basePath, selectedRoute.RouteImagePath);
                 if (File.Exists(imagePath))
                 {

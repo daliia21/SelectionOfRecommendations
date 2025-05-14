@@ -1,6 +1,7 @@
 using TouristRoutes.Dtos;
 using TouristRoutes.Forms;
 using TouristRoutes.Services;
+using static TouristRoutes.Properties.Resources;
 
 namespace TouristRoutes
 {
@@ -36,7 +37,7 @@ namespace TouristRoutes
 
             if (result.Item1)
             {
-                MessageBox.Show("Аутентификация прошла успешно!");
+                MessageBox.Show(AuthMessage);
                 this.Hide();
                 var recomendationForm = new RecommendationsListForm();
                 recomendationForm.Show();
@@ -67,7 +68,7 @@ namespace TouristRoutes
 
             if (result.Item1)
             {
-                MessageBox.Show("Регистрация прошла успешно!");
+                MessageBox.Show(RegisterMessage);
 
                 this.Hide();
                 var anketaForm = new AnketaForm();
