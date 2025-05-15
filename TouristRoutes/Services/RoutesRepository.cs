@@ -107,28 +107,31 @@ namespace TouristRoutes.Services
         public void AddTagsToRoute(int Id, List<Tag> tags)
         {
             var route = _dbContext.Routes
-                .Include(route => route.RouteTags)
-                .ThenInclude(routeTag => routeTag.Tag)
-                .Where(r => r.Id == Id)
-                .FirstOrDefault();
+                .Include(r => r.RouteTags)
+                .FirstOrDefault(r => r.Id == Id);
+
+            if (route == null)
+                throw new Exception("Маршрут не найден");
 
             foreach (var tag in tags)
-            {
-                var routeTag = new RouteTag
-                {
-                    RouteId = route.Id,
-                    TagId = tag.Id,
-                    Route = route,
-                    Tag = tag
-                };
+            {                
+                var existingTag = _dbContext.Tags.Find(tag.Id);
+
+                if (existingTag == null)
+                    continue;
 
                 bool isAlreadyLinked = route.RouteTags
-                    .Any(rt => rt.RouteId == route.Id && rt.TagId == tag.Id);
+                    .Any(rt => rt.TagId == existingTag.Id);
 
                 if (!isAlreadyLinked)
                 {
-                    route.RouteTags.Add(routeTag);
-                }                
+                    route.RouteTags.Add(new RouteTag
+                    {
+                        RouteId = route.Id,
+                        TagId = existingTag.Id,
+                        Tag = existingTag
+                    });
+                }
             }
             _dbContext.SaveChanges();
         }

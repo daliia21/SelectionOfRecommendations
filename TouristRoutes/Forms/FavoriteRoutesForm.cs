@@ -66,6 +66,8 @@ namespace TouristRoutes.Forms
             var card = new RouteCardControl();
             card.SetRoute(route);
             flowLayoutPanel1.Controls.Add(card);
+            MessageBox.Show("Маршрут добавлен в список избранных!");
+
         }
 
         public void RemoveRouteFromFavorites(int userId, int routeId)
