@@ -33,6 +33,13 @@ namespace TouristRoutes
         /// </summary>
         public DbSet<Route> Routes { get; set; }
 
+        /// <summary>
+        /// Таблица избранных маршрутов пользователей
+        /// </summary>
+        public DbSet<UserFavoriteRoute> UserInfoFavoriteRoutes { get; set; }
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {        
             modelBuilder.Entity<Tag>()
@@ -64,6 +71,19 @@ namespace TouristRoutes
                 .HasOne(rt => rt.Tag)
                 .WithMany()
                 .HasForeignKey(rt => rt.TagId);
+
+            modelBuilder.Entity<UserFavoriteRoute>()
+                .HasKey(ufr => new { ufr.AppUserId, ufr.RouteId });
+
+            modelBuilder.Entity<UserFavoriteRoute>()
+                .HasOne(ufr => ufr.AppUser)
+                .WithMany(u => u.UserFavoriteRoutes)
+                .HasForeignKey(ufr => ufr.AppUserId);
+
+            modelBuilder.Entity<UserFavoriteRoute>()
+                .HasOne(ufr => ufr.Route)
+                .WithMany()
+                .HasForeignKey(ufr => ufr.RouteId);
 
             base.OnModelCreating(modelBuilder);
         }

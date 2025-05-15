@@ -15,13 +15,17 @@ namespace TouristRoutes.Forms
         private Route _selectedRoute;
         private string _selectedImagePath;
         private string _savedImageFileName;
+        private RecommendationsListForm _previousForm;
+
 
         /// <summary>
         /// Конструктор формы администратора
         /// </summary>
-        public AdministratorForm()
+        public AdministratorForm(RecommendationsListForm previousForm)
         {
             InitializeComponent();
+            _previousForm = previousForm;
+
 
             _routesRepository = new RoutesRepository();
             _routeList = _routesRepository.GetAllRoutesWithTags();
@@ -274,6 +278,14 @@ namespace TouristRoutes.Forms
                 pictureBox.Image?.Dispose();
                 pictureBox.Image = Image.FromFile(imagePath);
             }
+        }
+
+        public void AdministratorForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _previousForm.Close();
+
+            var newRecommendationsListForm = new RecommendationsListForm();
+            newRecommendationsListForm.Show();
         }
     }
 }

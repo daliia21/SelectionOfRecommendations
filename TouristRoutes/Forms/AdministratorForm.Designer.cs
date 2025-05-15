@@ -57,6 +57,7 @@
             routeDeleteButton = new Button();
             routeSaveButton2 = new Button();
             routePictureLabel2 = new Label();
+            routePictureBox2 = new PictureBox();
             routeDescriptionRichTextBox2 = new RichTextBox();
             routeLevelOfTrainingTextBox2 = new TextBox();
             routeDurationTextBox2 = new TextBox();
@@ -72,13 +73,12 @@
             panel1 = new Panel();
             routeListBoxLabel = new Label();
             routesListBox = new ListBox();
-            routePictureBox2 = new PictureBox();
             administratorsTabControl.SuspendLayout();
             addRouteTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)routePictureBox).BeginInit();
             updateRouteTabPage.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)routePictureBox2).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // administratorsTabControl
@@ -223,6 +223,7 @@
             // 
             routeDescriptionRichTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routeDescriptionRichTextBox.Location = new Point(167, 626);
+            routeDescriptionRichTextBox.MaxLength = 300;
             routeDescriptionRichTextBox.Name = "routeDescriptionRichTextBox";
             routeDescriptionRichTextBox.Size = new Size(1345, 155);
             routeDescriptionRichTextBox.TabIndex = 12;
@@ -232,6 +233,7 @@
             // 
             routeLevelOfTrainingTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routeLevelOfTrainingTextBox.Location = new Point(167, 503);
+            routeLevelOfTrainingTextBox.MaxLength = 100;
             routeLevelOfTrainingTextBox.Name = "routeLevelOfTrainingTextBox";
             routeLevelOfTrainingTextBox.Size = new Size(1345, 39);
             routeLevelOfTrainingTextBox.TabIndex = 10;
@@ -248,6 +250,7 @@
             // 
             routeLocationTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routeLocationTextBox.Location = new Point(167, 275);
+            routeLocationTextBox.MaxLength = 100;
             routeLocationTextBox.Name = "routeLocationTextBox";
             routeLocationTextBox.Size = new Size(1345, 39);
             routeLocationTextBox.TabIndex = 8;
@@ -256,6 +259,7 @@
             // 
             routePriceTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routePriceTextBox.Location = new Point(167, 160);
+            routePriceTextBox.MaxLength = 100;
             routePriceTextBox.Name = "routePriceTextBox";
             routePriceTextBox.Size = new Size(1345, 39);
             routePriceTextBox.TabIndex = 7;
@@ -264,6 +268,7 @@
             // 
             routeNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routeNameTextBox.Location = new Point(167, 57);
+            routeNameTextBox.MaxLength = 100;
             routeNameTextBox.Name = "routeNameTextBox";
             routeNameTextBox.Size = new Size(1345, 39);
             routeNameTextBox.TabIndex = 6;
@@ -438,10 +443,21 @@
             routePictureLabel2.TabIndex = 28;
             routePictureLabel2.Text = "Фото маршрута:";
             // 
+            // routePictureBox2
+            // 
+            routePictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            routePictureBox2.BackColor = Color.White;
+            routePictureBox2.Location = new Point(426, 938);
+            routePictureBox2.Name = "routePictureBox2";
+            routePictureBox2.Size = new Size(403, 400);
+            routePictureBox2.TabIndex = 27;
+            routePictureBox2.TabStop = false;
+            // 
             // routeDescriptionRichTextBox2
             // 
             routeDescriptionRichTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routeDescriptionRichTextBox2.Location = new Point(426, 641);
+            routeDescriptionRichTextBox2.MaxLength = 300;
             routeDescriptionRichTextBox2.Name = "routeDescriptionRichTextBox2";
             routeDescriptionRichTextBox2.Size = new Size(1202, 198);
             routeDescriptionRichTextBox2.TabIndex = 26;
@@ -451,6 +467,7 @@
             // 
             routeLevelOfTrainingTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routeLevelOfTrainingTextBox2.Location = new Point(426, 518);
+            routeLevelOfTrainingTextBox2.MaxLength = 100;
             routeLevelOfTrainingTextBox2.Name = "routeLevelOfTrainingTextBox2";
             routeLevelOfTrainingTextBox2.Size = new Size(1202, 39);
             routeLevelOfTrainingTextBox2.TabIndex = 25;
@@ -459,6 +476,7 @@
             // 
             routeDurationTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routeDurationTextBox2.Location = new Point(426, 411);
+            routeDurationTextBox2.MaxLength = 100;
             routeDurationTextBox2.Name = "routeDurationTextBox2";
             routeDurationTextBox2.Size = new Size(1202, 39);
             routeDurationTextBox2.TabIndex = 24;
@@ -467,6 +485,7 @@
             // 
             routeLocationTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routeLocationTextBox2.Location = new Point(426, 290);
+            routeLocationTextBox2.MaxLength = 100;
             routeLocationTextBox2.Name = "routeLocationTextBox2";
             routeLocationTextBox2.Size = new Size(1202, 39);
             routeLocationTextBox2.TabIndex = 23;
@@ -475,6 +494,7 @@
             // 
             routePriceTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routePriceTextBox2.Location = new Point(426, 175);
+            routePriceTextBox2.MaxLength = 100;
             routePriceTextBox2.Name = "routePriceTextBox2";
             routePriceTextBox2.Size = new Size(1202, 39);
             routePriceTextBox2.TabIndex = 22;
@@ -483,6 +503,7 @@
             // 
             routeNameTextBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             routeNameTextBox2.Location = new Point(426, 72);
+            routeNameTextBox2.MaxLength = 100;
             routeNameTextBox2.Name = "routeNameTextBox2";
             routeNameTextBox2.Size = new Size(1202, 39);
             routeNameTextBox2.TabIndex = 21;
@@ -584,16 +605,6 @@
             routesListBox.TabIndex = 0;
             routesListBox.SelectedIndexChanged += routesListBox_SelectedIndexChanged;
             // 
-            // routePictureBox2
-            // 
-            routePictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            routePictureBox2.BackColor = Color.White;
-            routePictureBox2.Location = new Point(426, 938);
-            routePictureBox2.Name = "routePictureBox2";
-            routePictureBox2.Size = new Size(403, 400);
-            routePictureBox2.TabIndex = 27;
-            routePictureBox2.TabStop = false;
-            // 
             // AdministratorForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -609,9 +620,9 @@
             ((System.ComponentModel.ISupportInitialize)routePictureBox).EndInit();
             updateRouteTabPage.ResumeLayout(false);
             updateRouteTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)routePictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)routePictureBox2).EndInit();
             ResumeLayout(false);
         }
 

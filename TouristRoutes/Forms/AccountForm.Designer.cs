@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             registerTabPage = new TabPage();
+            label4 = new Label();
+            passwordRepeatTextBox = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             registerButton = new Button();
             registerPasswordLabel = new Label();
             registerEmailLabel = new Label();
@@ -53,6 +58,11 @@
             // registerTabPage
             // 
             registerTabPage.BackColor = Color.FromArgb(96, 118, 85);
+            registerTabPage.Controls.Add(label4);
+            registerTabPage.Controls.Add(passwordRepeatTextBox);
+            registerTabPage.Controls.Add(label3);
+            registerTabPage.Controls.Add(label2);
+            registerTabPage.Controls.Add(label1);
             registerTabPage.Controls.Add(registerButton);
             registerTabPage.Controls.Add(registerPasswordLabel);
             registerTabPage.Controls.Add(registerEmailLabel);
@@ -69,12 +79,63 @@
             registerTabPage.TabIndex = 1;
             registerTabPage.Text = "Регистрация";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 15F);
+            label4.ForeColor = Color.FromArgb(255, 247, 233);
+            label4.Location = new Point(26, 679);
+            label4.Name = "label4";
+            label4.Size = new Size(355, 54);
+            label4.TabIndex = 14;
+            label4.Text = "повторите пароль";
+            // 
+            // passwordRepeatTextBox
+            // 
+            passwordRepeatTextBox.Location = new Point(26, 751);
+            passwordRepeatTextBox.MaxLength = 52;
+            passwordRepeatTextBox.Name = "passwordRepeatTextBox";
+            passwordRepeatTextBox.Size = new Size(875, 39);
+            passwordRepeatTextBox.TabIndex = 13;
+            passwordRepeatTextBox.UseSystemPasswordChar = true;
+            passwordRepeatTextBox.KeyPress += passwordRepeatTextBox_KeyPress;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(26, 608);
+            label3.Name = "label3";
+            label3.Size = new Size(593, 32);
+            label3.TabIndex = 12;
+            label3.Text = "символы. Минимальная длина пароля - 8 символов";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(26, 576);
+            label2.Name = "label2";
+            label2.Size = new Size(880, 32);
+            label2.TabIndex = 11;
+            label2.Text = "Пароль должен содержать строчные, заглавные буквы, цифры, специальные ";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(26, 389);
+            label1.Name = "label1";
+            label1.Size = new Size(739, 32);
+            label1.TabIndex = 10;
+            label1.Text = "Логин должен быть следующего формата: IvanovIvan@gmail.com";
+            // 
             // registerButton
             // 
             registerButton.BackColor = Color.FromArgb(255, 247, 233);
             registerButton.Font = new Font("Segoe UI", 13F);
             registerButton.ForeColor = Color.FromArgb(96, 118, 85);
-            registerButton.Location = new Point(208, 802);
+            registerButton.Location = new Point(214, 874);
             registerButton.Name = "registerButton";
             registerButton.Size = new Size(525, 84);
             registerButton.TabIndex = 9;
@@ -87,7 +148,7 @@
             registerPasswordLabel.AutoSize = true;
             registerPasswordLabel.Font = new Font("Segoe UI", 15F);
             registerPasswordLabel.ForeColor = Color.FromArgb(255, 247, 233);
-            registerPasswordLabel.Location = new Point(26, 593);
+            registerPasswordLabel.Location = new Point(27, 458);
             registerPasswordLabel.Name = "registerPasswordLabel";
             registerPasswordLabel.Size = new Size(154, 54);
             registerPasswordLabel.TabIndex = 8;
@@ -98,7 +159,7 @@
             registerEmailLabel.AutoSize = true;
             registerEmailLabel.Font = new Font("Segoe UI", 15F);
             registerEmailLabel.ForeColor = Color.FromArgb(255, 247, 233);
-            registerEmailLabel.Location = new Point(27, 414);
+            registerEmailLabel.Location = new Point(27, 277);
             registerEmailLabel.Name = "registerEmailLabel";
             registerEmailLabel.Size = new Size(128, 54);
             registerEmailLabel.TabIndex = 7;
@@ -109,7 +170,7 @@
             registerLastNameLabel.AutoSize = true;
             registerLastNameLabel.Font = new Font("Segoe UI", 15F);
             registerLastNameLabel.ForeColor = Color.FromArgb(255, 247, 233);
-            registerLastNameLabel.Location = new Point(26, 243);
+            registerLastNameLabel.Location = new Point(26, 149);
             registerLastNameLabel.Name = "registerLastNameLabel";
             registerLastNameLabel.Size = new Size(185, 54);
             registerLastNameLabel.TabIndex = 6;
@@ -117,38 +178,47 @@
             // 
             // registerLastName
             // 
-            registerLastName.Location = new Point(27, 308);
+            registerLastName.Location = new Point(27, 206);
+            registerLastName.MaxLength = 52;
             registerLastName.Name = "registerLastName";
             registerLastName.Size = new Size(880, 39);
             registerLastName.TabIndex = 5;
+            registerLastName.KeyPress += registerLastName_KeyPress;
             // 
             // registerEmail
             // 
-            registerEmail.Location = new Point(27, 476);
+            registerEmail.Location = new Point(27, 334);
+            registerEmail.MaxLength = 52;
             registerEmail.Name = "registerEmail";
             registerEmail.Size = new Size(880, 39);
             registerEmail.TabIndex = 4;
+            registerEmail.KeyPress += registerEmail_KeyPress;
             // 
             // registerPassword
             // 
-            registerPassword.Location = new Point(27, 656);
+            registerPassword.Location = new Point(32, 515);
+            registerPassword.MaxLength = 52;
             registerPassword.Name = "registerPassword";
             registerPassword.Size = new Size(875, 39);
             registerPassword.TabIndex = 1;
+            registerPassword.UseSystemPasswordChar = true;
+            registerPassword.KeyPress += registerPassword_KeyPress;
             // 
             // registerFirstName
             // 
-            registerFirstName.Location = new Point(27, 134);
+            registerFirstName.Location = new Point(27, 79);
+            registerFirstName.MaxLength = 52;
             registerFirstName.Name = "registerFirstName";
             registerFirstName.Size = new Size(880, 39);
             registerFirstName.TabIndex = 0;
+            registerFirstName.KeyPress += registerFirstName_KeyPress;
             // 
             // registerFirstNameLabel
             // 
             registerFirstNameLabel.AutoSize = true;
             registerFirstNameLabel.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
             registerFirstNameLabel.ForeColor = Color.FromArgb(255, 247, 233);
-            registerFirstNameLabel.Location = new Point(26, 68);
+            registerFirstNameLabel.Location = new Point(26, 22);
             registerFirstNameLabel.Name = "registerFirstNameLabel";
             registerFirstNameLabel.Size = new Size(94, 54);
             registerFirstNameLabel.TabIndex = 3;
@@ -194,16 +264,21 @@
             // loginEmail
             // 
             loginEmail.Location = new Point(25, 325);
+            loginEmail.MaxLength = 52;
             loginEmail.Name = "loginEmail";
             loginEmail.Size = new Size(880, 39);
             loginEmail.TabIndex = 12;
+            loginEmail.KeyPress += loginEmail_KeyPress;
             // 
             // loginPassword
             // 
             loginPassword.Location = new Point(25, 537);
+            loginPassword.MaxLength = 52;
             loginPassword.Name = "loginPassword";
             loginPassword.Size = new Size(880, 39);
             loginPassword.TabIndex = 11;
+            loginPassword.UseSystemPasswordChar = true;
+            loginPassword.KeyPress += loginPassword_KeyPress;
             // 
             // loginButton
             // 
@@ -267,5 +342,10 @@
         private Label loginEmailLabel;
         private TextBox loginEmail;
         private TextBox loginPassword;
+        private Label label1;
+        private Label label3;
+        private Label label2;
+        private Label label4;
+        private TextBox passwordRepeatTextBox;
     }
 }
