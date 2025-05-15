@@ -7,7 +7,7 @@ namespace TouristRoutes.Forms
     /// <summary>
     /// Форма детализации маршрута
     /// </summary>
-    public partial class RouteDetailsForm: Form
+    public partial class RouteDetailsForm : Form
     {
         private Route _route;
 
@@ -34,7 +34,7 @@ namespace TouristRoutes.Forms
 
             routeDescriptionRichTextBox.MouseDown += (s, e) =>
             {
-                this.ActiveControl = null; 
+                this.ActiveControl = null;
             };
         }
     }

@@ -70,10 +70,10 @@
             // 
             routeDescriptionRichTextBox.BackColor = Color.FromArgb(226, 214, 204);
             routeDescriptionRichTextBox.BorderStyle = BorderStyle.None;
-            routeDescriptionRichTextBox.Location = new Point(514, 860);
+            routeDescriptionRichTextBox.Location = new Point(514, 903);
             routeDescriptionRichTextBox.Name = "routeDescriptionRichTextBox";
             routeDescriptionRichTextBox.ReadOnly = true;
-            routeDescriptionRichTextBox.Size = new Size(553, 192);
+            routeDescriptionRichTextBox.Size = new Size(553, 171);
             routeDescriptionRichTextBox.TabIndex = 11;
             routeDescriptionRichTextBox.TabStop = false;
             routeDescriptionRichTextBox.Text = "";
@@ -81,7 +81,7 @@
             // routeLevelOfTrainingLabel
             // 
             routeLevelOfTrainingLabel.AutoSize = true;
-            routeLevelOfTrainingLabel.Location = new Point(514, 815);
+            routeLevelOfTrainingLabel.Location = new Point(514, 825);
             routeLevelOfTrainingLabel.Name = "routeLevelOfTrainingLabel";
             routeLevelOfTrainingLabel.Size = new Size(78, 32);
             routeLevelOfTrainingLabel.TabIndex = 10;
