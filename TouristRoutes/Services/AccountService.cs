@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using TouristRoutes.Dtos;
 using TouristRoutes.Models;
 using static BCrypt.Net.BCrypt;
@@ -71,7 +70,7 @@ namespace TouristRoutes.Services
             AppState.IsAuthenticated = true;
             AppState.CurrentAppUser = user;
 
-            return (true, "");
+            return (true, string.Empty);
         }
 
         /// <summary>
@@ -185,7 +184,9 @@ namespace TouristRoutes.Services
 
         private bool CheckFillFields(RegisterDto registerDto)
         {
-            if (registerDto.FirstName == "" || registerDto.LastName == "" || registerDto.Email == "" || registerDto.Password == "" || registerDto.RepeatPassword == "")
+            if (registerDto.FirstName == string.Empty || registerDto.LastName == string.Empty
+                || registerDto.Email == string.Empty || registerDto.Password == string.Empty
+                || registerDto.RepeatPassword == string.Empty)
             {
                 return false;
             }
@@ -198,8 +199,8 @@ namespace TouristRoutes.Services
         public (bool, string) Login(LoginDto loginDto)
         {
             var dbUser = _dbContext.Users
-                .Where(u => u.Email == loginDto.Email)
-                .FirstOrDefault();
+                .FirstOrDefault(u => u.Email == loginDto.Email);
+                
 
             if (!CheckFillFields(loginDto))
             {
@@ -220,7 +221,7 @@ namespace TouristRoutes.Services
                 AppState.CurrentAppUser = dbUser;
                 AppState.IsAdmin = dbUser.IsAdmin;
 
-                return (true, "");
+                return (true, string.Empty);
             } else
             {
                 return (false, PasswordInvalidMessage);
@@ -229,7 +230,7 @@ namespace TouristRoutes.Services
 
         private bool CheckFillFields(LoginDto loginDto)
         {
-            if (loginDto.Email == "" || loginDto.Password == "")
+            if (loginDto.Email == string.Empty || loginDto.Password == string.Empty)
             {
                 return false;
             }
