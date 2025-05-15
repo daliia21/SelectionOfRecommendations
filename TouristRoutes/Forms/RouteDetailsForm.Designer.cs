@@ -70,10 +70,10 @@
             // 
             routeDescriptionRichTextBox.BackColor = Color.FromArgb(226, 214, 204);
             routeDescriptionRichTextBox.BorderStyle = BorderStyle.None;
-            routeDescriptionRichTextBox.Location = new Point(292, 903);
+            routeDescriptionRichTextBox.Location = new Point(514, 860);
             routeDescriptionRichTextBox.Name = "routeDescriptionRichTextBox";
             routeDescriptionRichTextBox.ReadOnly = true;
-            routeDescriptionRichTextBox.Size = new Size(785, 192);
+            routeDescriptionRichTextBox.Size = new Size(553, 192);
             routeDescriptionRichTextBox.TabIndex = 11;
             routeDescriptionRichTextBox.TabStop = false;
             routeDescriptionRichTextBox.Text = "";
@@ -81,7 +81,7 @@
             // routeLevelOfTrainingLabel
             // 
             routeLevelOfTrainingLabel.AutoSize = true;
-            routeLevelOfTrainingLabel.Location = new Point(457, 825);
+            routeLevelOfTrainingLabel.Location = new Point(514, 815);
             routeLevelOfTrainingLabel.Name = "routeLevelOfTrainingLabel";
             routeLevelOfTrainingLabel.Size = new Size(78, 32);
             routeLevelOfTrainingLabel.TabIndex = 10;
@@ -90,7 +90,7 @@
             // routeDurationLabel
             // 
             routeDurationLabel.AutoSize = true;
-            routeDurationLabel.Location = new Point(438, 746);
+            routeDurationLabel.Location = new Point(514, 746);
             routeDurationLabel.Name = "routeDurationLabel";
             routeDurationLabel.Size = new Size(78, 32);
             routeDurationLabel.TabIndex = 9;
@@ -99,7 +99,7 @@
             // routeBudgetLabel
             // 
             routeBudgetLabel.AutoSize = true;
-            routeBudgetLabel.Location = new Point(373, 665);
+            routeBudgetLabel.Location = new Point(514, 665);
             routeBudgetLabel.Name = "routeBudgetLabel";
             routeBudgetLabel.Size = new Size(78, 32);
             routeBudgetLabel.TabIndex = 8;
@@ -108,7 +108,7 @@
             // routeLocationLabel
             // 
             routeLocationLabel.AutoSize = true;
-            routeLocationLabel.Location = new Point(404, 591);
+            routeLocationLabel.Location = new Point(514, 591);
             routeLocationLabel.Name = "routeLocationLabel";
             routeLocationLabel.Size = new Size(78, 32);
             routeLocationLabel.TabIndex = 7;
@@ -117,63 +117,69 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label7.Location = new Point(95, 903);
             label7.Name = "label7";
-            label7.Size = new Size(129, 32);
+            label7.Size = new Size(137, 32);
             label7.TabIndex = 6;
             label7.Text = "Описание:";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label6.Location = new Point(97, 825);
             label6.Name = "label6";
-            label6.Size = new Size(247, 32);
+            label6.Size = new Size(265, 32);
             label6.TabIndex = 5;
             label6.Text = "Уровень подготовки:";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label5.Location = new Point(95, 746);
             label5.Name = "label5";
-            label5.Size = new Size(245, 32);
+            label5.Size = new Size(265, 32);
             label5.TabIndex = 4;
             label5.Text = "Продолжительность:";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label4.Location = new Point(97, 665);
             label4.Name = "label4";
-            label4.Size = new Size(107, 32);
+            label4.Size = new Size(116, 32);
             label4.TabIndex = 3;
             label4.Text = "Бюджет:";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label3.Location = new Point(97, 591);
             label3.Name = "label3";
-            label3.Size = new Size(182, 32);
+            label3.Size = new Size(195, 32);
             label3.TabIndex = 2;
             label3.Text = "Расположение:";
             // 
             // RouteNameLabel
             // 
             RouteNameLabel.AutoSize = true;
-            RouteNameLabel.Location = new Point(508, 484);
+            RouteNameLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            RouteNameLabel.Location = new Point(355, 483);
             RouteNameLabel.Name = "RouteNameLabel";
-            RouteNameLabel.Size = new Size(78, 32);
+            RouteNameLabel.Size = new Size(83, 32);
             RouteNameLabel.TabIndex = 1;
             RouteNameLabel.Text = "label2";
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.FromArgb(224, 224, 224);
-            pictureBox1.Location = new Point(67, 60);
+            pictureBox1.Location = new Point(276, 55);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1010, 401);
+            pictureBox1.Size = new Size(525, 401);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 

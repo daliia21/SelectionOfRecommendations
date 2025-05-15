@@ -97,9 +97,12 @@ namespace TouristRoutes.Services
 
             foreach (var tag in dbTags)
             {
-                if (!currentUser.UserTags.Any(ut => ut.TagId == tag.Id))
+                var exists = _dbContext.UserInfoTags
+                    .Any(ut => ut.AppUserId == currentUser.Id && ut.TagId == tag.Id);
+
+                if (!exists)
                 {
-                    currentUser.UserTags.Add(new AppUserTag
+                    _dbContext.UserInfoTags.Add(new AppUserTag
                     {
                         AppUserId = currentUser.Id,
                         TagId = tag.Id
