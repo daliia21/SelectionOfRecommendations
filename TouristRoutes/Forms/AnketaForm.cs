@@ -20,16 +20,16 @@ namespace TouristRoutes.Forms
             InitializeComponent();
 
             double curDpi;
-            using (Graphics g = this.CreateGraphics())
+            using (var g = this.CreateGraphics())
             {
                 curDpi = g.DpiY;
             }
 
-            double k = curDpi / 192.0;
+            var k = curDpi / 192.0;
 
             // Заполнение тегов
-            double yPosition = 50 * k;
-            double verticalSpacing = 40 * k;
+            var yPosition = 50 * k;
+            var verticalSpacing = 40 * k;
 
             _getTagsService = new GetTagsService();
             var ageTags = _getTagsService.GetTagsForTagType(TagType.AgeTag);

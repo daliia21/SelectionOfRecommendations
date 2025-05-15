@@ -1,4 +1,3 @@
-using NLog;
 using TouristRoutes.Dtos;
 using TouristRoutes.Forms;
 using TouristRoutes.Services;
@@ -23,6 +22,14 @@ namespace TouristRoutes
             Program.Logger.Info(AccountFormLoadLog);
 
             _accountService = new AccountService();
+
+            loginEmail.KeyPress += BlockWhiteSpace_KeyPress;
+            registerFirstName.KeyPress += BlockWhiteSpace_KeyPress;
+            registerLastName.KeyPress += BlockWhiteSpace_KeyPress;
+            registerEmail.KeyPress += BlockWhiteSpace_KeyPress;
+            loginPassword.KeyPress += BlockWhiteSpace_KeyPress;
+            registerPassword.KeyPress += BlockWhiteSpace_KeyPress;
+            passwordRepeatTextBox.KeyPress += BlockWhiteSpace_KeyPress;
         }
 
         private void logIn_Click(object sender, EventArgs e)
@@ -77,55 +84,7 @@ namespace TouristRoutes
             }
         }
 
-        private void loginEmail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void registerFirstName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void registerLastName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void registerEmail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void loginPassword_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void registerPassword_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void passwordRepeatTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void BlockWhiteSpace_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsWhiteSpace(e.KeyChar))
             {

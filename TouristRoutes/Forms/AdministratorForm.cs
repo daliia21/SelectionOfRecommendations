@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-using TouristRoutes.Models;
+﻿using TouristRoutes.Models;
 using TouristRoutes.Services;
 using static TouristRoutes.Properties.Resources;
 
@@ -30,9 +29,7 @@ namespace TouristRoutes.Forms
 
             routesListBox.DataSource = _routeList;
             routesListBox.DisplayMember = "RouteName";
-            routesListBox.ValueMember = "Id";
-
-            
+            routesListBox.ValueMember = "Id";           
         }
 
         private void routeSaveButton_Click(object sender, EventArgs e)

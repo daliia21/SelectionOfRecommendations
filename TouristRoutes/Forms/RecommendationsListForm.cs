@@ -1,5 +1,4 @@
-﻿using TouristRoutes.Models;
-using TouristRoutes.Services;
+﻿using TouristRoutes.Services;
 using static TouristRoutes.Properties.Resources;
 
 
@@ -22,7 +21,7 @@ namespace TouristRoutes.Forms
         {
             InitializeComponent();
 
-            if (AppState.IsAdmin == false)
+            if (!AppState.IsAdmin)
             {
                 button1.Visible = false;
             }

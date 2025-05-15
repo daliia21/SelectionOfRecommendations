@@ -98,7 +98,6 @@
             passwordRepeatTextBox.Size = new Size(875, 39);
             passwordRepeatTextBox.TabIndex = 13;
             passwordRepeatTextBox.UseSystemPasswordChar = true;
-            passwordRepeatTextBox.KeyPress += passwordRepeatTextBox_KeyPress;
             // 
             // label3
             // 
@@ -183,7 +182,6 @@
             registerLastName.Name = "registerLastName";
             registerLastName.Size = new Size(880, 39);
             registerLastName.TabIndex = 5;
-            registerLastName.KeyPress += registerLastName_KeyPress;
             // 
             // registerEmail
             // 
@@ -192,7 +190,6 @@
             registerEmail.Name = "registerEmail";
             registerEmail.Size = new Size(880, 39);
             registerEmail.TabIndex = 4;
-            registerEmail.KeyPress += registerEmail_KeyPress;
             // 
             // registerPassword
             // 
@@ -202,7 +199,6 @@
             registerPassword.Size = new Size(875, 39);
             registerPassword.TabIndex = 1;
             registerPassword.UseSystemPasswordChar = true;
-            registerPassword.KeyPress += registerPassword_KeyPress;
             // 
             // registerFirstName
             // 
@@ -211,7 +207,6 @@
             registerFirstName.Name = "registerFirstName";
             registerFirstName.Size = new Size(880, 39);
             registerFirstName.TabIndex = 0;
-            registerFirstName.KeyPress += registerFirstName_KeyPress;
             // 
             // registerFirstNameLabel
             // 
@@ -268,7 +263,6 @@
             loginEmail.Name = "loginEmail";
             loginEmail.Size = new Size(880, 39);
             loginEmail.TabIndex = 12;
-            loginEmail.KeyPress += loginEmail_KeyPress;
             // 
             // loginPassword
             // 
@@ -278,7 +272,6 @@
             loginPassword.Size = new Size(880, 39);
             loginPassword.TabIndex = 11;
             loginPassword.UseSystemPasswordChar = true;
-            loginPassword.KeyPress += loginPassword_KeyPress;
             // 
             // loginButton
             // 

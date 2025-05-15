@@ -34,8 +34,8 @@ namespace TouristRoutes.Services
         public Route GetRouteById(int Id)
         {
             var route = _dbContext.Routes
-                .Where(r => r.Id == Id)
-                .FirstOrDefault();
+                .FirstOrDefault(r => r.Id == Id);
+                
             return route;
         }
 
@@ -47,9 +47,8 @@ namespace TouristRoutes.Services
             var route = _dbContext.Routes
                 .Include(route => route.RouteTags)
                 .ThenInclude(routeTag => routeTag.Tag)
-                .Where(r => r.Id == Id)
-                .FirstOrDefault();
-                           
+                .FirstOrDefault(r => r.Id == Id);
+                                           
             return route;
         }
 
@@ -81,8 +80,8 @@ namespace TouristRoutes.Services
             var route = _dbContext.Routes
                 .Include(route => route.RouteTags)
                 .ThenInclude(routeTag => routeTag.Tag)
-                .Where(r => r.Id == Id)
-                .FirstOrDefault();
+                .FirstOrDefault(r => r.Id == Id);
+                
 
             if (route == null)
             {
@@ -121,7 +120,7 @@ namespace TouristRoutes.Services
                 if (existingTag == null)
                     continue;
 
-                bool isAlreadyLinked = route.RouteTags
+                var isAlreadyLinked = route.RouteTags
                     .Any(rt => rt.TagId == existingTag.Id);
 
                 if (!isAlreadyLinked)
@@ -155,7 +154,6 @@ namespace TouristRoutes.Services
         /// </summary>
         public List<Route> GetFavoriteRoutesForUser(int userId)
         {
-
             var favoriteRoutes = _dbContext.UserInfoFavoriteRoutes
             .Where(ufr => ufr.AppUserId == userId)
             .Include(ufr => ufr.Route) 
