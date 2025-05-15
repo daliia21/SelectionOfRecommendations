@@ -1,5 +1,7 @@
 ﻿using TouristRoutes.Models;
 using TouristRoutes.Services;
+using static TouristRoutes.Properties.Resources;
+
 
 namespace TouristRoutes.Forms
 {
@@ -59,7 +61,7 @@ namespace TouristRoutes.Forms
         {
             if (_selectedCard == null)
             {
-                MessageBox.Show("Выберите маршрут");
+                MessageBox.Show(RouteUnselectMessage);
                 return;
             }
 

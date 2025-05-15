@@ -20,7 +20,7 @@ namespace TouristRoutes
         {
             InitializeComponent();
 
-            Program.Logger.Info("Форма аккаунта загрузилась");
+            Program.Logger.Info(AccountFormLoadLog);
 
             _accountService = new AccountService();
         }

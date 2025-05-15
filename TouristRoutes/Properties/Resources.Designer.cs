@@ -61,6 +61,15 @@ namespace TouristRoutes.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма аккаунта загрузилась.
+        /// </summary>
+        internal static string AccountFormLoadLog {
+            get {
+                return ResourceManager.GetString("AccountFormLoadLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ваши данные успешно сохранены!.
         /// </summary>
         internal static string AnketaDataSavedMessage {
@@ -97,11 +106,56 @@ namespace TouristRoutes.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не все поля заполнены.
+        /// </summary>
+        internal static string FieldsNotFillMessage {
+            get {
+                return ResourceManager.GetString("FieldsNotFillMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif.
+        /// </summary>
+        internal static string FileFormatFilter {
+            get {
+                return ResourceManager.GetString("FileFormatFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Main запустился.
+        /// </summary>
+        internal static string MainStartLog {
+            get {
+                return ResourceManager.GetString("MainStartLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Миграции применились.
+        /// </summary>
+        internal static string MigrationAppliedLog {
+            get {
+                return ResourceManager.GetString("MigrationAppliedLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Неверный пароль.
         /// </summary>
         internal static string PasswordInvalidMessage {
             get {
                 return ResourceManager.GetString("PasswordInvalidMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пароли не совпадают.
+        /// </summary>
+        internal static string PasswordUncoincidenceMessage {
+            get {
+                return ResourceManager.GetString("PasswordUncoincidenceMessage", resourceCulture);
             }
         }
         
@@ -133,6 +187,24 @@ namespace TouristRoutes.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Маршрут добавлен в список избранных!.
+        /// </summary>
+        internal static string RouteAddToFavoriteListMessage {
+            get {
+                return ResourceManager.GetString("RouteAddToFavoriteListMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Маршрут уже добавлен в избранное.
+        /// </summary>
+        internal static string RouteAlreadyAddedMessage {
+            get {
+                return ResourceManager.GetString("RouteAlreadyAddedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Подтверждение удаления.
         /// </summary>
         internal static string RouteDeleteConfirm {
@@ -160,6 +232,15 @@ namespace TouristRoutes.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Маршрут не найден.
+        /// </summary>
+        internal static string RouteNotFindMessage {
+            get {
+                return ResourceManager.GetString("RouteNotFindMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Images.
         /// </summary>
         internal static string RoutePicturesFileName {
@@ -169,11 +250,56 @@ namespace TouristRoutes.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &quot;!@#$%^&amp;*()~`;:?&quot;.
+        ///   Ищет локализованную строку, похожую на Маршрут удален из списка избранных.
+        /// </summary>
+        internal static string RouteRemovedFromFavoriteRoutesListMessage {
+            get {
+                return ResourceManager.GetString("RouteRemovedFromFavoriteRoutesListMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выберите маршрут.
+        /// </summary>
+        internal static string RouteUnselectMessage {
+            get {
+                return ResourceManager.GetString("RouteUnselectMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка при загрузке и сохранении изображения.
+        /// </summary>
+        internal static string SavePictureErrorLog {
+            get {
+                return ResourceManager.GetString("SavePictureErrorLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Формат файла не соответсвует требуемому.
+        /// </summary>
+        internal static string SavePictureErrorMessage {
+            get {
+                return ResourceManager.GetString("SavePictureErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на !@#$%^&amp;*()~`;:?.
         /// </summary>
         internal static string SpecialSymbols {
             get {
                 return ResourceManager.GetString("SpecialSymbols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на tags.json.
+        /// </summary>
+        internal static string TagsJSONfileName {
+            get {
+                return ResourceManager.GetString("TagsJSONfileName", resourceCulture);
             }
         }
         

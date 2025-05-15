@@ -1,5 +1,7 @@
 ﻿using TouristRoutes.Models;
 using TouristRoutes.Services;
+using static TouristRoutes.Properties.Resources;
+
 
 namespace TouristRoutes.Forms
 {
@@ -59,7 +61,7 @@ namespace TouristRoutes.Forms
 
             if (alreadyFavorite)
             {
-                MessageBox.Show("Маршрут уже добавлен в избранное");
+                MessageBox.Show(RouteAlreadyAddedMessage);
                 return;
             }
 
@@ -74,7 +76,7 @@ namespace TouristRoutes.Forms
             var card = new RouteCardControl();
             card.SetRoute(route);
             flowLayoutPanel1.Controls.Add(card);
-            MessageBox.Show("Маршрут добавлен в список избранных!");
+            MessageBox.Show(RouteAddToFavoriteListMessage);
 
         }
 
@@ -98,14 +100,14 @@ namespace TouristRoutes.Forms
             var _currentUser = AppState.CurrentAppUser;
             if (_selectedCard == null)
             {
-                MessageBox.Show("Выберите маршрут");
+                MessageBox.Show(RouteUnselectMessage);
                 return;
             }
 
             var selectedRoute = _selectedCard.Route;
             
             this.RemoveRouteFromFavorites(_currentUser.Id ,selectedRoute.Id);
-            MessageBox.Show("Маршрут удален из списка избранных");
+            MessageBox.Show(RouteRemovedFromFavoriteRoutesListMessage);
             this.Hide();
             var favoriteForm = new FavoriteRoutesForm();
             favoriteForm.Show();

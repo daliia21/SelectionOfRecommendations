@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountFormLoadLog" xml:space="preserve">
+    <value>Форма аккаунта загрузилась</value>
+    <comment>AccountForm</comment>
+  </data>
   <data name="AnketaDataSavedMessage" xml:space="preserve">
     <value>Ваши данные успешно сохранены!</value>
     <comment>AnketaForm</comment>
@@ -133,8 +137,28 @@
     <value>Неправильный формат email</value>
     <comment>AccountService</comment>
   </data>
+  <data name="FieldsNotFillMessage" xml:space="preserve">
+    <value>Не все поля заполнены</value>
+    <comment>AccountService</comment>
+  </data>
+  <data name="FileFormatFilter" xml:space="preserve">
+    <value>Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif</value>
+    <comment>AdministratorForm</comment>
+  </data>
+  <data name="MainStartLog" xml:space="preserve">
+    <value>Main запустился</value>
+    <comment>Program</comment>
+  </data>
+  <data name="MigrationAppliedLog" xml:space="preserve">
+    <value>Миграции применились</value>
+    <comment>Program</comment>
+  </data>
   <data name="PasswordInvalidMessage" xml:space="preserve">
     <value>Неверный пароль</value>
+    <comment>AccountService</comment>
+  </data>
+  <data name="PasswordUncoincidenceMessage" xml:space="preserve">
+    <value>Пароли не совпадают</value>
     <comment>AccountService</comment>
   </data>
   <data name="PasswordUnsecureMessage" xml:space="preserve">
@@ -149,6 +173,14 @@
     <value>Маршрут добавлен!</value>
     <comment>AdministratorForm</comment>
   </data>
+  <data name="RouteAddToFavoriteListMessage" xml:space="preserve">
+    <value>Маршрут добавлен в список избранных!</value>
+    <comment>FavoriteRoutesForm</comment>
+  </data>
+  <data name="RouteAlreadyAddedMessage" xml:space="preserve">
+    <value>Маршрут уже добавлен в избранное</value>
+    <comment>FavoriteRoutesForm</comment>
+  </data>
   <data name="RouteDeleteConfirm" xml:space="preserve">
     <value>Подтверждение удаления</value>
     <comment>AdministratorForm</comment>
@@ -161,13 +193,37 @@
     <value>Маршрут удален!</value>
     <comment>AdministratorForm</comment>
   </data>
+  <data name="RouteNotFindMessage" xml:space="preserve">
+    <value>Маршрут не найден</value>
+    <comment>AccountService</comment>
+  </data>
   <data name="RoutePicturesFileName" xml:space="preserve">
     <value>Images</value>
     <comment>AdministratorForm</comment>
   </data>
+  <data name="RouteRemovedFromFavoriteRoutesListMessage" xml:space="preserve">
+    <value>Маршрут удален из списка избранных</value>
+    <comment>FavoriteRoutesForm</comment>
+  </data>
+  <data name="RouteUnselectMessage" xml:space="preserve">
+    <value>Выберите маршрут</value>
+    <comment>FavoriteRoutesForm</comment>
+  </data>
+  <data name="SavePictureErrorLog" xml:space="preserve">
+    <value>Ошибка при загрузке и сохранении изображения</value>
+    <comment>AdministratorForm</comment>
+  </data>
+  <data name="SavePictureErrorMessage" xml:space="preserve">
+    <value>Формат файла не соответсвует требуемому</value>
+    <comment>AdministratorForm</comment>
+  </data>
   <data name="SpecialSymbols" xml:space="preserve">
-    <value>"!@#$%^&amp;*()~`;:?"</value>
+    <value>!@#$%^&amp;*()~`;:?</value>
     <comment>AccountService</comment>
+  </data>
+  <data name="TagsJSONfileName" xml:space="preserve">
+    <value>tags.json</value>
+    <comment>Program</comment>
   </data>
   <data name="TagsNotFindMessage" xml:space="preserve">
     <value>Не все теги найдены</value>

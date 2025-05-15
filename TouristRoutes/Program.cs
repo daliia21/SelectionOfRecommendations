@@ -5,6 +5,8 @@ using System.Text.Json.Serialization;
 using TouristRoutes.Forms;
 using TouristRoutes.Models;
 using TouristRoutes.Services;
+using static TouristRoutes.Properties.Resources;
+
 
 namespace TouristRoutes
 {
@@ -18,7 +20,7 @@ namespace TouristRoutes
         [STAThread]
         static void Main()
         {
-            Logger.Info("Main запустился");
+            Logger.Info(MainStartLog);
 
             using (var context = new AppDbContext())
             {
@@ -27,7 +29,7 @@ namespace TouristRoutes
                 if (!databaseExist)
                 {
                     context.Database.Migrate();
-                    Logger.Info("Миграции применились");
+                    Logger.Info(MigrationAppliedLog);
 
                     var options = new JsonSerializerOptions
                     {
@@ -35,7 +37,7 @@ namespace TouristRoutes
                         Converters = { new JsonStringEnumConverter() } 
                     };
 
-                    var json = File.ReadAllText("tags.json");
+                    var json = File.ReadAllText(TagsJSONfileName);
                     var tagGroups = JsonSerializer.Deserialize<List<TagGroup>>(json, options);
 
                     

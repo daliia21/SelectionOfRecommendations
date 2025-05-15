@@ -77,7 +77,7 @@ namespace TouristRoutes.Forms
             {
                 try
                 {
-                    ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                    ofd.Filter = FileFormatFilter;
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
                         _selectedImagePath = ofd.FileName;
@@ -96,8 +96,8 @@ namespace TouristRoutes.Forms
 
                 catch(Exception ex)
                 {
-                    Program.Logger.Error(ex, "Ошибка при загрузке и сохранении изображения");
-                    MessageBox.Show("Формат файла не соответсвует требуемому");
+                    Program.Logger.Error(ex, SavePictureErrorLog);
+                    MessageBox.Show(SavePictureErrorMessage);
                 }
             }
         }
@@ -149,7 +149,7 @@ namespace TouristRoutes.Forms
             {
                 try
                 {
-                    ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                    ofd.Filter = FileFormatFilter;
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
                         _selectedImagePath = ofd.FileName;
@@ -167,8 +167,8 @@ namespace TouristRoutes.Forms
                 }
                 catch (Exception ex)
                 {
-                    Program.Logger.Error(ex, "Ошибка при загрузке и сохранении изображения");
-                    MessageBox.Show("Формат файла не соответсвует требуемому");
+                    Program.Logger.Error(ex, SavePictureErrorLog);
+                    MessageBox.Show(SavePictureErrorMessage);
                 }
             }
         }
