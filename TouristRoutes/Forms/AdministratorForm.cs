@@ -25,8 +25,6 @@ namespace TouristRoutes.Forms
         {
             InitializeComponent();
             _previousForm = previousForm;
-
-
             _routesRepository = new RoutesRepository();
             _routeList = _routesRepository.GetAllRoutesWithTags();
 
@@ -53,7 +51,6 @@ namespace TouristRoutes.Forms
             _routesRepository.AddNewRoute(route);
 
             var routeTags = new List<Tag>();
-
             var _getTagsService = new GetTagsService();
             var allTags = _getTagsService.GetAllTags();
 
@@ -78,20 +75,29 @@ namespace TouristRoutes.Forms
         {
             using (var ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                if (ofd.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    _selectedImagePath = ofd.FileName;
+                    ofd.Filter = FileFormatFilter;
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        _selectedImagePath = ofd.FileName;
 
-                    var imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
-                    Directory.CreateDirectory(imagesFolder);
+                        var imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
+                        Directory.CreateDirectory(imagesFolder);
 
-                    _savedImageFileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
-                    var destinationPath = Path.Combine(imagesFolder, _savedImageFileName);
+                        _savedImageFileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
+                        var destinationPath = Path.Combine(imagesFolder, _savedImageFileName);
 
-                    File.Copy(_selectedImagePath, destinationPath, overwrite: true);
+                        File.Copy(_selectedImagePath, destinationPath, overwrite: true);
 
-                    LoadRouteImageToPictureBox(routePictureBox, destinationPath);
+                        LoadRouteImageToPictureBox(routePictureBox, destinationPath);
+                    }
+                }
+
+                catch(Exception ex)
+                {
+                    Program.Logger.Error(ex, SavePictureErrorLog);
+                    MessageBox.Show(SavePictureErrorMessage);
                 }
             }
         }
@@ -141,20 +147,28 @@ namespace TouristRoutes.Forms
         {
             using (var ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                if (ofd.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    _selectedImagePath = ofd.FileName;
+                    ofd.Filter = FileFormatFilter;
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        _selectedImagePath = ofd.FileName;
 
-                    var imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
-                    Directory.CreateDirectory(imagesFolder);
+                        var imagesFolder = Path.Combine(Application.StartupPath, RoutePicturesFileName);
+                        Directory.CreateDirectory(imagesFolder);
 
-                    _savedImageFileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
-                    var destinationPath = Path.Combine(imagesFolder, _savedImageFileName);
+                        _savedImageFileName = Guid.NewGuid().ToString() + Path.GetExtension(_selectedImagePath);
+                        var destinationPath = Path.Combine(imagesFolder, _savedImageFileName);
 
-                    File.Copy(_selectedImagePath, destinationPath, overwrite: true);
+                        File.Copy(_selectedImagePath, destinationPath, overwrite: true);
 
-                    LoadRouteImageToPictureBox(routePictureBox, destinationPath);
+                        LoadRouteImageToPictureBox(routePictureBox, destinationPath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Program.Logger.Error(ex, SavePictureErrorLog);
+                    MessageBox.Show(SavePictureErrorMessage);
                 }
             }
         }
@@ -280,6 +294,9 @@ namespace TouristRoutes.Forms
             }
         }
 
+        /// <summary>
+        /// Метод для обновления RecommendationsListForm
+        /// </summary>
         public void AdministratorForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             _previousForm.Close();

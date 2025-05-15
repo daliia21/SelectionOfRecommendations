@@ -33,7 +33,7 @@ namespace TouristRoutes.Services
 
             if (!CheckFillFields(registerDto))
             {
-                return (false, "Не все поля заполнены");
+                return (false, FieldsNotFillMessage);
             }
 
             if (dbUser != null)
@@ -53,7 +53,7 @@ namespace TouristRoutes.Services
 
             if (!CheckCoincidencePasswords(registerDto.Password, registerDto.RepeatPassword))
             {
-                return (false, "Пароли не совпадают");
+                return (false, PasswordUncoincidenceMessage);
             }
 
             
@@ -115,6 +115,9 @@ namespace TouristRoutes.Services
             return (true, "Ok");
         }
 
+        /// <summary>
+        /// Метод для получения тегов текущего пользователя
+        /// </summary>
         public List<Tag> GetAllTagsForCurrentUser()
         {            
             var currentUser = AppState.CurrentAppUser;
@@ -200,7 +203,7 @@ namespace TouristRoutes.Services
 
             if (!CheckFillFields(loginDto))
             {
-                return (false, "Не все поля заполнены");
+                return (false, FieldsNotFillMessage);
             }
             if (dbUser == null)
             {

@@ -4,10 +4,16 @@ using static TouristRoutes.Properties.Resources;
 
 namespace TouristRoutes.Forms
 {
-    public partial class RouteDetailsForm: Form
+    /// <summary>
+    /// Форма детализации маршрута
+    /// </summary>
+    public partial class RouteDetailsForm : Form
     {
         private Route _route;
 
+        /// <summary>
+        /// Конструктор формы детализации
+        /// </summary>
         public RouteDetailsForm(Route route)
         {
             InitializeComponent();
@@ -28,7 +34,7 @@ namespace TouristRoutes.Forms
 
             routeDescriptionRichTextBox.MouseDown += (s, e) =>
             {
-                this.ActiveControl = null; 
+                this.ActiveControl = null;
             };
         }
     }

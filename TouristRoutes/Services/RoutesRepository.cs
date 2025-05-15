@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TouristRoutes.Models;
+using static TouristRoutes.Properties.Resources;
 
 namespace TouristRoutes.Services
 {
@@ -111,7 +112,7 @@ namespace TouristRoutes.Services
                 .FirstOrDefault(r => r.Id == Id);
 
             if (route == null)
-                throw new Exception("Маршрут не найден");
+                throw new Exception(RouteNotFindMessage);
 
             foreach (var tag in tags)
             {                
@@ -149,6 +150,9 @@ namespace TouristRoutes.Services
             
         }
 
+        /// <summary>
+        /// Метод для получения избранных маршрутов пользователя
+        /// </summary>
         public List<Route> GetFavoriteRoutesForUser(int userId)
         {
 
