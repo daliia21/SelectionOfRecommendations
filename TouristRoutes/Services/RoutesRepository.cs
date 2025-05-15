@@ -149,6 +149,9 @@ namespace TouristRoutes.Services
             
         }
 
+        /// <summary>
+        /// Метод для получения избранных маршрутов пользователя
+        /// </summary>
         public List<Route> GetFavoriteRoutesForUser(int userId)
         {
 

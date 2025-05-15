@@ -115,6 +115,9 @@ namespace TouristRoutes.Services
             return (true, "Ok");
         }
 
+        /// <summary>
+        /// Метод для получения тегов текущего пользователя
+        /// </summary>
         public List<Tag> GetAllTagsForCurrentUser()
         {            
             var currentUser = AppState.CurrentAppUser;

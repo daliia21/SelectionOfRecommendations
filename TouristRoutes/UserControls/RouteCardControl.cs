@@ -10,10 +10,19 @@ namespace TouristRoutes
     public partial class RouteCardControl: UserControl
     {
         private Route _route;
+        /// <summary>
+        /// Публичное поле, возвращающее _route
+        /// </summary>
         public Route Route => _route;
 
+        /// <summary>
+        /// Метка выбранного маршрута
+        /// </summary>
         public bool IsSelected { get; private set; } = false;
 
+        /// <summary>
+        /// Событие Selected
+        /// </summary>
         public event EventHandler Selected;
         private Color _defaultBackColor;
 
@@ -60,7 +69,10 @@ namespace TouristRoutes
 
 
         }
-        
+
+        /// <summary>
+        /// Метод для установки выбора карты маршрута
+        /// </summary>
         public void SetSelected(bool selected)
         {
             IsSelected = selected;

@@ -26,7 +26,7 @@
         public string Password { get; set; }
 
         /// <summary>
-        /// Пароль пользователя
+        /// Повторный пароль пользователя
         /// </summary>
         public string RepeatPassword { get; set; }
     }

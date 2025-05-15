@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TouristRoutes.Models
 {
+    /// <summary>
+    /// Модель для хранения избранных маршрутов у пользователей
+    /// </summary>
     public class UserFavoriteRoute
     {
         /// <summary>
