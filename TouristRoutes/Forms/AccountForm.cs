@@ -56,8 +56,10 @@ namespace TouristRoutes
                 FirstName = registerFirstName.Text,
                 LastName = registerLastName.Text,
                 Email = registerEmail.Text,
-                Password = registerPassword.Text
+                Password = registerPassword.Text,
+                RepeatPassword = passwordRepeatTextBox.Text
             };
+
 
             var result = _accountService.Register(registerDto);
 
@@ -72,6 +74,62 @@ namespace TouristRoutes
             else
             {
                 MessageBox.Show(result.Item2);
+            }
+        }
+
+        private void loginEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void registerFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void registerLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void registerEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void loginPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void registerPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void passwordRepeatTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button1 = new Button();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,6 +45,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1882, 1117);
             panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(75, 136, 158);
+            button1.Location = new Point(1515, 1027);
+            button1.Name = "button1";
+            button1.Size = new Size(325, 59);
+            button1.TabIndex = 2;
+            button1.Text = "УБРАТЬ ИЗ ИЗБРАННОГО";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -66,17 +77,6 @@
             flowLayoutPanel1.Size = new Size(1876, 913);
             flowLayoutPanel1.TabIndex = 0;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(75, 136, 158);
-            button1.Location = new Point(1515, 1027);
-            button1.Name = "button1";
-            button1.Size = new Size(325, 59);
-            button1.TabIndex = 2;
-            button1.Text = "УБРАТЬ ИЗ ИЗБРАННОГО";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // FavoriteRoutesForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -85,7 +85,7 @@
             ClientSize = new Size(1877, 1194);
             Controls.Add(panel1);
             Name = "FavoriteRoutesForm";
-            Text = "FavoriteRoutesForm";
+            Text = "Список избранных маршрутов";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

@@ -24,5 +24,10 @@
         /// Пароль пользователя
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// Пароль пользователя
+        /// </summary>
+        public string RepeatPassword { get; set; }
     }
 }

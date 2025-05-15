@@ -197,7 +197,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "RouteDetailsForm";
-            Text = "RouteDetailsForm";
+            Text = "Детали маршрута";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

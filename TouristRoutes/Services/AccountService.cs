@@ -31,14 +31,14 @@ namespace TouristRoutes.Services
                 .Where(u => u.Email == registerDto.Email)
                 .FirstOrDefault();
 
+            if (!CheckFillFields(registerDto))
+            {
+                return (false, "Не все поля заполнены");
+            }
+
             if (dbUser != null)
             {
                 return (false, EmailRepeatMessage);
-            }
-
-            if (!CheckComplexityPassword(registerDto.Password))
-            {
-                return (false, PasswordUnsecureMessage);
             }
 
             if (!CheckCorrectEmail(registerDto.Email))
@@ -46,6 +46,17 @@ namespace TouristRoutes.Services
                 return (false, EmailUncorrectMessage);
             }
 
+            if (!CheckComplexityPassword(registerDto.Password))
+            {
+                return (false, PasswordUnsecureMessage);
+            }           
+
+            if (!CheckCoincidencePasswords(registerDto.Password, registerDto.RepeatPassword))
+            {
+                return (false, "Пароли не совпадают");
+            }
+
+            
             var user = new AppUser
             {
                 FirstName = registerDto.FirstName,
@@ -157,6 +168,24 @@ namespace TouristRoutes.Services
             return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
         }
 
+        private bool CheckCoincidencePasswords(string pass1, string pass2)
+        {
+            if (pass1 != pass2)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool CheckFillFields(RegisterDto registerDto)
+        {
+            if (registerDto.FirstName == "" || registerDto.LastName == "" || registerDto.Email == "" || registerDto.Password == "" || registerDto.RepeatPassword == "")
+            {
+                return false;
+            }
+            return true;
+        }
+
         /// <summary>
         /// Метод для входа
         /// </summary>
@@ -166,10 +195,15 @@ namespace TouristRoutes.Services
                 .Where(u => u.Email == loginDto.Email)
                 .FirstOrDefault();
 
+            if (!CheckFillFields(loginDto))
+            {
+                return (false, "Не все поля заполнены");
+            }
             if (dbUser == null)
             {
                 return (false, UserUnregisterMessage);
             }
+
 
 
             var isValid = Verify(loginDto.Password, dbUser.PasswordHash);
@@ -185,6 +219,15 @@ namespace TouristRoutes.Services
             {
                 return (false, PasswordInvalidMessage);
             }
+        }
+
+        private bool CheckFillFields(LoginDto loginDto)
+        {
+            if (loginDto.Email == "" || loginDto.Password == "")
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
