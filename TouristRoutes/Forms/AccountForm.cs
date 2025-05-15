@@ -1,3 +1,4 @@
+using NLog;
 using TouristRoutes.Dtos;
 using TouristRoutes.Forms;
 using TouristRoutes.Services;
@@ -18,6 +19,8 @@ namespace TouristRoutes
         public AccountForm()
         {
             InitializeComponent();
+
+            Program.Logger.Info("Форма аккаунта загрузилась");
 
             _accountService = new AccountService();
         }

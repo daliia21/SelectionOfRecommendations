@@ -10,12 +10,20 @@ namespace TouristRoutes
     public partial class RouteCardControl: UserControl
     {
         private Route _route;
+        public Route Route => _route;
+
+        public bool IsSelected { get; private set; } = false;
+
+        public event EventHandler Selected;
+        private Color _defaultBackColor;
+
         /// <summary>
         /// Конструктор карты маршрута
         /// </summary>
         public RouteCardControl()
         {
             InitializeComponent();
+            _defaultBackColor = this.BackColor;
         }
 
         /// <summary>
@@ -45,6 +53,23 @@ namespace TouristRoutes
             }
 
             this.Click += Card_Click;
+            foreach (Control control in this.Controls)
+            {
+                control.DoubleClick += Card_Click;
+            }
+
+
+        }
+        
+        public void SetSelected(bool selected)
+        {
+            IsSelected = selected;
+            this.BackColor = selected ? Color.DarkGray : _defaultBackColor; 
+        }
+
+        protected virtual void OnSelected()
+        {
+            Selected?.Invoke(this, EventArgs.Empty);
         }
 
         private void Card_DoubleClick(object sender, EventArgs e)
@@ -55,7 +80,7 @@ namespace TouristRoutes
 
         private void Card_Click(object sender, EventArgs e)
         {
-            
+            OnSelected();
         }
     }
 }

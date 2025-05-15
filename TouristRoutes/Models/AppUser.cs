@@ -16,6 +16,11 @@
         public List<AppUserTag> UserTags { get; set; } = new List<AppUserTag>();
 
         /// <summary>
+        /// Список избранных маршрутов пользователя
+        /// </summary>
+        public List<UserFavoriteRoute> UserFavoriteRoutes { get; set; } = new();
+
+        /// <summary>
         /// Имя пользователя
         /// </summary>
         public string FirstName { get; set; }

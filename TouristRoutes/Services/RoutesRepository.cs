@@ -137,15 +137,27 @@ namespace TouristRoutes.Services
         /// Метод для удаления маршрута по ID
         /// </summary>
         public void DeleteRouteById(Route route)
-        {
-            using (var context = new AppDbContext())
+        {            
+            if (route != null)
             {
-                if (route != null)
-                {
-                    context.Routes.Remove(route);
-                    context.SaveChanges();
-                }
+                _dbContext.Routes.Remove(route);
+                _dbContext.SaveChanges();
             }
+            
+        }
+
+        public List<Route> GetFavoriteRoutesForUser(int userId)
+        {
+
+            var favoriteRoutes = _dbContext.UserInfoFavoriteRoutes
+            .Where(ufr => ufr.AppUserId == userId)
+            .Include(ufr => ufr.Route) 
+                .ThenInclude(r => r.RouteTags) 
+                    .ThenInclude(rt => rt.Tag)
+            .Select(ufr => ufr.Route)
+            .ToList();
+
+            return favoriteRoutes;            
         }
     }
 }

@@ -33,6 +33,7 @@
             button2 = new Button();
             button1 = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            button3 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             button2.TabIndex = 3;
             button2.Text = "ДОБАВИТЬ В ИЗБРАННОЕ";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -89,12 +91,25 @@
             flowLayoutPanel1.Size = new Size(1876, 913);
             flowLayoutPanel1.TabIndex = 1;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(96, 118, 85);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(38, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(238, 54);
+            button3.TabIndex = 3;
+            button3.Text = "ИЗБРАННОЕ";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
             // RecommendationsListForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(96, 118, 85);
             ClientSize = new Size(1877, 1194);
+            Controls.Add(button3);
             Controls.Add(panel1);
             Name = "RecommendationsListForm";
             Text = "Список рекомендаций";
@@ -109,5 +124,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button button1;
         private Button button2;
+        private Button button3;
     }
 }
